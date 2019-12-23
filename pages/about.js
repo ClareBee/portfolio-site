@@ -8,7 +8,7 @@ export default function About() {
   gsap.registerPlugin(MotionPathPlugin);
 
   return (
-    <Layout>
+    <Layout title="About">
     <Spinner />
       <p>About page</p>
       <svg id="text-container" width="129" height="115" xmlns="http://www.w3.org/2000/svg">

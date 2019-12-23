@@ -14,7 +14,7 @@ const Content = () => {
 const Post = () => {
 
   return (
-    <Layout>
+    <Layout title="post">
       <Content />
     </Layout>
   );

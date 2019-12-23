@@ -4,7 +4,7 @@ import Markdown from 'react-markdown';
 import fetch from 'isomorphic-unfetch';
 
 const Post = props => (
-  <Layout>
+  <Layout title={props.show.name}>
     <h1>{props.show.name}</h1>
     <p>{props.show.summary.replace(/<[/]?[pb]>/g, '')}</p>
     <img src={props.show.image.medium} />

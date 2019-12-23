@@ -1,11 +1,16 @@
 html {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #2f303a;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
-  color: blue;
+  color: #fff;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
 }

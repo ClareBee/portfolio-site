@@ -8,6 +8,9 @@ const Header = () => (
     <Link href="/blog">
       <a className="link">Blog</a>
     </Link>
+    <Link href="/resume">
+      <a className="link">Resume</a>
+    </Link>
     <Link href="/about">
       <a className="link">About</a>
     </Link>

@@ -1,0 +1,14 @@
+
+.link {
+  margin: 2em;
+
+  color: pink;
+}
+
+.selected {
+  background-color: blue;
+  color: green;
+  a {
+    color: orange;
+  }
+}

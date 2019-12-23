@@ -2,8 +2,6 @@ import Layout from '../components/Layout';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 import { NextPage } from 'next';
-import css from '../styles.scss';
-
 
 // const Index = props => (
 //   <Layout>

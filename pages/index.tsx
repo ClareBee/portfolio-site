@@ -7,7 +7,7 @@ type showProps = {
   shows: Array<{id: number, name: string}>
 }
 const Index = ({ shows }: showProps) => (
-  <Layout>
+  <Layout title="Projects">
     <h1>Batman Shows</h1>
     <ul>
       {shows.map(show => (

@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import { gsap } from "gsap/dist/gsap";
+import { gsap } from 'gsap/dist/gsap';
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin.js";
 import Spinner from '../components/Spinner';
 //without this line, PixiPlugin and MotionPathPlugin may get dropped by your bundler (tree shaking)...

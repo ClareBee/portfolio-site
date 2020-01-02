@@ -1,7 +1,6 @@
 const withPlugins = require('next-compose-plugins');
 
 const nextConfig = {
-  distDir: 'build',
   webpack: (config, options) => {
     config.module.rules.push({
          test: /\.md$/,

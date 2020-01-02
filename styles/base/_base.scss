@@ -2,13 +2,14 @@ html {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   background-color: #2f303a;
+  background-color: var(--bg-color);
+  color: var(--font-color);
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
-  color: #fff;
 }
 
 p {

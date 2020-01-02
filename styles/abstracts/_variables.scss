@@ -1,3 +1,20 @@
 // COLOURS
 
+
+:root {
+    --primary-color: #e63462;
+    --secondary-color: #536390;
+    --font-color: #2d3142;
+    --bg-color: #fff;
+    --heading-color: #666a86;
+}
+
+[data-theme="dark"] {
+    --primary-color: #e63462;
+    --secondary-color: #818cab;
+    --font-color: #fff;
+    --bg-color: #2d3142;
+    --heading-color: #e0e0e2;
+}
+
 // BREAKPOINTS

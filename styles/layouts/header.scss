@@ -1,0 +1,14 @@
+.mode-switch input {
+  display:none;
+}
+
+.lightbulb svg {
+  fill: black;
+}
+input:checked + .lightbulb svg {
+  fill: white;
+}
+
+.lightbulb:hover {
+  cursor: pointer;
+}

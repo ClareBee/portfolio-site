@@ -1,14 +1,10 @@
-
 .link {
   margin: 2em;
-
-  color: pink;
+  text-decoration: none;
+  color: var(--font-color);
 }
 
 .selected {
-  background-color: blue;
-  color: green;
-  a {
-    color: orange;
-  }
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
 }

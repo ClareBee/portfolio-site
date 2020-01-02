@@ -1,7 +1,7 @@
 import Link from './Link';
 
 const Header = () => (
-  <div>
+  <div className="header">
     <Link href="/">
       <a className="link">Projects</a>
     </Link>

@@ -9,7 +9,7 @@ useEffect(() => {
   var tl = gsap.timeline();
   const controller = new ScrollMagic.Controller();
   console.log('controller', controller)
-  tl.from ('blockquote', .5, {x: 200, opacity: 0 })
+  tl.from ('blockquote', { x: 200, opacity: 0, duration: 2, delay: .25 })
   const scene = new ScrollMagic.Scene({
     triggerElement: '.animate',
     duration: '100%'
@@ -22,14 +22,22 @@ useEffect(() => {
       tl.reverse();
   })
   .addTo(controller)
-});
 
+  scene.on("progress", function (event) {
+      console.log("Scene progress changed to " + event.progress);
+  });
+});
 
 // then we can control the whole thing easily...
 // tl.pause();
 // tl.resume();
 // tl.seek(1.5);
 // tl.reverse();
+// controller.scrollTo("#anchor");
+//
+// // scroll to the beginning of a scene
+// var scene = new ScrollMagic.Scene({offset: 200});
+// controller.scrollTo(scene);
   return (
     <div>
       scroll magic example

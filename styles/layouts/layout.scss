@@ -1,0 +1,41 @@
+// https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css
+.container {
+  display: flex;
+  height: 100vh; // vh buggy in older mobile Safari - replace w %?
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto; // prevents shrinkage http://bit.ly/1Mn35US for details
+  width: 100%;
+  // padding: var(--space) var(--space) 0;
+}
+
+.header,
+.footer {
+  flex: none; // prevents shrinkage See http://bit.ly/1Mn35US for details.
+}
+
+
+// .Site-content::after {
+//   content: '\00a0'; /* &nbsp; */
+//   display: block;
+//   margin-top: var(--space);
+//   height: 0px;
+//   visibility: hidden;
+// }
+// @media (--break-lg) {
+//   .Site-content {
+//     padding-top: var(--space-lg);
+//   }
+//   .Site-content::after {
+//     margin-top: var(--space-lg);
+//   }
+// }
+//
+// .Site-content--full {
+//   padding: 0;
+// }
+// .Site-content--full::after {
+//   content: none;
+// }

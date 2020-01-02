@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import '../styles.scss';
 const Layout = props => (
-  <div>
+  <div className="container">
     <Head>
       <title>{props.title}</title>
       <meta charSet="utf-8" />
@@ -11,7 +11,9 @@ const Layout = props => (
       <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400|Roboto&display=swap" rel="stylesheet" />
     </Head>
     <Header />
+    <div className="content">
     {props.children}
+    </div>
     <Footer />
   </div>
 );

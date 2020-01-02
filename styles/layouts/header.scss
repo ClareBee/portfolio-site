@@ -1,3 +1,18 @@
+.header {
+  padding: 1rem;
+  flex: none; // prevents shrinkage http://bit.ly/1Mn35US for details
+  display: flex;
+  justify-content: flex-end;
+  &__links {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.mode-switch-container {
+  display: inline-block;
+}
+
 .mode-switch input {
   display:none;
 }

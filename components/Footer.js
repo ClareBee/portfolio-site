@@ -1,7 +1,9 @@
+import Icons from '../components/Icons';
 
 const Footer = () => (
   <div className="footer">
-    <p>2020 ClareBee. All rights reserved.</p>
+    <p>&copy; 2020 ClareBee. All rights reserved.</p>
+    <Icons />
   </div>
 );
 

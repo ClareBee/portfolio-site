@@ -3,6 +3,7 @@
   display: flex;
   height: 100vh; // vh buggy in older mobile Safari - replace w %?
   flex-direction: column;
+  padding: 1rem;
 }
 
 .content {
@@ -10,12 +11,6 @@
   width: 100%;
   // padding: var(--space) var(--space) 0;
 }
-
-.header,
-.footer {
-  flex: none; // prevents shrinkage See http://bit.ly/1Mn35US for details.
-}
-
 
 // .Site-content::after {
 //   content: '\00a0'; /* &nbsp; */

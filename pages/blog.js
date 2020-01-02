@@ -1,6 +1,5 @@
 import matter from 'gray-matter';
 import Layout from '../components/Layout';
-import Icons from '../components/Icons';
 import BlogRoll from '../components/BlogRoll';
 
 
@@ -10,7 +9,6 @@ const Blog = (props) => {
     <Layout title="Blog">
       <p>Blog Page </p>
       <BlogRoll allBlogs={props.allBlogs}/>
-      <Icons />
     </Layout>
   );
 }

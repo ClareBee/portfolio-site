@@ -26,6 +26,7 @@ const Header = () => {
 
   return (
     <div className="header">
+      <div className="header__links">
       <Link href="/">
         <a className="link">Projects</a>
       </Link>
@@ -41,7 +42,7 @@ const Header = () => {
       <Link href="/contact">
         <a className="link">Contact</a>
       </Link>
-      <div>
+      <div className="mode-switch-container">
         <label className="mode-switch" htmlFor="checkbox">
           <Checkbox
             checked={checked}
@@ -51,6 +52,7 @@ const Header = () => {
             <FaLightbulb />
           </div>
         </label>
+      </div>
       </div>
     </div>
   )

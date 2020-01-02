@@ -1,0 +1,7 @@
+.footer {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: none; // prevents shrinkage http://bit.ly/1Mn35US for details
+}

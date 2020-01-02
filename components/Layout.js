@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Header from './Header';
+import Footer from './Footer';
 import '../styles.scss';
 const Layout = props => (
   <div>
@@ -11,6 +12,7 @@ const Layout = props => (
     </Head>
     <Header />
     {props.children}
+    <Footer />
   </div>
 );
 

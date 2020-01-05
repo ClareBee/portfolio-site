@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#E4E4E4'
   },
   section: {
+    fontFamily: 'Courier', // Helvetica/Times also available, w diff weights
     margin: 10,
     padding: 10,
     flexGrow: 1

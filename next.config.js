@@ -22,4 +22,4 @@ const withTM = require('next-transpile-modules');
 //   transpileModules: ['somemodule', 'and-another']
 // });
 
-module.exports = withPlugins([[sass], [bundleAnalyzer]], nextConfig);
+module.exports = withPlugins([[sass],[bundleAnalyzer]], nextConfig);

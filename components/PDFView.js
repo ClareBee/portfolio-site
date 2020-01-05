@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import Spinner from './Spinner';
 
 import Icons from '../components/Icons';
 import { PDFViewer } from '@react-pdf/renderer';
@@ -12,5 +13,6 @@ const PDFView = () => (
 );
 
 export default dynamic(() => Promise.resolve(PDFView), {
+  loading: () => <Spinner />,
   ssr: false
 });

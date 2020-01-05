@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@next/bundle-analyzer": "^9.1.6",
+    "@react-pdf/renderer": "^1.6.8",
     "@zeit/next-sass": "^1.0.1",
     "cross-env": "^6.0.3",
     "gray-matter": "^4.0.2",

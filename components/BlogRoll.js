@@ -23,7 +23,7 @@ const BlogRoll = (props) => {
             <a>
             <li>
               <div>
-                <img src={blog.document.data.banner} alt={blog.document.data.banner} />
+                <img src={require(`../images/${blog.document.data.banner}`)} alt={blog.document.data.banner} />
               </div>
               <div>
                 <h2>{blog.document.data.title}</h2>

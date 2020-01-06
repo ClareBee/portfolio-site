@@ -1,4 +1,5 @@
 const withPlugins = require('next-compose-plugins');
+const optimizedImages = require('next-optimized-images');
 
 const nextConfig = {
   webpack: (config, options) => {
@@ -22,4 +23,4 @@ const withTM = require('next-transpile-modules');
 //   transpileModules: ['somemodule', 'and-another']
 // });
 
-module.exports = withPlugins([[sass],[bundleAnalyzer]], nextConfig);
+module.exports = withPlugins([[sass], [optimizedImages], [bundleAnalyzer]], nextConfig);

@@ -16,3 +16,11 @@
     fill: $hover-color;
   }
 }
+
+@mixin link-states(){
+  color: var(--heading-color);
+  transition: all .3s ease-in-out;
+  &:hover, &:focus {
+    color: var(--primary-color)
+  }
+}

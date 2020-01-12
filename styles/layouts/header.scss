@@ -1,6 +1,6 @@
 .header {
-  padding: 0 1rem;
   font-size: 18px;
+  letter-spacing: .15rem;
   flex: none; // prevents shrinkage http://bit.ly/1Mn35US for details
   display: flex;
   justify-content: space-between;
@@ -11,6 +11,7 @@
     align-items: top;
   }
   &__logo-link svg {
+    fill: none;
     @include hover-svg(var(--primary-color), .5s);
   }
 }

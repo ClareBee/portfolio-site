@@ -27,3 +27,8 @@ input:checked + .lightbulb svg {
 .lightbulb:hover {
   cursor: pointer;
 }
+
+.logo-link {
+  cursor: pointer;
+  text-decoration: none;
+}

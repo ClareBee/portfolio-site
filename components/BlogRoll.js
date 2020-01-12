@@ -18,6 +18,7 @@ const BlogRoll = (props) => {
         {props.allBlogs.length >= 1 && props.allBlogs.map(blog => (
           <Link
             key={blog.slug}
+            // href="/blog/[id]" as={`/blog/${blog.slug}`}
             href={{ pathname: `/blog/${blog.slug}` }}
           >
             <a>
@@ -29,7 +30,7 @@ const BlogRoll = (props) => {
                 <h2>{blog.document.data.title}</h2>
                 <h4>{blog.document.data.subtitle}</h4>
                 <h3><span>{blog.document.data.author} -</span> {reformatDate(blog.document.data.date)}</h3>
-                <ReactMarkdown source={truncateSummary(blog.document.content)} />
+                <ReactMarkdown source={truncateSummary(blog.document.content.replace(/<[/]?[pb]>/g, ''))} />
               </div>
             </li>
             </a>

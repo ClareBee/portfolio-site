@@ -4,7 +4,11 @@ import Link from 'next/link';
 const Index = () => (
   <Layout title="Projects">
     <div className="index">
-      <img style={{borderRadius: '50%'}} src={require('../images/opacity_portrait.png')} />
+      <div className="portrait">
+        <div className="portrait__border">
+          <img className="portrait__image" src={require('../images/opacity_portrait.png')} />
+        </div>
+      </div>
     </div>
   </Layout>
 );

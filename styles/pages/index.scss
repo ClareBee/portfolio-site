@@ -1,3 +1,21 @@
 .index {
   display: flex;
 }
+
+
+.portrait__border {
+  height: 250px;
+  border-radius: 50%;
+  padding: 5px;
+  background:
+      linear-gradient(to right bottom, var(--bg-color) 0%, var(--secondary-color) 65%, var(--primary-color) 80%);
+}
+
+.portrait__image {
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  background-size: contain;
+  padding: 15px;
+  overflow: hidden;
+}

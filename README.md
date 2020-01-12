@@ -7,3 +7,5 @@ https://scrollmagic.io/docs/index.html
 https://github.com/developit/unfetch
 
 https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8
+
+https://cloudfour.com/thinks/css-circles/

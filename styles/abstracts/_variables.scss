@@ -2,19 +2,21 @@
 
 
 :root {
-    --primary-color: #e63462;
+    --primary-color: #DA2497;
     --secondary-color: #536390;
-    --font-color: #2d3142;
-    --bg-color: #fff;
-    --heading-color: #666a86;
+    --font-color: #373f51;
+    --bg-color: #FDFDFD;
+    --heading-color: ##5a5766;
+    --logo-start-color: #FDFDFD;
 }
 
 [data-theme="dark"] {
-    --primary-color: #e63462;
-    --secondary-color: #818cab;
-    --font-color: #fff;
-    --bg-color: #2d3142;
-    --heading-color: #e0e0e2;
+    --primary-color: #DA2497;
+    --secondary-color: #536390;
+    --font-color: #FDFDFD;
+    --bg-color: #373f51;
+    --heading-color: #c1cad6;
+    --logo-start-color: #FDFDFD;
 }
 
 // BREAKPOINTS

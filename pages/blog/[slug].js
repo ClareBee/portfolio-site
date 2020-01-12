@@ -10,7 +10,7 @@ export default function Blog(props) {
       <article>
         <h1>{frontmatter.title}</h1>
         <h4>{frontmatter.subtitle}</h4>
-        <img src={require(`../images/${frontmatter.banner}`)} alt={frontmatter.alt_text} />
+        <img src={require(`../../images/${frontmatter.banner}`)} alt={frontmatter.alt_text} />
         <div>
           <ReactMarkdown source={markdownContent} />
         </div>

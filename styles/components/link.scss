@@ -5,14 +5,16 @@
   color: var(--font-color);
   min-height: 2.5rem;
   min-width: 4rem;
+  @extend .gradient-underline;
+  background-size: 0% 5px;
+  transition: all .3s;
+}
+
+.link:hover {
+  background-size: 100% 5px;
 }
 
 .selected {
-  display: inline-block;
+  @extend .gradient-underline;
   background-size: 100% 5px;
-  background-position: bottom 0 left 0, bottom 5px left 0;
-  background-repeat: no-repeat;
-  background-image:
-    linear-gradient(to right, var(--bg-color), var(--bg-color)),
-    linear-gradient(to right, var(--secondary-color), var(--primary-color));
 }

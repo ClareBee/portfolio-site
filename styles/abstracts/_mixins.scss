@@ -1,0 +1,9 @@
+.gradient-underline {
+  display: inline-block;
+  background-position: bottom 0 left 0, bottom 5px left 0;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(to right, var(--bg-color), var(--bg-color)),
+    linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  background-blend-mode: soft-light, lighten;
+}

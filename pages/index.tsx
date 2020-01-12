@@ -5,7 +5,7 @@ const Index = () => (
   <Layout title="Projects">
     <div className="index">
       <div className="introduction">
-        <p>Hi! I'm <span className="highlight"><Link href="/about">Clare</Link></span>, a <span className="bold">ReactJS</span> developer in Scotland</p>
+        <p>Hi! I'm <span className="introduction__content highlight"><Link href="/about">Clare</Link></span>, a <span className="bold">ReactJS</span> developer in Scotland</p>
       </div>
       <div className="portrait">
         <div className="portrait__border">

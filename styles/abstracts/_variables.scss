@@ -7,7 +7,7 @@
     --font-color: #373f51;
     --bg-color: #FDFDFD;
     --heading-color: #5a5766;
-    --logo-start-color: #FDFDFD;
+    --white-color: #FDFDFD;
     --svg-color: #536390;
 }
 
@@ -17,8 +17,10 @@
     --font-color: #FDFDFD;
     --bg-color: #373f51;
     --heading-color: #c1cad6;
-    --logo-start-color: #FDFDFD;
+    --white-color: #FDFDFD;
     --svg-color: #FDFDFD;
 }
 
 // BREAKPOINTS
+// ems best option for media queries due to browsers
+// base is 16px

@@ -32,3 +32,8 @@ a {
   text-decoration: none;
   color: var(--font-color);
 }
+
+::selection {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}

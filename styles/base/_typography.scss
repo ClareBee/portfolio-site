@@ -1,35 +1,36 @@
 p {
   font-size: 1.6rem;
   font-family: 'Montserrat', sans-serif;
+  width: 65ch * 0.7986; //https://johndjameson.com/blog/making-sense-of-ch-units/
 }
 
 %heading {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  line-height: 1;
 }
 
 .heading-1 {
   @extend %heading;
   font-size: 4.5rem;
   color: var(--heading-color);
-  line-height: 1;
 }
 
 .heading-2 {
   @extend %heading;
   font-size: 4rem;
-  color: var(--heading-color);
-  line-height: 1;
+  color: var(--font-color);
 }
 
 .heading-3 {
   @extend %heading;
-  font-size: 1.6rem;
-  color: var(--font-color);
+  font-size: 1.9rem;
+  color: var(--heading-color);
   text-transform: uppercase;
 }
 
 .heading-4 {
   @extend %heading;
-  font-size: 1.9rem;
+  color: var(--font-color);
+  font-size: 1.6rem;
 }

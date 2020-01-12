@@ -16,8 +16,7 @@
   flex: 1 1 auto;
   letter-spacing: .35rem;
   padding: 10rem 2rem 2rem 3rem;
-  font-size: 2rem;
-  @include fade-in(3s);
+  @include fade-in(4s);
   &__content {
     @extend .gradient-underline;
     padding-bottom: .5rem;
@@ -29,8 +28,8 @@
     }
   }
   &__subtitle {
-    font-size: 1rem;
-    line-height: 2rem;
+    line-height: 3;
+    font-weight: 200;
     color: var(--heading-color);
   }
 }

@@ -5,6 +5,7 @@ import { Page, Text, Link, View, Document, StyleSheet } from '@react-pdf/rendere
 const styles = StyleSheet.create({
   page: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
     backgroundColor: '#E4E4E4'
   },
   section: {
@@ -19,6 +20,14 @@ const styles = StyleSheet.create({
 const CV = () => (
   <Document title="ClareBee" subject="Software Developer CV 2020" author="ClareBee" >
     <Page size="A4" style={styles.page}>
+      <View style={styles.section}>
+        <Text>ClareBee</Text>
+        <Text>Software Developer</Text>
+        <Text><Link>www.github.com/clarebee</Link></Text>
+      </View>
+      <View style={styles.section}>
+        <Text>Section #2</Text>
+      </View>
       <View style={styles.section}>
         <Text>ClareBee</Text>
         <Text>Software Developer</Text>

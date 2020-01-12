@@ -5,6 +5,7 @@
   justify-content: space-around;
   a {
     margin: 0 1.5rem;
+    font-size: 2rem;
     svg {
       @include hover-svg(var(--svg-color), var(--primary-color), .5s);
     }

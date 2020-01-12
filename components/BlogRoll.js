@@ -24,9 +24,6 @@ const BlogRoll = (props) => {
             <a>
             <li>
               <div>
-                <img src={require(`../images/${blog.document.data.banner}`)} alt={blog.document.data.banner} />
-              </div>
-              <div>
                 <h2>{blog.document.data.title}</h2>
                 <h4>{blog.document.data.subtitle}</h4>
                 <h3><span>{blog.document.data.author} -</span> {reformatDate(blog.document.data.date)}</h3>

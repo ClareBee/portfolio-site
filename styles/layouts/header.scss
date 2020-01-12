@@ -4,11 +4,11 @@
   flex: none; // prevents shrinkage http://bit.ly/1Mn35US for details
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   &__links {
     display: flex;
     justify-content: space-around;
-    align-items: top;
+    align-items: flex-start;
   }
   &__logo-text {
     @include hover-svg(var(--svg-color), var(--primary-color), .5s);
@@ -25,9 +25,9 @@
 
 .lightbulb {
   svg {
-    min-height: 30px;
-    min-width: 30px;
-    margin: 32px;
+    min-height: 3rem;
+    min-width: 3rem;
+    margin: 1rem 2rem;
     @include hover-svg(var(--svg-color), var(--primary-color), .4s);
   }
 }

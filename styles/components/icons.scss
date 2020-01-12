@@ -1,0 +1,12 @@
+.social-media-icons {
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  a {
+    margin: 0 1.5rem;
+    svg {
+      @include hover-svg(var(--primary-color), .5s);
+    }
+  }
+}

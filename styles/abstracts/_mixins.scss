@@ -7,3 +7,12 @@
     linear-gradient(to right, var(--secondary-color), var(--primary-color));
   background-blend-mode: soft-light, lighten;
 }
+
+@mixin hover-svg($hover-color, $duration) {
+  cursor: pointer;
+  fill: var(--heading-color);
+  transition: all $duration ease-in-out;
+  &:hover {
+    fill: $hover-color;
+  }
+}

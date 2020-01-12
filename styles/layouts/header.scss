@@ -9,6 +9,9 @@
     justify-content: space-around;
     align-items: top;
   }
+  &__logo-link svg {
+    @include hover-svg(var(--primary-color), .5s);
+  }
 }
 
 .mode-switch-container {
@@ -19,21 +22,11 @@
   display: none;
 }
 
-.lightbulb svg {
-  min-height: 30px;
-  min-width: 30px;
-  margin: 32px;
-  fill: black;
-}
-input:checked + .lightbulb svg {
-  fill: white;
-}
-
-.lightbulb:hover {
-  cursor: pointer;
-}
-
-.logo-link {
-  cursor: pointer;
-  text-decoration: none;
+.lightbulb {
+  svg {
+    min-height: 30px;
+    min-width: 30px;
+    margin: 32px;
+    @include hover-svg(var(--primary-color), .4s);
+  }
 }

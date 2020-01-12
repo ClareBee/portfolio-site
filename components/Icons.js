@@ -1,7 +1,7 @@
 import { FaTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 const Icons = () => (
-  <div>
+  <div className="social-media-icons">
     <a><FaTwitter /></a>
     <a><FaLinkedinIn /></a>
     <a><FaGithub /></a>

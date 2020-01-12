@@ -10,9 +10,8 @@
     justify-content: space-around;
     align-items: top;
   }
-  &__logo-link svg {
-    fill: none;
-    @include hover-svg(var(--primary-color), .5s);
+  &__logo-text {
+    @include hover-svg(var(--svg-color), var(--primary-color), .5s);
   }
 }
 
@@ -29,6 +28,6 @@
     min-height: 30px;
     min-width: 30px;
     margin: 32px;
-    @include hover-svg(var(--primary-color), .4s);
+    @include hover-svg(var(--svg-color), var(--primary-color), .4s);
   }
 }

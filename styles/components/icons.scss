@@ -6,7 +6,7 @@
   a {
     margin: 0 1.5rem;
     svg {
-      @include hover-svg(var(--primary-color), .5s);
+      @include hover-svg(var(--svg-color), var(--primary-color), .5s);
     }
   }
 }

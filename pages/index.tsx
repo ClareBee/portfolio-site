@@ -6,7 +6,7 @@ const Index = () => (
     <div className="index">
       <div className="introduction">
         <p>Hi! I'm <span className="introduction__content highlight"><Link href="/about"><a>Clare</a></Link></span>, a <span className="bold">FrontEnd</span> developer in Scotland</p>
-        <p className="introduction__subtitle">ReactJS, GraphQL & the JAMStack</p>
+        <p className="introduction__subtitle">ReactJS, GraphQL & the JAMstack</p>
       </div>
       <div className="portrait">
         <div className="portrait__border">

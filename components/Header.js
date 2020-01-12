@@ -35,12 +35,12 @@ const Header = () => {
               <stop offset="95%" stopColor="var(--primary-color)" />
             </linearGradient>
           </defs>
-              <Link href="/">
-          <a className="logo-link">
-            <circle cx="50" cy="50" r="40" stroke="url(#myGradient)" strokeWidth="3" fill="transparent" />
-            <text x="50%" y="50%" textAnchor="middle" fontSize="35px" fontFamily="Roboto" dy=".3em">CB</text>
-          </a>
-              </Link>
+          <Link href="/">
+            <a>
+              <circle cx="50" cy="50" r="40" stroke="url(#myGradient)" strokeWidth="3" fill="transparent" />
+              <text className="header__logo-text" x="50%" y="50%" textAnchor="middle" fontSize="35px" fontFamily="Roboto" dy=".3em">CB</text>
+            </a>
+          </Link>
         </svg>
 
       </div>

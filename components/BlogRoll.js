@@ -27,7 +27,8 @@ const BlogRoll = (props) => {
               </div>
               <div>
                 <h2>{blog.document.data.title}</h2>
-                <h3> {reformatDate(blog.document.data.date)}</h3>
+                <h4>{blog.document.data.subtitle}</h4>
+                <h3><span>{blog.document.data.author} -</span> {reformatDate(blog.document.data.date)}</h3>
                 <ReactMarkdown source={truncateSummary(blog.document.content)} />
               </div>
             </li>

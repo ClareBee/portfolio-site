@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, Link, View, Document, StyleSheet } from '@react-pdf/renderer';
 
 // Create styles
 const styles = StyleSheet.create({
@@ -20,7 +20,9 @@ const CV = () => (
   <Document title="ClareBee" subject="Software Developer CV 2020" author="ClareBee" >
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
-        <Text>Section #1</Text>
+        <Text>ClareBee</Text>
+        <Text>Software Developer</Text>
+        <Text><Link>www.github.com/clarebee</Link></Text>
       </View>
       <View style={styles.section}>
         <Text>Section #2</Text>

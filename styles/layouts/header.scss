@@ -31,3 +31,155 @@
     @include hover-svg(var(--svg-color), var(--primary-color), .4s);
   }
 }
+
+.nav-links {
+  @media only screen and (max-width: $md-breakpoint){
+    display: none;
+  }
+}
+.navigation {
+  display: none;
+  &__checkbox {
+    display: none;
+  }
+  &__button {
+    background-color: var(--bg-color);
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 1.5rem;
+    right: 9rem;
+    border-radius: 50%;
+    z-index: 2000;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 2rem;
+    right: 9.5rem;
+    background-image: radial-gradient(var(--primary-color), var(--secondary-color));
+    z-index: 1000; // only works if element's position is defined
+    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+
+    // hides it until check box clicked
+    opacity: 0;
+    width: 0;
+    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  &__list {
+    @include absoluteCenter;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__item {
+    margin: 1rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      color: white;
+      text-transform: uppercase;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+      background-size: 220%;
+      transition: all .4s;
+      span {
+        margin-right: 1.5rem;
+        display: inline-block;
+      }
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: var(--secondary-color);
+      transform: translateX(1rem);
+    }
+  }
+
+  // functionality
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+  &__checkbox:checked ~ &__nav {
+    // makes visible
+    opacity: 1;
+    width: 100%;
+  }
+
+  // icon
+  &__icon {
+    position: relative;
+    margin-top: 1rem;
+    & {
+      width: 3rem
+    }
+    &::before {
+      width: 2rem
+    }
+    &::after {
+      width: 1rem;
+    }
+    &,
+    &::before,
+    &::after {
+      height: 4px;
+      background-color: var(--primary-color);
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      transition: all .2s;
+    }
+    &::before {
+      top: -.8rem;
+    }
+    &::after {
+      top: .8rem;
+    }
+  }
+
+  &__msg {
+    color: var(--font-color);
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  &__button:hover &__icon::before {
+    width: 1rem;
+  }
+  &__button:hover &__icon{
+    width: 3rem;
+  }
+
+  &__button:hover &__icon::after {
+    width: 2rem;
+  }
+
+  @media only screen and (max-width: $md-breakpoint){
+    display: inline-block;
+  }
+}

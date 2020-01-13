@@ -2,6 +2,9 @@
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  @media only screen and (max-width: $md-breakpoint){
+
+  }
 }
 
 .arrow {
@@ -13,10 +16,13 @@
 
 .introduction {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   flex: 1 1 auto;
   letter-spacing: .35rem;
   padding: 10rem 2rem 2rem 3rem;
   @include fade-in(4s);
+
   &__content {
     @extend .gradient-underline;
     padding-bottom: .5rem;

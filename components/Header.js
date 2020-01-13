@@ -67,7 +67,7 @@ const Header = () => {
   const hamburgerMenu = () =>  (
       <div className="navigation">
         <input type="checkbox" className="navigation__checkbox" id="navi-toggle" />
-        <label for="navi-toggle" className="navigation__button">
+        <label htmlFor="navi-toggle" className="navigation__button">
           <span className="navigation__msg">MENU</span>
           <span className="navigation__icon">&nbsp;</span>
         </label>
@@ -79,10 +79,27 @@ const Header = () => {
                 <a className="navigation__link"><span>01</span>Projects</a>
               </Link>
             </li>
-            <li className="navigation__item"><a href="#" className="navigation__link"><span>02</span>Your Benefits</a></li>
-            <li className="navigation__item"><a href="#" className="navigation__link"><span>03</span>Popular Tours</a></li>
-            <li className="navigation__item"><a href="#" className="navigation__link"><span>04</span>Stories</a></li>
-            <li className="navigation__item"><a href="#" className="navigation__link"><span>05</span>Book Now</a></li>
+            <li className="navigation__item">
+              <Link href="/blog">
+                <a className="navigation__link"><span>02</span>Blog</a>
+              </Link>
+            </li>
+
+            <li className="navigation__item">
+              <Link href="/about">
+                <a className="navigation__link"><span>03</span>About</a>
+              </Link>
+            </li>
+            <li className="navigation__item">
+              <Link href="/CV">
+                <a className="navigation__link"><span>04</span>CV</a>
+              </Link>
+            </li>
+            <li className="navigation__item">
+              <Link href="/contact">
+                <a className="navigation__link"><span>05</span>Contact</a>
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

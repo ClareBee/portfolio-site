@@ -1,5 +1,6 @@
 import matter from 'gray-matter';
 import Layout from '../components/Layout';
+import PageTitle from '../components/PageTitle';
 import BlogRoll from '../components/BlogRoll';
 
 
@@ -7,7 +8,7 @@ const Blog = (props) => {
   console.log('props', props)
   return (
     <Layout title="Blog">
-      <p>Blog Page </p>
+      <PageTitle title="Blog" subtitle="Stuff learned on the journey from career changer to dev" />
       <BlogRoll allBlogs={props.allBlogs}/>
     </Layout>
   );

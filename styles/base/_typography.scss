@@ -1,7 +1,7 @@
 p {
   font-size: 1.6rem;
   font-family: 'Montserrat', sans-serif;
-  width: 65ch * 0.7986; //https://johndjameson.com/blog/making-sense-of-ch-units/
+  max-width: 90ch * 0.7986; //https://johndjameson.com/blog/making-sense-of-ch-units/
 }
 
 %heading {

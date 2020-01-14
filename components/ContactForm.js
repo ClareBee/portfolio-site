@@ -66,11 +66,9 @@ export default () => {
       })
   }
   return (
-    <section>
-      <h1>Contact</h1>
-      <hr />
-      <form onSubmit={handleOnSubmit}>
-        <label htmlFor="email">Email</label>
+    <section className="contact-section">
+      <form onSubmit={handleOnSubmit} className="contact-form">
+        <label htmlFor="email">Your Email</label>
         <input
           id="email"
           type="email"
@@ -79,7 +77,7 @@ export default () => {
           required
           value={inputs.email}
         />
-        <label htmlFor="message">Message</label>
+        <label htmlFor="message">Your Message</label>
         <textarea
           id="message"
           name="message"

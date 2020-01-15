@@ -34,3 +34,9 @@ p {
   color: var(--font-color);
   font-size: 1.9rem;
 }
+
+.heading-5 {
+  @extend %heading;
+  color: var(--heading-color);
+  font-size: 1.5rem;
+}

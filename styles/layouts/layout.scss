@@ -14,19 +14,7 @@
 
 .page-title {
   margin: 1rem 2rem 4rem 2rem;
-  &__divider {
-    // cross-browser compatibility of styles
-    border: none;
-    width: 100%;
-    height: 4px;
-    text-align: center;
-    margin: 0 auto;
-    color: var(--primary-color);
-    background-color: var(--primary-color);
-    margin: .5rem 0;
-    background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
-    box-shadow: 0 10px 10px -10px #8c8c8c inset;
-  }
+  letter-spacing: .4rem;
 }
 // .Site-content::after {
 //   content: '\00a0'; /* &nbsp; */

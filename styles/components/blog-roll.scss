@@ -20,3 +20,26 @@
     margin-right: 0;
   }
 }
+
+.blog {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    letter-spacing: .4rem;
+  }
+
+  &__subtitle {
+    letter-spacing: .2rem;
+    margin-bottom: 1rem;
+  }
+
+
+  border-left: 3px solid transparent;
+  transition: all .5s ease-in-out;
+  &:hover {
+    border-left: 3px solid var(--primary-color);
+  }
+}

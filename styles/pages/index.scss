@@ -38,6 +38,11 @@
     font-weight: 200;
     color: var(--heading-color);
   }
+  &__icon {
+    svg {
+      fill: var(--primary-color);
+    }
+  }
 }
 
 .portrait {

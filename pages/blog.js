@@ -8,7 +8,7 @@ const Blog = (props) => {
   console.log('props', props)
   return (
     <Layout title="Blog">
-      <PageTitle title="Blog" subtitle="Stuff learned on the journey from career changer to dev" />
+      <PageTitle title="Blog" subtitle="Stuff learned en route from researcher to dev" />
       <BlogRoll allBlogs={props.allBlogs}/>
     </Layout>
   );

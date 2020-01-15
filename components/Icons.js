@@ -1,4 +1,4 @@
-import { FaTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaLinkedinIn, FaGithub } from 'react-icons/fa';
 
 const Icons = () => (
   <div className="social-media-icons">

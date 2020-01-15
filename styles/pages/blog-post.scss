@@ -1,0 +1,14 @@
+.blog-post {
+  margin: 2rem 20%;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__subtitle {
+    margin: 1rem 0 2rem 0;
+  }
+  &__img {
+    width: 250px;
+  }
+}

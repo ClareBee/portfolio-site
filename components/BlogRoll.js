@@ -10,6 +10,7 @@ const BlogRoll = (props) => {
   function reformatDate(fullDate) {
     const date = new Date(fullDate)
     const options = { day: 'numeric', month: 'long', year: 'numeric' }
+    // TODO: not supported by all browsers - refactor not to use locale
     return date.toLocaleString('en-GB', options);
   }
 

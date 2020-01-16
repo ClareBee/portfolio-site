@@ -23,6 +23,9 @@
     background: none;
     border: none;
     height: 100%;
+    svg {
+      fill: var(--svg-color);
+    }
     &:hover{
       svg {
         fill: var(--primary-color);

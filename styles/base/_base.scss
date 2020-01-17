@@ -33,6 +33,28 @@ a {
   color: var(--font-color);
 }
 
+label {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.1;
+}
+
+input, textarea {
+  font-family: inherit;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  background-color: #c1cad6;
+  border-radius: 3px;
+  padding: 1rem;
+  margin: .5rem 0 1rem 0;
+  border: none;
+}
+
+// add defaults for placeholder styling
+
+// button defaults
+
+
 ::selection {
   background-color: var(--primary-color);
   color: var(--white-color);

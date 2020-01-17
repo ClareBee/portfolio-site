@@ -12,7 +12,6 @@ export default () => {
 
   return (
     <div className="clipboard">
-
       <label className="clipboard__label">
         <input className="clipboard__input" readOnly value= "clarebee@protonmail.com" ref={inputRef}/>
         <button className="clipboard__button" onClick={() => copyToClipboard()}>

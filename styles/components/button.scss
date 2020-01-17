@@ -1,0 +1,17 @@
+.btn {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  padding: 1rem 2.5rem;
+  margin: .5rem 0;
+  cursor: pointer;
+  &--primary {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+  }
+
+  &--secondary {
+
+  }
+}

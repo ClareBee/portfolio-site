@@ -5,10 +5,10 @@ const Index = () => (
   <Layout title="Projects">
     <div className="index">
       <div className="introduction">
-        <p className="heading-2">Hi! I'm <span className="introduction__content highlight"><Link href="/about"><a>Clare</a></Link></span>, a <span className="bold">FrontEnd</span> developer in Scotland</p>
-        <p className="heading-3 introduction__subtitle">
+        <h2 className="heading-2">Hi! I'm <span className="introduction__content highlight"><Link href="/about"><a>Clare</a></Link></span>, a <span className="bold">FrontEnd</span> developer in Scotland</h2>
+        <h3 className="heading-3 introduction__subtitle">
           ReactJS, GraphQL & the JAMstack
-        </p>
+        </h3>
       </div>
       <div className="portrait">
         <div className="portrait__border">

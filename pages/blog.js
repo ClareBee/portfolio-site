@@ -1,15 +1,20 @@
 import matter from 'gray-matter';
 import Layout from '../components/Layout';
 import PageTitle from '../components/PageTitle';
+import PromotedBlog from '../components/PromotedBlog';
 import BlogRoll from '../components/BlogRoll';
 
 
 const Blog = (props) => {
-  console.log('props', props)
+  console.log('props', props.allBlogs)
+  const promotedBlog = props.allBlogs.find(blog => blog.document.data.promoted);
   return (
     <Layout title="Blog">
       <PageTitle title="Blog" subtitle="Stuff learned en route from researcher to dev" />
-      <BlogRoll allBlogs={props.allBlogs}/>
+      <div className="blog-layout">
+        <PromotedBlog blog={promotedBlog} />
+        <BlogRoll allBlogs={props.allBlogs}/>
+      </div>
     </Layout>
   );
 }

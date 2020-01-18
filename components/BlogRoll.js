@@ -14,34 +14,36 @@ const BlogRoll = (props) => {
     return date.toLocaleString('en-GB', options);
   }
 
+  function orderByRecentFirst(blogs) {
+    return blogs.sort(blog => blog.document.data.date).reverse()
+  }
+
   return (
-    <div className="blog-container">
       <ul className="blog-list">
-        {props.allBlogs.length >= 1 && props.allBlogs.map(blog => (
+        {props.allBlogs.length >= 1 && orderByRecentFirst(props.allBlogs).map(blog => (
           <Link
             key={blog.slug}
             href="/blog/[id]" as={`/blog/${blog.slug}`}
             // href={{ pathname: `/blog/${blog.slug}` }}
           >
             <a className="blog">
-            <li>
-              <div>
+              <li>
                 <div className="blog__header">
                   <h3 className="heading-3 blog__title">{blog.document.data.title}</h3>
-                  <p><span>{blog.document.data.author} -</span> {reformatDate(blog.document.data.date)}</p>
+                  <p>
+                    <span className="blog__author">{blog.document.data.author} -</span>
+                    <span className="blog__date">{reformatDate(blog.document.data.date)}</span>
+                  </p>
                 </div>
-                <hr className="divider lighten"/>
 
                 <h4 className="heading-5 blog__subtitle">{blog.document.data.subtitle}</h4>
                 <ReactMarkdown source={truncateSummary(blog.document.content.replace(/<[/]?[pb]>/g, ''))} />
                 <div className="blog-list__read-more">Read More</div>
-              </div>
-            </li>
+              </li>
             </a>
           </Link>
         ))}
       </ul>
-    </div>
   );
 };
 

@@ -17,6 +17,7 @@
 .introduction {
   width: 100%;
   display: flex;
+  align-content: flex-start;
   flex-wrap: wrap;
   flex: 1 1 auto;
   letter-spacing: .35rem;
@@ -34,7 +35,7 @@
     }
   }
   &__subtitle {
-    line-height: 3;
+    margin-top: .5rem;
     font-weight: 200;
     color: var(--heading-color);
   }

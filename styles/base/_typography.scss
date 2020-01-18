@@ -13,7 +13,7 @@ p {
 .heading-1 {
   @extend %heading;
   font-size: 4.5rem;
-  color: var(--heading-color);
+  color: var(--svg-color);
 }
 
 .heading-2 {
@@ -25,18 +25,18 @@ p {
 .heading-3 {
   @extend %heading;
   font-size: 2.1rem;
-  color: var(--heading-color);
+  color: var(--svg-color);
   text-transform: uppercase;
 }
 
 .heading-4 {
   @extend %heading;
-  color: var(--font-color);
+  color: var(--heading-color);
   font-size: 1.9rem;
 }
 
 .heading-5 {
   @extend %heading;
-  color: var(--heading-color);
+  color: var(--svg-color);
   font-size: 1.5rem;
 }

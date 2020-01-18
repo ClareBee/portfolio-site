@@ -1,0 +1,43 @@
+.promoted-blog {
+  width: 75%;
+  margin: 1rem 0 2rem 0;
+  padding: 1.5rem 1rem;
+  border: 1px solid var(--heading-color);
+  border-radius: 3px;
+  transition: all .2s ease-in;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+
+  &__img {
+    width: 30%;
+    margin: 1rem;
+  }
+  &__content {
+    width: 55%;
+    margin: 1rem;
+  }
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  &__msg {
+    border: 2px solid var(--primary-color);
+    border-radius: 3px;
+    padding: .5rem 1.5rem;
+    margin: 1rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid var(--font-color);
+
+  }
+}

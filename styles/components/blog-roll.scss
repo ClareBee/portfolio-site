@@ -1,15 +1,11 @@
-.blog-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin: 1rem 2rem 4rem 2rem;
-
-}
 .blog-list {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  width: 75%;
   li {
+    width: 100%;
     padding: .75rem;
   }
   &__read-more {
@@ -22,6 +18,9 @@
 }
 
 .blog {
+  margin: 1.5rem 0;
+  border-left: 3px solid transparent;
+  transition: all .5s ease-in-out;
   &__header {
     display: flex;
     justify-content: space-between;
@@ -30,15 +29,15 @@
   &__title {
     letter-spacing: .4rem;
   }
-
   &__subtitle {
     letter-spacing: .2rem;
     margin-bottom: 1rem;
   }
+  &__author, &__date {
+    color: var(--heading-color);
+    font-size: 1.25rem;
+  }
 
-
-  border-left: 3px solid transparent;
-  transition: all .5s ease-in-out;
   &:hover {
     border-left: 3px solid var(--primary-color);
   }

@@ -11,3 +11,22 @@
     }
   }
 }
+
+.tag-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.tag-icon {
+  display: inline-block;
+  padding: .25rem 1rem;
+  margin-right: 1rem;
+  letter-spacing: .4rem;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid black;
+  border-radius: 3px;
+}

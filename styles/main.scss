@@ -32,12 +32,14 @@
   'components/contact-form',
   'components/icons',
   'components/link',
+  'components/promoted-blog',
   'components/spinner';
 
 
 // 6. Page-specific styles
 @import
   'pages/index',
+  'pages/blog',
   'pages/blog-post',
   'pages/about';
 

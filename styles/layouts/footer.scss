@@ -5,6 +5,6 @@
   justify-content: space-between;
   flex: none; // prevents shrinkage http://bit.ly/1Mn35US for details
   a {
-    @include link-states();
+    @include link-states(--heading-color, --primary-color);
   }
 }

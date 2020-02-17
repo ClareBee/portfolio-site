@@ -14,6 +14,7 @@
     font-size: 1.5rem;
     text-transform: uppercase;
     margin-right: 0;
+    @include link-states(--primary-color, --font-color)
   }
 }
 

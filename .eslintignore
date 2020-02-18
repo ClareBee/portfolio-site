@@ -3,3 +3,4 @@ build
 .next
 public
 package-lock.json
+test

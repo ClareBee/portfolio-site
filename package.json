@@ -11,6 +11,11 @@
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -44,6 +49,9 @@
     "@typescript-eslint/parser": "^2.20.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
+    "husky": "^4.2.3",
+    "prettier": "1.19.1",
+    "pretty-quick": "^2.0.1",
     "typescript": "^3.7.3"
   }
 }

@@ -1,6 +1,8 @@
 import React from 'react'
-import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nord } from '../styles/javascript/syntax-theme';
+import dynamic from 'next/dynamic';
+
+const SyntaxHighlighter = dynamic(() => import('react-syntax-highlighter'));
 
 console.log('nord', nord)
 

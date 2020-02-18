@@ -1,5 +1,6 @@
 const primary = "#DA2497";
-const white = "#FDFDFD"
+const white = "#FDFDFD";
+const yellow= "#FFFD98"
 
 export const nord = {
   "hljs": {
@@ -62,7 +63,7 @@ export const nord = {
     "color": primary
   },
   "hljs-regexp": {
-    "color": "#EBCB8B"
+    "color": yellow
   },
   "hljs-string": {
     "color": "#A3BE8C"
@@ -140,7 +141,7 @@ export const nord = {
     "color": "#88C0D0"
   },
   "abnf .hljs-symbol": {
-    "color": "#EBCB8B"
+    "color": yellow
   },
   "apache .hljs-attribute": {
     "color": "#88C0D0"
@@ -164,7 +165,7 @@ export const nord = {
     "color": "#88C0D0"
   },
   "clojure .hljs-symbol": {
-    "color": "#EBCB8B"
+    "color": yellow
   },
   "coq .hljs-built_in": {
     "color": "#88C0D0"

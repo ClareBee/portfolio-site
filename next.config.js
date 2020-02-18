@@ -4,17 +4,17 @@ const optimizedImages = require('next-optimized-images');
 const nextConfig = {
   webpack: (config, options) => {
     config.module.rules.push({
-         test: /\.md$/,
-         use: 'raw-loader'
-       })
+      test: /\.md$/,
+      use: 'raw-loader',
+    });
     return config;
-  }
+  },
 };
 
 const sass = require('@zeit/next-sass');
 
 const bundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true'
+  enabled: process.env.ANALYZE === 'true',
 });
 
 const withTM = require('next-transpile-modules');
@@ -23,4 +23,7 @@ const withTM = require('next-transpile-modules');
 //   transpileModules: ['somemodule', 'and-another']
 // });
 
-module.exports = withPlugins([[sass], [optimizedImages], [bundleAnalyzer]], nextConfig);
+module.exports = withPlugins(
+  [[sass], [optimizedImages], [bundleAnalyzer]],
+  nextConfig,
+);

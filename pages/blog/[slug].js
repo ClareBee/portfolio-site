@@ -1,6 +1,7 @@
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import Layout from '../../components/Layout'
+import WithHighlight from '../../hocs/with-highlight'
 
 function reformatDate(fullDate) {
   const date = new Date(fullDate)
@@ -24,7 +25,7 @@ export default function Blog(props) {
           <img src={require(`../../images/${frontmatter.banner}`)} alt={frontmatter.alt_text} />
         </div>
         <div className="blog-post__content-container">
-          <ReactMarkdown source={markdownContent} />
+          <ReactMarkdown source={markdownContent} renderers={{ code: WithHighlight }} />
         </div>
       </article>
     </Layout>

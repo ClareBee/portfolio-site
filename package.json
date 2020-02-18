@@ -31,8 +31,10 @@
     "raw-loader": "^4.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-highlight": "^0.12.0",
     "react-icons": "^3.8.0",
     "react-markdown": "^4.3.0",
+    "react-syntax-highlighter": "^12.2.1",
     "scrollmagic": "^2.0.7"
   },
   "devDependencies": {

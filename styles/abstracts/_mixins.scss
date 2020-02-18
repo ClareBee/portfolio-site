@@ -7,11 +7,11 @@
   }
 }
 
-@mixin link-states(){
-  color: var(--heading-color);
+@mixin link-states($from, $to){
+  color: var($from);
   transition: all .3s ease-in-out;
   &:hover, &:focus {
-    color: var(--primary-color)
+    color: var($to)
   }
 }
 

@@ -31,7 +31,6 @@ const BlogRoll = (props) => {
                 <div className="blog__header">
                   <h3 className="heading-3 blog__title">{blog.document.data.title}</h3>
                   <p>
-                    <span className="blog__author">{blog.document.data.author} -</span>
                     <span className="blog__date">{reformatDate(blog.document.data.date)}</span>
                   </p>
                 </div>

@@ -68,6 +68,8 @@ export default () => {
   return (
     <section className="contact-section">
       <form onSubmit={handleOnSubmit} className="form">
+      <h3 className="heading-3">Or a message via the form: </h3>
+
       <div className="form__form-control">
         <label htmlFor="email">Your Email</label>
         <input

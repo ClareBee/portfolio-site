@@ -6,7 +6,6 @@ import BlogRoll from '../components/BlogRoll';
 
 
 const Blog = (props) => {
-  console.log('props', props.allBlogs)
   const promotedBlog = props.allBlogs.find(blog => blog.document.data.promoted);
   return (
     <Layout title="Blog">
@@ -37,6 +36,7 @@ Blog.getInitialProps = async function() {
       const value = values[index];
       // gray-matter parses yaml metadata & markdownbody
       const document = matter(value.default);
+      console.log('document', typeof document)
       return {
         document,
         slug

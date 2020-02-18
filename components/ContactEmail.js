@@ -11,13 +11,17 @@ export default () => {
   }
 
   return (
-    <div className="clipboard">
+    <div className="clipboard-section">
+      <div className="clipboard">
+      <h3 className="clipboard__header heading-3">Send me an email:</h3>
+
       <label className="clipboard__label">
         <input className="clipboard__input" readOnly value= "clarebee@protonmail.com" ref={inputRef}/>
         <button className="clipboard__button" onClick={() => copyToClipboard()}>
           <TiClipboard />
         </button>
       </label>
+      </div>
     </div>
   )
 }

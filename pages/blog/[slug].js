@@ -1,4 +1,5 @@
 import matter from 'gray-matter';
+import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Layout from '../../components/Layout';
 import WithHighlight from '../../components/WithHighlight';
@@ -9,11 +10,11 @@ function reformatDate(fullDate) {
   return date.toLocaleString('en-GB', options);
 }
 
-export default function Blog(props) {
-  const frontmatter = props.data;
-  const markdownContent = props.content;
+const Blog = ({ data, content, siteTitle }) => {
+  const frontmatter = data;
+  const markdownContent = content;
   return (
-    <Layout title={props.siteTitle}>
+    <Layout title={siteTitle}>
       <article className="blog-post">
         <div className="blog-post__header">
           <h1 className="heading-1">{frontmatter.title}</h1>
@@ -38,7 +39,7 @@ export default function Blog(props) {
       </article>
     </Layout>
   );
-}
+};
 
 Blog.getInitialProps = async function(context) {
   const { slug } = context.query;
@@ -51,3 +52,11 @@ Blog.getInitialProps = async function(context) {
     ...data,
   };
 };
+
+Blog.propTypes = {
+  siteTitle: PropTypes.string,
+  data: PropTypes.any,
+  content: PropTypes.any,
+};
+
+export default Blog;

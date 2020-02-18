@@ -1,10 +1,12 @@
 import Link from 'next/link';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
 const nestedPath = (href, router) =>
   href.match('blog') && router.pathname.match('blog');
 
-export default ({ href, children }) => {
+const NextLink = ({ href, children }) => {
   const router = useRouter();
   let className = children.props.className || '';
   if (
@@ -19,3 +21,16 @@ export default ({ href, children }) => {
     </Link>
   );
 };
+
+NextLink.propTypes = {
+  href: PropTypes.string.isRequired,
+  children: PropTypes.shape({
+    type: PropTypes.string,
+    props: PropTypes.shape({
+      children: PropTypes.any,
+      className: PropTypes.string,
+    }),
+  }),
+};
+
+export default NextLink;

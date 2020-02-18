@@ -1,4 +1,14 @@
 module.exports = {
+  env: {
+    node: true, // to allow require
+    browser: true, // to allow document
+    es6: true, // to allow Promise
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   root: true,
   rules: {
     'react/react-in-jsx-scope': 'off', // Next imports React for you

@@ -16,7 +16,7 @@ const Footer = () => (
       <a
         href="https://nextjs.org/"
         target="_blank"
-        rel="noopenner noreferrer"
+        rel="noopener noreferrer"
       >
         NextJS
       </a>{' '}
@@ -24,7 +24,7 @@ const Footer = () => (
       <a
         href="https://zeit.co"
         target="_blank"
-        rel="nofollower noopenner"
+        rel="noopener noreferrer"
       >
         ZEIT
       </a>

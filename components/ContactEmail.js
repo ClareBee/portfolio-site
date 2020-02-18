@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { TiClipboard } from 'react-icons/ti';
 
-export default () => {
+const ContactEmail = () => {
   const inputRef = useRef(null);
 
   const copyToClipboard = () => {
@@ -34,3 +34,5 @@ export default () => {
     </div>
   );
 };
+
+export default ContactEmail;

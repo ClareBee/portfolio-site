@@ -1,9 +1,14 @@
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 
-const PromotedBlog = ({ blog }) => {
-  console.log(blog);
+const PromotedBlog = ({
+  blog,
+  blog: {
+    document: { content },
+  },
+}) => {
   const promotedBlog = blog.document.data;
-  const content = blog.document.content;
+  const { altText } = promotedBlog;
 
   function truncateSummary(content) {
     return content.slice(0, 250).trimEnd() + '...';
@@ -24,7 +29,7 @@ const PromotedBlog = ({ blog }) => {
           <div className="promoted-blog__img">
             <img
               src={require(`../images/${promotedBlog.banner}`)}
-              alt={promotedBlog.alt_text}
+              alt={altText}
             />
           </div>
           <div className="promoted-blog__content">
@@ -46,4 +51,19 @@ const PromotedBlog = ({ blog }) => {
   );
 };
 
+PromotedBlog.propTypes = {
+  blog: PropTypes.shape({
+    slug: PropTypes.string,
+    document: PropTypes.shape({
+      content: PropTypes.object,
+      data: PropTypes.shape({
+        title: PropTypes.string,
+        subtitle: PropTypes.string,
+        banner: PropTypes.string,
+        tags: PropTypes.array,
+        altText: PropTypes.string,
+      }),
+    }),
+  }),
+};
 export default PromotedBlog;

@@ -6,6 +6,9 @@ import ScrollMagic from 'scrollmagic';
 
 const ScrollMagicPage = () => {
   useEffect(() => {
+    const timelineComplete = () => {
+      console.log('completed');
+    };
     const tl = gsap.timeline({ onComplete: timelineComplete });
     const tl2 = gsap.timeline();
     const controller = new ScrollMagic.Controller();
@@ -44,10 +47,6 @@ const ScrollMagicPage = () => {
       console.log('Scene progress changed to ' + event.progress);
     });
   });
-
-  const timelineComplete = () => {
-    console.log('completed');
-  };
 
   // then we can control the whole thing easily...
   // tl.pause();

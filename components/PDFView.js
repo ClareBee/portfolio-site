@@ -12,6 +12,7 @@ const PDFView = () => (
   </div>
 );
 
+/*eslint-disable */
 export default dynamic(() => Promise.resolve(PDFView), {
   loading: () => <Spinner />,
   ssr: false,

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { nord } from '../styles/javascript/syntax-theme';
 import dynamic from 'next/dynamic';
 
@@ -16,4 +17,8 @@ const WithHighlight = ({ language, value }) => {
   );
 };
 
+WithHighlight.propTypes = {
+  language: PropTypes.string.isRequired,
+  value: PropTypes.string,
+};
 export default WithHighlight;

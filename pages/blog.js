@@ -1,11 +1,12 @@
 import matter from 'gray-matter';
+import PropTypes from 'prop-types';
 import Layout from '../components/Layout';
 import PageTitle from '../components/PageTitle';
 import PromotedBlog from '../components/PromotedBlog';
 import BlogRoll from '../components/BlogRoll';
 
-const Blog = props => {
-  const promotedBlog = props.allBlogs.find(
+const Blog = ({ allBlogs }) => {
+  const promotedBlog = allBlogs.find(
     blog => blog.document.data.promoted,
   );
   return (
@@ -16,10 +17,14 @@ const Blog = props => {
       />
       <div className="blog-layout">
         <PromotedBlog blog={promotedBlog} />
-        <BlogRoll allBlogs={props.allBlogs} />
+        <BlogRoll allBlogs={allBlogs} />
       </div>
     </Layout>
   );
+};
+
+Blog.propTypes = {
+  allBlogs: PropTypes.array,
 };
 
 export default Blog;
@@ -33,7 +38,7 @@ Blog.getInitialProps = async function() {
     const data = keys.map((key, index) => {
       // Create slug from filename
       const slug = key
-        .replace(/^.*[\\\/]/, '')
+        .replace(/^.*[\\/]/, '')
         .split('.')
         .slice(0, -1)
         .join('.');

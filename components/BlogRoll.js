@@ -1,8 +1,8 @@
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
-const BlogRoll = props => {
-  console.log('blog roll', props);
+const BlogRoll = ({ allBlogs }) => {
   function truncateSummary(content) {
     return content.slice(0, 150).trimEnd() + '...';
   }
@@ -24,8 +24,8 @@ const BlogRoll = props => {
 
   return (
     <ul className="blog-list">
-      {props.allBlogs.length >= 1 &&
-        orderByRecentFirst(props.allBlogs).map(blog => (
+      {allBlogs.length >= 1 &&
+        orderByRecentFirst(allBlogs).map(blog => (
           <Link
             key={blog.slug}
             href="/blog/[id]"
@@ -62,4 +62,7 @@ const BlogRoll = props => {
   );
 };
 
+BlogRoll.propTypes = {
+  allBlogs: PropTypes.array.isRequired,
+};
 export default BlogRoll;

@@ -6,7 +6,7 @@ const Index = () => (
     <div className="index">
       <div className="introduction">
         <h2 className="heading-2">
-          Hi! I'm{' '}
+          Hi! I&apos;m{' '}
           <span className="introduction__content highlight">
             <Link href="/about">
               <a>Clare</a>

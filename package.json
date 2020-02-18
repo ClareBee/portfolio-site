@@ -7,6 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p 3000",
+    "format": "eslint . --ext .js,.jsx,.ts,.tsx",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"

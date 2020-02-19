@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Font,
 } from '@react-pdf/renderer';
+import { useMediaQuery } from 'react-responsive';
 
 // Font.register({
 //   family: 'Oswald',
@@ -92,79 +93,122 @@ const styles = StyleSheet.create({
   },
 });
 
+const mobileStyles = StyleSheet.create({
+  header: {
+    display: 'flex',
+    flexDirection: 'column',
+    fontFamily: 'Helvetica', // Helvetica/Times also available, w diff weights
+    padding: 20,
+    background: palette.white,
+    color: palette.heading,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  contactDetails: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 // Create Document Component
-const CV = () => (
-  <Document
-    title="ClareBee"
-    subject="Software Developer CV 2020"
-    author="ClareBee"
-  >
-    <Page size="A4" style={styles.page}>
-      <View style={styles.header}>
-        <View>
-          <Text style={styles.name}>ClareBee</Text>
-          <Text style={styles.jobTitle}>Software Developer</Text>
+const CV = () => {
+  const handleMediaQueryChange = () => {
+    console.log('changing');
+  };
+  const isBigScreen = useMediaQuery(
+    { minDeviceWidth: 1824 },
+    undefined,
+    handleMediaQueryChange,
+  );
+  const isMediumScreen = useMediaQuery(
+    { maxWidth: 800 },
+    undefined,
+    handleMediaQueryChange,
+  );
+  const isSmallScreen = useMediaQuery(
+    { maxWidth: 420 },
+    undefined,
+    handleMediaQueryChange,
+  );
+
+  const header = isSmallScreen ? mobileStyles.header : styles.header;
+  const details = isSmallScreen
+    ? mobileStyles.contactDetails
+    : styles.contactDetails;
+  return (
+    <Document
+      title="ClareBee"
+      subject="Software Developer CV 2020"
+      author="ClareBee"
+    >
+      <Page size="A4" style={styles.page}>
+        <View style={header}>
+          <View style={details}>
+            <Text style={styles.name}>ClareBee</Text>
+            <Text style={styles.jobTitle}>Software Developer</Text>
+          </View>
+          <View style={details}>
+            <Text>clarebee@protonmail.com</Text>
+            <Text>07972021246</Text>
+            <Link>www.github.com/clarebee</Link>
+          </View>
         </View>
-        <View style={styles.contactDetails}>
-          <Text>clarebee@protonmail.com</Text>
-          <Text>07972021246</Text>
-          <Link>www.github.com/clarebee</Link>
+        <View style={styles.main}>
+          <Text style={styles.heading}>About Me</Text>
+          <Text style={styles.body}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Integer dolor metus, interdum at scelerisque in, porta at
+            lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. Donec ultricies
+            massa et erat luctus hendrerit. Curabitur non consequat
+            enim. Vestibulum bibendum mattis dignissim. Proin id
+            sapien quis libero interdum porttitor.
+          </Text>
         </View>
-      </View>
-      <View style={styles.main}>
-        <Text style={styles.heading}>About Me</Text>
-        <Text style={styles.body}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Integer dolor metus, interdum at scelerisque in, porta at
-          lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit. Donec ultricies massa et
-          erat luctus hendrerit. Curabitur non consequat enim.
-          Vestibulum bibendum mattis dignissim. Proin id sapien quis
-          libero interdum porttitor.
-        </Text>
-      </View>
-      <View style={styles.main}>
-        <View style={styles.experience}>
-          <Text style={styles.heading}>Experience</Text>
-          <Text style={styles.position}>Position 1</Text>
+        <View style={styles.main}>
+          <View style={styles.experience}>
+            <Text style={styles.heading}>Experience</Text>
+            <Text style={styles.position}>Position 1</Text>
+            <Text style={styles.duration}>12/03 - 17/08</Text>
+          </View>
+          <Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Integer dolor metus, interdum at scelerisque in, porta at
+            lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. Donec ultricies
+            massa et erat luctus hendrerit. Curabitur non consequat
+            enim. Vestibulum bibendum mattis dignissim. Proin id
+            sapien quis libero interdum porttitor.
+          </Text>
+        </View>
+        <View style={styles.main}>
+          <Text style={styles.heading}>Education</Text>
           <Text style={styles.duration}>12/03 - 17/08</Text>
+          <Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Integer dolor metus, interdum at scelerisque in, porta at
+          </Text>
         </View>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Integer dolor metus, interdum at scelerisque in, porta at
-          lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit. Donec ultricies massa et
-          erat luctus hendrerit. Curabitur non consequat enim.
-          Vestibulum bibendum mattis dignissim. Proin id sapien quis
-          libero interdum porttitor.
-        </Text>
-      </View>
-      <View style={styles.main}>
-        <Text style={styles.heading}>Education</Text>
-        <Text style={styles.duration}>12/03 - 17/08</Text>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Integer dolor metus, interdum at scelerisque in, porta at
-        </Text>
-      </View>
-      <View style={styles.main}>
-        <Text style={styles.heading}>Education</Text>
-        <Text style={styles.duration}>12/03 - 17/08</Text>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Integer dolor metus, interdum at scelerisque in, porta at
-        </Text>
-      </View>
-      <View style={styles.main}>
-        <Text style={styles.heading}>Education</Text>
-        <Text style={styles.duration}>12/03 - 17/08</Text>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Integer dolor metus, interdum at scelerisque in, porta at
-        </Text>
-      </View>
-    </Page>
-  </Document>
-);
+        <View style={styles.main}>
+          <Text style={styles.heading}>Education</Text>
+          <Text style={styles.duration}>12/03 - 17/08</Text>
+          <Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Integer dolor metus, interdum at scelerisque in, porta at
+          </Text>
+        </View>
+        <View style={styles.main}>
+          <Text style={styles.heading}>Education</Text>
+          <Text style={styles.duration}>12/03 - 17/08</Text>
+          <Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Integer dolor metus, interdum at scelerisque in, porta at
+          </Text>
+        </View>
+      </Page>
+    </Document>
+  );
+};
 
 export default CV;

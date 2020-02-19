@@ -17,11 +17,39 @@
     float: left;
     margin-right: 2rem;
     margin-bottom: 2rem;
-    @media only screen and (max-width: 780px){
+    @media only screen and (max-width: 780px) {
       width: 100%;
     }
   }
   &__content-container {
     text-align: justify;
+  }
+  @media only screen and (max-width: $lg-breakpoint) {
+    &__img-container {
+      float: none;
+      margin: 2rem auto;
+      margin-bottom: 3rem;
+    }
+  }
+  @media only screen and (max-width: $md-breakpoint) {
+    margin: 2rem 5%;
+    &__img-container {
+      float: none;
+      margin: 2rem auto;
+      margin-bottom: 3rem;
+      display: inline-block;
+    }
+  }
+  @media only screen and (max-width: $sm-breakpoint) {
+    margin: 2rem 0;
+    &__header {
+      flex-direction: column;
+    }
+    &__img-container {
+      float: none;
+      margin: 2rem auto;
+      margin-bottom: 3rem;
+      display: inline-block;
+    }
   }
 }

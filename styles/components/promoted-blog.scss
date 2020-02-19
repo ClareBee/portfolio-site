@@ -4,16 +4,13 @@
   padding: 1.5rem 1rem;
   border: 1px solid var(--heading-color);
   border-radius: 3px;
-  transition: all .2s ease-in;
-
+  transition: all 0.2s ease-in;
   &__container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
   }
-
-
   &__img {
     width: 30%;
     margin: 1rem;
@@ -31,13 +28,24 @@
   &__msg {
     border: 2px solid var(--primary-color);
     border-radius: 3px;
-    padding: .5rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     margin: 1rem;
   }
 
   &:hover {
     cursor: pointer;
     border: 1px solid var(--font-color);
-
+  }
+  @media only screen and (max-width: $md-breakpoint) {
+    width: 95%;
+    &__container {
+      flex-direction: column;
+    }
+    &__img {
+      width: 90%;
+    }
+    &__content {
+      width: 90%;
+    }
   }
 }

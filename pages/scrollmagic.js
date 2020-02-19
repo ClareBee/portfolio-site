@@ -7,8 +7,9 @@ const DynamicComponentWithNoSSR = dynamic(
 );
 
 function ScrollMagic() {
+  console.log('location', location);
   return (
-    <Layout title="scroll">
+    <Layout title="scroll" location>
       <DynamicComponentWithNoSSR />
       <p>HOME PAGE is here!</p>
     </Layout>

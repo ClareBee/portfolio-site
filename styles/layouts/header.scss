@@ -1,6 +1,6 @@
 .header {
   font-size: 18px;
-  letter-spacing: .15rem;
+  letter-spacing: 0.15rem;
   flex: none; // prevents shrinkage http://bit.ly/1Mn35US for details
   display: flex;
   justify-content: space-between;
@@ -11,7 +11,7 @@
     align-items: flex-start;
   }
   &__logo-text {
-    @include hover-svg(var(--svg-color), var(--primary-color), .5s);
+    @include hover-svg(var(--svg-color), var(--primary-color), 0.5s);
   }
 }
 
@@ -28,12 +28,12 @@
     min-height: 3rem;
     min-width: 3rem;
     margin: 1rem 2rem;
-    @include hover-svg(var(--svg-color), var(--primary-color), .4s);
+    @include hover-svg(var(--svg-color), var(--primary-color), 0.4s);
   }
 }
 
 .nav-links {
-  @media only screen and (max-width: $md-breakpoint){
+  @media only screen and (max-width: $md-breakpoint) {
     display: none;
   }
 }
@@ -62,9 +62,12 @@
     position: fixed;
     top: 2rem;
     right: 9.5rem;
-    background-image: radial-gradient(var(--primary-color), var(--secondary-color));
+    background-image: radial-gradient(
+      var(--primary-color),
+      var(--secondary-color)
+    );
     z-index: 1000; // only works if element's position is defined
-    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
   &__nav {
@@ -77,7 +80,7 @@
     // hides it until check box clicked
     opacity: 0;
     width: 0;
-    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   &__list {
@@ -99,9 +102,14 @@
       padding: 1rem 5rem;
       color: white;
       text-transform: uppercase;
-      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        white 50%
+      );
       background-size: 220%;
-      transition: all .4s;
+      transition: all 0.4s;
       span {
         margin-right: 1.5rem;
         display: inline-block;
@@ -131,10 +139,10 @@
     position: relative;
     margin-top: 1rem;
     & {
-      width: 3rem
+      width: 3rem;
     }
     &::before {
-      width: 2rem
+      width: 2rem;
     }
     &::after {
       width: 1rem;
@@ -152,13 +160,13 @@
       content: '';
       position: absolute;
       right: 0;
-      transition: all .2s;
+      transition: all 0.2s;
     }
     &::before {
-      top: -.8rem;
+      top: -0.8rem;
     }
     &::after {
-      top: .8rem;
+      top: 0.8rem;
     }
   }
 
@@ -171,7 +179,7 @@
   &__button:hover &__icon::before {
     width: 1rem;
   }
-  &__button:hover &__icon{
+  &__button:hover &__icon {
     width: 3rem;
   }
 
@@ -179,7 +187,28 @@
     width: 2rem;
   }
 
-  @media only screen and (max-width: $md-breakpoint){
+  @media only screen and (max-width: $md-breakpoint) {
     display: inline-block;
+  }
+}
+
+@media only screen and (max-width: $sm-breakpoint) {
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: var(--bg-color);
+    border-bottom: 2px solid var(--svg-color);
+  }
+  .lightbulb {
+    margin-top: 2rem;
+  }
+  .navigation {
+    &__button,
+    &__background {
+      right: 5rem;
+    }
   }
 }

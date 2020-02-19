@@ -5,6 +5,7 @@ import Spinner from '../components/Spinner';
 //without this line, PixiPlugin and MotionPathPlugin may get dropped by your bundler (tree shaking)...
 
 export default function About() {
+  console.log('location', location);
   gsap.registerPlugin(MotionPathPlugin);
   console.log(typeof gsap);
   console.log('spinner', typeof Spinner);

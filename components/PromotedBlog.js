@@ -13,7 +13,6 @@ const PromotedBlog = ({
   function truncateSummary(content) {
     return content.slice(0, 250).trimEnd() + '...';
   }
-  console.log(promotedBlog.tags);
   const tags = promotedBlog.tags.map(tag => {
     return (
       <li key={tag} className="tag-icon">
@@ -21,7 +20,6 @@ const PromotedBlog = ({
       </li>
     );
   });
-  // console.log(tags);
   return (
     <Link key={blog.slug} href={{ pathname: `/blog/${blog.slug}` }}>
       <a className="promoted-blog">

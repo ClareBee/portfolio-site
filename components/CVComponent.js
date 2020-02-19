@@ -37,6 +37,9 @@ const styles = StyleSheet.create({
     background: palette.white,
     display: 'flex',
     color: palette.heading,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   name: {
     fontSize: 24,
@@ -98,8 +101,10 @@ const CV = () => (
   >
     <Page size="A4" style={styles.page}>
       <View style={styles.header}>
-        <Text style={styles.name}>ClareBee</Text>
-        <Text style={styles.jobTitle}>Software Developer</Text>
+        <View>
+          <Text style={styles.name}>ClareBee</Text>
+          <Text style={styles.jobTitle}>Software Developer</Text>
+        </View>
         <View style={styles.contactDetails}>
           <Text>clarebee@protonmail.com</Text>
           <Text>07972021246</Text>

@@ -5,7 +5,7 @@ import Icons from '../components/Icons';
 import { PDFViewer } from '@react-pdf/renderer';
 import CV from '../components/CVComponent';
 const PDFView = () => (
-  <div>
+  <div style={{ '--aspect-ratio': '16/9' }}>
     <PDFViewer width="100%" style={{ height: '100vh' }}>
       <CV />
     </PDFViewer>

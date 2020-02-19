@@ -6,7 +6,7 @@
   width: 75%;
   li {
     width: 100%;
-    padding: .75rem;
+    padding: 0.75rem;
   }
   &__read-more {
     text-align: right;
@@ -14,32 +14,47 @@
     font-size: 1.5rem;
     text-transform: uppercase;
     margin-right: 0;
-    @include link-states(--primary-color, --font-color)
+    @include link-states(--primary-color, --font-color);
+  }
+  @media only screen and (max-width: $md-breakpoint) {
+    width: 100%;
   }
 }
 
 .blog {
   margin: 1.5rem 0;
   border-left: 3px solid transparent;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   &__title {
-    letter-spacing: .4rem;
+    letter-spacing: 0.4rem;
   }
   &__subtitle {
-    letter-spacing: .2rem;
+    letter-spacing: 0.2rem;
     margin-bottom: 1rem;
   }
-  &__author, &__date {
+  &__date {
     color: var(--heading-color);
     font-size: 1.25rem;
   }
 
   &:hover {
     border-left: 3px solid var(--primary-color);
+  }
+  @media only screen and (max-width: $md-breakpoint) {
+    &__date {
+      font-size: 0.85rem;
+    }
+    &__header {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
   }
 }

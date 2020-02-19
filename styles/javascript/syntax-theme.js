@@ -1,6 +1,7 @@
 const primary = '#DA2497';
 const white = '#FDFDFD';
 const yellow = '#FFFD98';
+const grey = '#A2A2A2';
 
 export const nord = {
   hljs: {
@@ -93,10 +94,10 @@ export const nord = {
     textDecoration: 'underline',
   },
   'hljs-quote': {
-    color: '#4C566A',
+    color: grey,
   },
   'hljs-comment': {
-    color: '#4C566A',
+    color: grey,
   },
   'hljs-doctag': {
     color: '#8FBCBB',

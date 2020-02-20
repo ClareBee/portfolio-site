@@ -23,7 +23,8 @@ img {
   max-width: 100%;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -40,14 +41,15 @@ label {
   color: var(--svg-color);
 }
 
-input, textarea {
+input,
+textarea {
   font-family: inherit;
   font-size: 1.5rem;
   line-height: 1.5;
   background-color: var(--form-color);
   border-radius: 3px;
   padding: 1rem;
-  margin: .5rem 0 1rem 0;
+  margin: 0.5rem 0 1rem 0;
   border: none;
 }
 
@@ -55,8 +57,30 @@ input, textarea {
 
 // button defaults
 
-
 ::selection {
   background-color: var(--primary-color);
   color: var(--white-color);
+}
+
+// TODO: check if this works or not
+// https://css-tricks.com/responsive-iframes/
+[style*='--aspect-ratio'] > :first-child {
+  width: 100%;
+}
+
+@supports (--custom: property) {
+  [style*='--aspect-ratio'] {
+    position: relative;
+  }
+  [style*='--aspect-ratio']::before {
+    content: '';
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }
+  [style*='--aspect-ratio'] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
 }

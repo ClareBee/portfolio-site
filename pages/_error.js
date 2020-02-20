@@ -6,10 +6,13 @@ function Error({ statusCode }) {
   return (
     <Layout>
       <PageTitle title="Oops" subtitle="Something went wrong!" />
-
-      {statusCode
-        ? `An error ${statusCode} occurred on server`
-        : 'An error occurred on client'}
+      <div className="status-code">
+        <p>
+          {statusCode
+            ? `An error ${statusCode} occurred on server`
+            : 'An error occurred on client'}
+        </p>
+      </div>
     </Layout>
   );
 }

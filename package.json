@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
+  "name": "clare-bee-portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portfolio site with blog and contact form",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -19,8 +19,12 @@
       "pre-commit": "pretty-quick --staged && npm run check-format"
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ClareBee/p.git"
+  },
   "keywords": [],
-  "author": "",
+  "author": "ClareBee",
   "license": "ISC",
   "dependencies": {
     "@next/bundle-analyzer": "^9.1.6",

@@ -24,14 +24,14 @@
   &__content-container {
     text-align: justify;
   }
-  @media only screen and (max-width: $lg-breakpoint) {
+  @include lg {
     &__img-container {
       float: none;
       margin: 2rem auto;
       margin-bottom: 3rem;
     }
   }
-  @media only screen and (max-width: $md-breakpoint) {
+  @include md {
     margin: 2rem 5%;
     &__img-container {
       float: none;
@@ -40,7 +40,7 @@
       display: inline-block;
     }
   }
-  @media only screen and (max-width: $sm-breakpoint) {
+  @include sm {
     margin: 2rem 0;
     &__header {
       flex-direction: column;

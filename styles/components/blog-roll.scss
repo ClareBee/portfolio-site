@@ -16,7 +16,7 @@
     margin-right: 0;
     @include link-states(--primary-color, --font-color);
   }
-  @media only screen and (max-width: $md-breakpoint) {
+  @include md {
     width: 100%;
   }
 }
@@ -45,7 +45,7 @@
   &:hover {
     border-left: 3px solid var(--primary-color);
   }
-  @media only screen and (max-width: $md-breakpoint) {
+  @include md {
     &__date {
       font-size: 0.85rem;
     }

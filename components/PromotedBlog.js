@@ -53,7 +53,7 @@ PromotedBlog.propTypes = {
   blog: PropTypes.shape({
     slug: PropTypes.string,
     document: PropTypes.shape({
-      content: PropTypes.object,
+      content: PropTypes.string,
       data: PropTypes.shape({
         title: PropTypes.string,
         subtitle: PropTypes.string,

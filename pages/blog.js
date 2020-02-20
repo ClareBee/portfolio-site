@@ -1,14 +1,33 @@
 import matter from 'gray-matter';
 import PropTypes from 'prop-types';
+import Link from '../components/Link';
+
 import Layout from '../components/Layout';
 import PageTitle from '../components/PageTitle';
 import PromotedBlog from '../components/PromotedBlog';
+import Pagination from '../components/Pagination';
 import BlogRoll from '../components/BlogRoll';
 
-const Blog = ({ allBlogs }) => {
+const totalPerPage = 2;
+
+const Blog = ({ allBlogs, currentPage }) => {
+  // TODO: handle this in initial Props
+  const totalBlogs = allBlogs.length;
+  const pages = Math.ceil(totalBlogs / totalPerPage);
+  const pagesArray = Array.from(Array(pages));
+
   const promotedBlog = allBlogs.find(
     blog => blog.document.data.promoted,
   );
+
+  function orderByRecentFirst(blogs) {
+    // TODO: check this works
+    return blogs.sort(blog => blog.document.data.date).reverse();
+  }
+  // TODO: move into the initial request to only retrieve/parse those needed
+  const pagedBlogs = currentPage => {
+    return allBlogs.filter(blog => blog.page == currentPage);
+  };
   return (
     <Layout title="Blog">
       <PageTitle
@@ -16,8 +35,14 @@ const Blog = ({ allBlogs }) => {
         subtitle="Stuff learned en route from researcher to dev"
       />
       <div className="blog-layout">
-        <PromotedBlog blog={promotedBlog} />
-        <BlogRoll allBlogs={allBlogs} />
+        {promotedBlog && <PromotedBlog blog={promotedBlog} />}
+        <BlogRoll allBlogs={pagedBlogs(currentPage)} />
+        <Pagination />
+        {pagesArray.map((page, index) => (
+          <Link key={index} href={`/blog?page=${index + 1}`}>
+            <a>{index + 1}</a>
+          </Link>
+        ))}
       </div>
     </Layout>
   );
@@ -25,12 +50,19 @@ const Blog = ({ allBlogs }) => {
 
 Blog.propTypes = {
   allBlogs: PropTypes.array,
+  currentPage: PropTypes.string,
 };
 
 export default Blog;
 
-Blog.getInitialProps = async function() {
+Blog.getInitialProps = async function(context) {
+  const totalPerPage = 2;
   const siteConfig = await import(`../data/config.json`);
+  const query = context.query.page ? context.query.page : 1;
+  // get total posts to display
+  const posts = query * totalPerPage;
+  const startingIndex = posts - totalPerPage;
+  const endingIndex = posts;
   //get posts & context from folder
   const blogPosts = (context => {
     const keys = context.keys();
@@ -45,10 +77,11 @@ Blog.getInitialProps = async function() {
       const value = values[index];
       // gray-matter parses yaml metadata & markdownbody
       const document = matter(value.default);
-      console.log('document', typeof document);
+      // TODO: sort by recent last
       return {
         document,
         slug,
+        page: Math.ceil(totalPerPage / (index + 1)),
       };
     });
     return data;
@@ -56,6 +89,7 @@ Blog.getInitialProps = async function() {
 
   return {
     allBlogs: blogPosts,
+    currentPage: query,
     ...siteConfig,
   };
 };

@@ -7,14 +7,18 @@
     margin: 0 1.5rem;
     font-size: 2rem;
     svg {
-      @include hover-svg(var(--svg-color), var(--primary-color), .5s);
+      @include hover-svg(
+        var(--svg-color),
+        var(--primary-color),
+        0.5s
+      );
     }
   }
 }
 
 .tag-icons {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: flex-start;
   margin-top: 1rem;
@@ -22,9 +26,9 @@
 
 .tag-icon {
   display: inline-block;
-  padding: .25rem 1rem;
-  margin-right: 1rem;
-  letter-spacing: .4rem;
+  padding: 0.25rem 1rem;
+  margin: 1rem 1rem 0 0;
+  letter-spacing: 0.4rem;
   text-align: center;
   text-transform: uppercase;
   border: 1px solid black;

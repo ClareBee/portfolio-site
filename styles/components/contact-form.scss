@@ -16,7 +16,10 @@
     flex-direction: column;
     padding: 1rem;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: $md-breakpoint) {
     width: 90%;
+  }
+  @media only screen and (max-width: $sm-breakpoint) {
+    width: 100%;
   }
 }

@@ -17,7 +17,7 @@ const Layout = ({ title, children }) => {
         <link
           rel="shortcut icon"
           type="image/x-icon"
-          href={require('../images/favicon.jpg')}
+          href={require('../images/circle.png')}
         />
         <link
           href="https://fonts.googleapis.com/css?family=Montserrat:300,400|Roboto&display=swap"

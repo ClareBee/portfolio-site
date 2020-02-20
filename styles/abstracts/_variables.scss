@@ -1,26 +1,28 @@
-// COLOURS
-
-
-:root {
-    --primary-color: #DA2497;
-    --secondary-color: #536390;
-    --font-color: #373f51;
-    --bg-color: #FDFDFD;
-    --heading-color: #696673;
-    --white-color: #FDFDFD;
-    --svg-color: #536390;
-    --form-color: #ECEFF2;
-}
-
-[data-theme="dark"] {
-    --secondary-color: #536390;
-    --font-color: #FDFDFD;
-    --bg-color: #373f51;
-    --heading-color: #c1cad6;
-    --svg-color: #FDFDFD;
-}
-
 // BREAKPOINTS
 // ems best option for media queries due to browsers
 // base is 16px
+$xsm-breakpoint: 320px;
+$sm-breakpoint: 600px;
 $md-breakpoint: 916px;
+$lg-breakpoint: 976px;
+$xl-breakpoint: 1200px;
+// COLOURS
+
+:root {
+  --primary-color: #da2497;
+  --secondary-color: #536390;
+  --font-color: #373f51;
+  --bg-color: #fdfdfd;
+  --heading-color: #696673;
+  --white-color: #fdfdfd;
+  --svg-color: #536390;
+  --form-color: #eceff2;
+}
+
+[data-theme='dark'] {
+  --secondary-color: #536390;
+  --font-color: #fdfdfd;
+  --bg-color: #373f51;
+  --heading-color: #c1cad6;
+  --svg-color: #fdfdfd;
+}

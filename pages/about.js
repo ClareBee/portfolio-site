@@ -6,8 +6,6 @@ import Spinner from '../components/Spinner';
 
 export default function About() {
   gsap.registerPlugin(MotionPathPlugin);
-  console.log(typeof gsap);
-  console.log('spinner', typeof Spinner);
   return (
     <Layout title="About">
       <Spinner />

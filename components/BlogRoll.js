@@ -19,6 +19,7 @@ const BlogRoll = ({ allBlogs }) => {
   }
 
   function orderByRecentFirst(blogs) {
+    // TODO: check this works
     return blogs.sort(blog => blog.document.data.date).reverse();
   }
 
@@ -38,10 +39,8 @@ const BlogRoll = ({ allBlogs }) => {
                   <h3 className="heading-3 blog__title">
                     {blog.document.data.title}
                   </h3>
-                  <p>
-                    <span className="blog__date">
-                      {reformatDate(blog.document.data.date)}
-                    </span>
+                  <p className="blog__date">
+                    {reformatDate(blog.document.data.date)}
                   </p>
                 </div>
 

@@ -7,4 +7,7 @@
   a {
     @include link-states(--heading-color, --primary-color);
   }
+  @media only screen and (max-width: $sm-breakpoint) {
+    flex-direction: column-reverse;
+  }
 }

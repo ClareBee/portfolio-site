@@ -59,7 +59,9 @@ PromotedBlog.propTypes = {
         subtitle: PropTypes.string,
         banner: PropTypes.string,
         tags: PropTypes.array,
+        /*eslint-disable */
         alt_text: PropTypes.string,
+        /*eslint-enable */
       }),
     }),
   }),

@@ -4,7 +4,7 @@
   height: 100vh; // vh buggy in older mobile Safari - replace w %?
   flex-direction: column;
   padding: 2rem;
-  @media only screen and (max-width: $sm-breakpoint) {
+  @include sm {
     margin-top: 10rem;
   }
 }

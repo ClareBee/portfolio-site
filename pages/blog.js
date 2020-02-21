@@ -13,7 +13,6 @@ const Blog = ({
   currentPage,
   pagesArray,
   promotedBlog,
-  total,
 }) => {
   return (
     <Layout title="Blog">
@@ -36,6 +35,8 @@ const Blog = ({
 Blog.propTypes = {
   allBlogs: PropTypes.array,
   currentPage: PropTypes.string,
+  pagesArray: PropTypes.array,
+  promotedBlog: PropTypes.object,
 };
 
 export default Blog;
@@ -88,7 +89,6 @@ Blog.getInitialProps = async function(context) {
   return {
     allBlogs: blogPosts,
     pagesArray,
-    total,
     currentPage: query,
     promotedBlog,
     ...siteConfig,

@@ -52,17 +52,11 @@ Blog.getInitialProps = async function(context) {
   const blogPosts = (context => {
     const keys = context.keys();
     total = keys.length;
+    // date ordering not needed as file tree orders acc to date prefix
     const needed = context
       .keys()
-      .sort(
-        (a, b) =>
-          new Date(Array.from(b).splice(0, 9)) -
-          new Date(Array.from(a).splice(0, 9)),
-      )
       .reverse()
       .slice(startingIndex, endingIndex);
-    console.log(startingIndex, endingIndex);
-    console.log('needed', needed);
     const values = needed.map(context);
     const data = needed.map((key, index) => {
       // Create slug from filename
@@ -83,6 +77,7 @@ Blog.getInitialProps = async function(context) {
     return data;
   })(require.context('../blog_posts', true, /\.md$/));
 
+  // TODO: address case when promoted Blog not in first page batch
   const promotedBlog = blogPosts.find(
     blog => blog.document.data.promoted,
   );
@@ -92,9 +87,8 @@ Blog.getInitialProps = async function(context) {
   );
   return {
     allBlogs: blogPosts,
-    // pagedBlogs: pagedBlogs(query),
     pagesArray,
-    total: total,
+    total,
     currentPage: query,
     promotedBlog,
     ...siteConfig,

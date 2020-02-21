@@ -17,7 +17,7 @@
     float: left;
     margin-right: 2rem;
     margin-bottom: 2rem;
-    @media only screen and (max-width: 780px) {
+    @include custom(780px) {
       width: 100%;
     }
   }

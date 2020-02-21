@@ -18,15 +18,10 @@ const BlogRoll = ({ allBlogs }) => {
     return date.toLocaleString('en-GB', options);
   }
 
-  function orderByRecentFirst(blogs) {
-    // TODO: check this works
-    return blogs.sort(blog => blog.document.data.date).reverse();
-  }
-
   return (
     <ul className="blog-list">
       {allBlogs.length >= 1 &&
-        orderByRecentFirst(allBlogs).map(blog => (
+        allBlogs.map(blog => (
           <Link
             key={blog.slug}
             href="/blog/[id]"

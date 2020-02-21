@@ -11,9 +11,16 @@
   display: inline-block;
   background-position: bottom 0 left 0, bottom 1px left 0;
   background-repeat: no-repeat;
-  background-image:
-    linear-gradient(to right, var(--bg-color), var(--bg-color)),
-    linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  background-image: linear-gradient(
+      to right,
+      var(--bg-color),
+      var(--bg-color)
+    ),
+    linear-gradient(
+      to right,
+      var(--secondary-color),
+      var(--primary-color)
+    );
   background-blend-mode: soft-light, lighten;
 }
 
@@ -25,13 +32,17 @@
   text-align: center;
   color: var(--primary-color);
   background-color: var(--primary-color);
-  margin: .5rem 0 1rem 0;
-  background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  margin: 0.5rem 0 1rem 0;
+  background-image: linear-gradient(
+    to right,
+    var(--secondary-color),
+    var(--primary-color)
+  );
   box-shadow: 0 10px 10px -10px #8c8c8c inset;
 }
 
 .lighten {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .error {
@@ -43,4 +54,33 @@
   border-radius: 3px;
   padding: 1rem;
   margin: 1rem;
+}
+
+// TODO: move to component
+.pagination {
+  margin-bottom: 2rem;
+  a {
+    width: 50px;
+    text-decoration: none;
+    border-top: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    border-left: 2px solid var(--primary-color);
+    padding: 1rem 1.5rem;
+    background: var(--bg-color);
+    text-align: center;
+    transition: all 0.2s ease-in;
+    &:last-of-type {
+      border-right: 2px solid var(--primary-color);
+    }
+    &:hover:not(.active) {
+      background: var(--pagination-color);
+      color: var(--font-color);
+    }
+    &.active {
+      background: var(--primary-color);
+      color: var(--white-color);
+      cursor: none;
+      pointer-events: none;
+    }
+  }
 }

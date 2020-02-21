@@ -33,7 +33,7 @@
 }
 
 .nav-links {
-  @media only screen and (max-width: $md-breakpoint) {
+  @include custom(989px) {
     display: none;
   }
 }
@@ -189,7 +189,7 @@
     width: 2rem;
   }
 
-  @include md {
+  @include custom(989px) {
     display: inline-block;
   }
 }

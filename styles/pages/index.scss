@@ -4,13 +4,6 @@
   flex-wrap: wrap;
 }
 
-.arrow {
-  margin: 0 auto;
-  color: var(--primary-color);
-  font-size: 30px;
-  font-weight: bold;
-}
-
 .introduction {
   width: 100%;
   display: flex;
@@ -86,5 +79,33 @@
   @include sm {
     justify-content: center;
     padding: 2rem 0;
+  }
+}
+// TODO: implement
+.arrow {
+  margin: 0 auto;
+  color: var(--primary-color);
+  font-size: 30px;
+  font-weight: bold;
+}
+.projects {
+  width: 100%;
+  margin-top: 3rem;
+  .project {
+    margin: 4rem 1rem;
+    padding: 2rem;
+    background-color: lightgray;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    &__video {
+      width: 47%;
+      height: 200px;
+      background: white;
+    }
+    &__details {
+      width: 47%;
+      background: white;
+    }
   }
 }

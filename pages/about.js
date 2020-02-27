@@ -1,14 +1,12 @@
 import Layout from '../components/Layout';
 import { gsap } from 'gsap/dist/gsap';
 import { MotionPathPlugin } from 'gsap/dist/MotionPathPlugin.js';
-import Spinner from '../components/Spinner';
 //without this line, PixiPlugin and MotionPathPlugin may get dropped by your bundler (tree shaking)...
 
 export default function About() {
   gsap.registerPlugin(MotionPathPlugin);
   return (
     <Layout title="About">
-      <Spinner />
       <p>About page</p>
       <svg
         id="text-container"

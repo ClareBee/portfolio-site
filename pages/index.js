@@ -27,6 +27,30 @@ const Index = () => (
           />
         </div>
       </div>
+      <div>V</div>
+      <div className="projects">
+        <div className="project">
+          <div className="project__video">video here</div>
+          <div className="project__details">
+            <div className="project__title">Barns</div>
+            <div className="project__description">blahblah</div>
+          </div>
+        </div>
+        <div className="project">
+          <div className="project__details">
+            <div className="project__title">Barns</div>
+            <div className="project__description">blahblah</div>
+          </div>
+          <div className="project__video">video here</div>
+        </div>
+        <div className="project">
+          <div className="project__video">video here</div>
+          <div className="project__details">
+            <div className="project__title">Barns</div>
+            <div className="project__description">blahblah</div>
+          </div>
+        </div>
+      </div>
     </div>
   </Layout>
 );

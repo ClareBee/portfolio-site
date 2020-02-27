@@ -22,18 +22,18 @@ const PromotedBlog = ({
   });
   return (
     <Link key={blog.slug} href={{ pathname: `/blog/${blog.slug}` }}>
-      <a className="promoted-blog">
-        <div className="promoted-blog__container">
-          <div className="promoted-blog__img">
+      <a className="promoted">
+        <div className="promoted__container">
+          <div className="promoted__img">
             <img
               src={require(`../images/${promotedBlog.banner}`)}
               alt={altText}
             />
           </div>
-          <div className="promoted-blog__content">
-            <div className="promoted-blog__title">
+          <div className="promoted__content">
+            <div className="promoted__title">
               <h1 className="blog__title">{promotedBlog.title}</h1>
-              <span className="promoted-blog__msg">Pinned</span>
+              <span className="promoted__msg">Pinned</span>
             </div>
             <h2 className="blog__subtitle">
               {promotedBlog.subtitle}

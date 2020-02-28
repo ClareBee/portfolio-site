@@ -97,7 +97,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    align-items: flex-start;
+    // align-items: flex-start;
+    align-items: stretch;
     &__video {
       width: 47%;
       background: transparent;
@@ -117,7 +118,7 @@
       justify-content: space-between;
     }
     &__description {
-      flex-grow: 1;
+      flex: 1;
       ul {
         margin-top: 1rem;
         font-size: 1.5rem;

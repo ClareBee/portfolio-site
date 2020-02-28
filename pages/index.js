@@ -204,6 +204,64 @@ const Index = () => (
             </div>
           </div>
         </div>
+        <div className="project">
+          <div className="project__details">
+            <div className="project__title">
+              <h3 className="heading-3">Jekyll Blog</h3>
+              <div className="tag-icons">
+                <span className="tag-icon">Jekyll</span>
+                <span className="tag-icon">SCSS</span>
+                <span className="tag-icon">Liquid</span>
+              </div>
+            </div>
+            <div className="project__description">
+              <p>
+                Markdown blog exploring Lea Verou&apos;s CSS
+                Experiments in SCSS
+              </p>
+              <ul>
+                <li>
+                  <FaStar />
+                  Pagination
+                </li>
+                <li>
+                  <FaStar />
+                  RSS Feed
+                </li>
+                <li>
+                  <FaStar />
+                  Contact Form with FormSpree
+                </li>
+                <li>
+                  <FaStar />
+                  SEO and sitemap
+                </li>
+              </ul>
+            </div>
+            <div className="project__links">
+              <a
+                href="https://github.com/ClareBee/css-experiments"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+                <FaGithub />
+              </a>
+              <a
+                href="https://clarebee.github.io/css-experiments/"
+                target="blank"
+                rel="noopener noreferrer"
+              >
+                Website
+                <FaDesktop />
+              </a>
+              <a className="project__read-more">Read more</a>
+            </div>
+          </div>
+          <div className="project__video">
+            <img src={require('../images/jekyll.jpg')} />
+          </div>
+        </div>
       </div>
     </div>
   </Layout>

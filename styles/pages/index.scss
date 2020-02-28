@@ -97,6 +97,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    align-items: flex-start;
     &__video {
       width: 47%;
       background: transparent;
@@ -110,7 +111,7 @@
     &__details {
       width: 47%;
       background: var(--bg-color);
-      padding: 2rem;
+      padding: 2.5rem;
       display: flex;
       flex-flow: column nowrap;
       justify-content: space-between;
@@ -138,15 +139,17 @@
       align-items: center;
       justify-content: flex-start;
       font-size: 2rem;
+      margin-top: 2rem;
       svg {
         margin-left: 1rem;
       }
-      span {
+      a {
         margin-right: 2rem;
         display: flex;
         align-items: center;
+        @include link-states(--heading-color, --primary-color);
       }
-      span:last-of-type {
+      a:last-of-type {
         flex-grow: 1;
         display: flex;
         justify-content: flex-end;

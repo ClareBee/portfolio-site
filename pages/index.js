@@ -67,22 +67,28 @@ const Index = () => (
                 </li>
                 <li>
                   <FaStar />
-                  Google Analytics
+                  Google Analytics and SEO
                 </li>
               </ul>
             </div>
             <div className="project__links">
-              <span>
+              <a
+                href="https://github.com/ClareBee/barns"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 GitHub
                 <FaGithub />
-              </span>
-              <span>
+              </a>
+              <a
+                href="https://www.disappearingbarns.co.uk/"
+                target="blank"
+                rel="noopener noreferrer"
+              >
                 Website
                 <FaDesktop />
-              </span>
-              <span>
-                <a className="project__read-more">Read more</a>
-              </span>
+              </a>
+              <a className="project__read-more">Read more</a>
             </div>
           </div>
         </div>
@@ -90,6 +96,12 @@ const Index = () => (
           <div className="project__details">
             <div className="project__title">
               <h3 className="heading-3">Tech Blog</h3>
+              <div className="tag-icons">
+                <span className="tag-icon">GatsbyJS</span>
+                <span className="tag-icon">Strapi CMS</span>
+                <span className="tag-icon">TailwindCSS</span>
+                <span className="tag-icon">Prism.js</span>
+              </div>
             </div>
             <div className="project__description">
               <p>Simple Gatsby blog with Strapi CMS</p>
@@ -117,23 +129,23 @@ const Index = () => (
               </ul>
             </div>
             <div className="project__links">
-              <span>
+              <a
+                href="https://github.com/ClareBee/front-end"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 GitHub
                 <FaGithub />
-              </span>
-              <span>
+              </a>
+              <a
+                href="https://clare-bee-blog.netlify.com/posts"
+                target="blank"
+                rel="noopener noreferrer"
+              >
                 Website
                 <FaDesktop />
-              </span>
-              <span>
-                <a className="project__read-more">Read more</a>
-              </span>
-            </div>
-            <div className="tag-icons">
-              <span className="tag-icon">GatsbyJS</span>
-              <span className="tag-icon">Strapi CMS</span>
-              <span className="tag-icon">TailwindCSS</span>
-              <span className="tag-icon">Prism.js</span>
+              </a>
+              <a className="project__read-more">Read more</a>
             </div>
           </div>
           <div className="project__video">
@@ -147,7 +159,13 @@ const Index = () => (
           <div className="project__details">
             <div className="project__title">
               <h3 className="heading-3">Eleventy</h3>
+              <div className="tag-icons">
+                <span className="tag-icon">Eleventy</span>
+                <span className="tag-icon">Highlight.js</span>
+                <span className="tag-icon">Netlify</span>
+              </div>
             </div>
+
             <div className="project__description">
               <p>Eleventy site exploring CSSGrid and Flexbox</p>
               <ul>
@@ -166,22 +184,23 @@ const Index = () => (
               </ul>
             </div>
             <div className="project__links">
-              <span>
+              <a
+                href="https://github.com/ClareBee/eleventy_layouts"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 GitHub
                 <FaGithub />
-              </span>
-              <span>
+              </a>
+              <a
+                href="https://adventures-in-layouts.netlify.com/"
+                target="blank"
+                rel="noopener noreferrer"
+              >
                 Website
                 <FaDesktop />
-              </span>
-              <span>
-                <a className="project__read-more">Read more</a>
-              </span>
-            </div>
-            <div className="tag-icons">
-              <span className="tag-icon">Eleventy</span>
-              <span className="tag-icon">Highlight.js</span>
-              <span className="tag-icon">Netlify</span>
+              </a>
+              <a className="project__read-more">Read more</a>
             </div>
           </div>
         </div>

@@ -99,10 +99,13 @@
     justify-content: space-between;
     &__video {
       width: 47%;
-      background: white;
+      background: transparent;
       padding: 2rem;
       display: flex;
       align-items: center;
+      img {
+        border-radius: 3px;
+      }
     }
     &__details {
       width: 47%;

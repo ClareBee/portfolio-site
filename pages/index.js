@@ -39,7 +39,7 @@ const Index = () => (
       <div className="projects">
         <div className="project">
           <div className="project__video">
-            <img src="https://via.placeholder.com/300" />
+            <img src={require('../images/barns2.jpg')} />
           </div>
           <div className="project__details">
             <div className="project__title">
@@ -63,7 +63,11 @@ const Index = () => (
                 </li>
                 <li>
                   <FaStar />
-                  Blahblah
+                  Styling with Emotion
+                </li>
+                <li>
+                  <FaStar />
+                  Google Analytics
                 </li>
               </ul>
             </div>
@@ -88,34 +92,95 @@ const Index = () => (
               <h3 className="heading-3">Tech Blog</h3>
             </div>
             <div className="project__description">
-              <p>blablablabla</p>
+              <p>Simple Gatsby blog with Strapi CMS</p>
+              <ul>
+                <li>
+                  <FaStar />
+                  Pagination
+                </li>
+                <li>
+                  <FaStar />
+                  Contact Form with GetForm
+                </li>
+                <li>
+                  <FaStar />
+                  Disqus comments and Social Share buttons
+                </li>
+                <li>
+                  <FaStar />
+                  Code syntax highlighting with Prism.js
+                </li>
+                <li>
+                  <FaStar />
+                  Styling with TailwindCSS
+                </li>
+              </ul>
+            </div>
+            <div className="project__links">
+              <span>
+                GitHub
+                <FaGithub />
+              </span>
+              <span>
+                Website
+                <FaDesktop />
+              </span>
+              <span>
+                <a className="project__read-more">Read more</a>
+              </span>
             </div>
             <div className="tag-icons">
               <span className="tag-icon">GatsbyJS</span>
               <span className="tag-icon">Strapi CMS</span>
               <span className="tag-icon">TailwindCSS</span>
+              <span className="tag-icon">Prism.js</span>
             </div>
           </div>
           <div className="project__video">
-            {' '}
-            <img src="https://via.placeholder.com/300" />
+            <img src={require('../images/techblog.jpg')} />
           </div>
         </div>
         <div className="project">
           <div className="project__video">
-            {' '}
-            <img src="https://via.placeholder.com/300" />
+            <img src={require('../images/eleventy2.jpg')} />
           </div>
           <div className="project__details">
             <div className="project__title">
-              {' '}
               <h3 className="heading-3">Eleventy</h3>
             </div>
             <div className="project__description">
-              <p>blablablabla</p>
+              <p>Eleventy site exploring CSSGrid and Flexbox</p>
+              <ul>
+                <li>
+                  <FaStar />
+                  Customising a HTML template with Nunjucks
+                </li>
+                <li>
+                  <FaStar />
+                  Contact Form with Netlify
+                </li>
+                <li>
+                  <FaStar />
+                  Code syntax highlighting with Highlight.js
+                </li>
+              </ul>
+            </div>
+            <div className="project__links">
+              <span>
+                GitHub
+                <FaGithub />
+              </span>
+              <span>
+                Website
+                <FaDesktop />
+              </span>
+              <span>
+                <a className="project__read-more">Read more</a>
+              </span>
             </div>
             <div className="tag-icons">
-              <span className="tag-icon">11ty</span>
+              <span className="tag-icon">Eleventy</span>
+              <span className="tag-icon">Highlight.js</span>
               <span className="tag-icon">Netlify</span>
             </div>
           </div>

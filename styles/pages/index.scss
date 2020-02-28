@@ -12,8 +12,6 @@
   flex: 1 1 auto;
   letter-spacing: 0.35rem;
   padding: 10rem 2rem 2rem 3rem;
-  @include fade-in(4s);
-
   &__content {
     @extend .gradient-underline;
     padding-bottom: 0.5rem;
@@ -52,8 +50,9 @@
   display: flex;
   align-items: bottom;
   justify-content: flex-end;
+  // TODO non janky image load
   @include fade-in(4s);
-
+  // opacity: 0;
   &__border {
     height: 250px;
     border-radius: 50%;

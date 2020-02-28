@@ -150,7 +150,6 @@ const CV = () => {
           </View>
           <View style={details}>
             <Text>clarebee@protonmail.com</Text>
-            <Text>07972021246</Text>
             <Link>www.github.com/clarebee</Link>
           </View>
         </View>

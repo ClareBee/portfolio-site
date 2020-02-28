@@ -13,6 +13,10 @@
   &__logo-text {
     @include hover-svg(var(--svg-color), var(--primary-color), 0.5s);
   }
+  circle {
+    transform-origin: center center;
+    animation: rotateLogo 10s linear infinite;
+  }
 }
 
 .mode-switch-container {
@@ -212,5 +216,14 @@
     &__background {
       right: 5rem;
     }
+  }
+}
+
+@keyframes rotateLogo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

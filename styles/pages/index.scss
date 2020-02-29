@@ -12,8 +12,6 @@
   flex: 1 1 auto;
   letter-spacing: 0.35rem;
   padding: 10rem 2rem 2rem 3rem;
-  @include fade-in(4s);
-
   &__content {
     @extend .gradient-underline;
     padding-bottom: 0.5rem;
@@ -43,7 +41,41 @@
     }
   }
 }
-
+.project__left {
+  opacity: 0;
+  -webkit-transform: translateX(-100px);
+  -moz-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  -o-transform: translateX(-100px);
+  transform: translateX(-100px);
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+.project__right {
+  opacity: 0;
+  -webkit-transform: translateX(100px);
+  -moz-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  -o-transform: translateX(100px);
+  transform: translateX(100px);
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+.project__left.visible,
+.project__right.visible {
+  opacity: 1;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
 .portrait {
   width: 100%;
   flex: 1 1 auto;
@@ -52,8 +84,9 @@
   display: flex;
   align-items: bottom;
   justify-content: flex-end;
+  // TODO non janky image load
   @include fade-in(4s);
-
+  // opacity: 0;
   &__border {
     height: 250px;
     border-radius: 50%;

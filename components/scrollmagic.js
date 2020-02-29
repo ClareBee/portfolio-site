@@ -16,27 +16,26 @@ const ScrollMagicContext = ({ children, trigger }) => {
       x: -300,
       // TODO custom easing
       ease: 'back',
-    }).from(
-      '.introduction__subtitle',
-      {
-        duration: 3,
-        x: 300,
-        ease: 'back',
-      },
-      '-=3',
-    );
-    // TODO less of a pause after previous timeline
-    const bounce = gsap.timeline({
-      repeat: 3,
-      delay: 3.5,
-      repeatDelay: 2,
-    });
-    bounce.from('.arrow', {
-      duration: 2,
-      y: -70,
-      opacity: 0,
-      ease: 'bounce',
-    });
+    })
+      .from(
+        '.introduction__subtitle',
+        {
+          duration: 3,
+          x: 300,
+          ease: 'back',
+        },
+        '-=3',
+      )
+      .from(
+        '.arrow',
+        {
+          duration: 2,
+          y: -70,
+          opacity: 0,
+          ease: 'bounce',
+        },
+        '-=0.5',
+      );
     // const projects = gsap.timeline();
 
     const controller = new ScrollMagic.Controller();
@@ -79,47 +78,6 @@ const ScrollMagicContext = ({ children, trigger }) => {
         .addTo(controller)
         .reverse(true);
     }
-    // Array.prototype.forEach.call(projectTriggers, function(
-    //   projectTrigger,
-    // ) {
-    //   console.log('blah', projectTrigger);
-    //   const projectLHS = projectTrigger.querySelector(
-    //     '.project__left',
-    //   );
-    //   const projectRHS = projectTrigger.querySelector(
-    //     '.project__right',
-    //   );
-    //   console.log('project sides', projectLHS, projectRHS);
-    //   const project = gsap.timeline({ delay: 1.5 });
-    //   project.from(projectLHS, {
-    //     duration: 1.5,
-    //     x: -500,
-    //     opacity: 0,
-    //     ease: 'back.out(2)',
-    //   });
-    //   project.from(projectRHS, {
-    //     duration: 1.5,
-    //     x: 500,
-    //     opacity: 0,
-    //     ease: 'back.out(2)',
-    //   });
-    //   const scene = new ScrollMagic.Scene({
-    //     triggerElement: projectTrigger,
-    //     triggerHook: 'onEnter',
-    //     offset: 100, // show, when scrolled 10% into view
-    //   })
-    //     .on('start', function(e) {
-    //       project.play();
-    //     })
-    //     .on('leave', function(e) {
-    //       project.reverse();
-    //     })
-    //     // .setTween(project)
-    //     .addTo(controller);
-    //   scene.on('progress', function(event) {
-    //     console.log('Scene progress changed to ' + event.progress);
-    //   });
-    // });
   });
 
   // then we can control the whole thing easily...

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Layout from '../components/Layout';
 const DynamicComponentWithNoSSR = dynamic(
@@ -11,39 +10,11 @@ import {
   FaDesktop,
   FaStar,
   FaArrowDown,
+  FaArrowUp,
 } from 'react-icons/fa';
 // TODO lazy load this
 
 const Index = () => {
-  useEffect(() => {
-    // gsap.to('.portrait', { duration: 3, opacity: 1 });
-    // const tl = gsap.timeline();
-    // tl.from('#intro', {
-    //   duration: 3,
-    //   x: -300,
-    //   // TODO custom easing
-    //   ease: 'back',
-    // }).from(
-    //   '.introduction__subtitle',
-    //   {
-    //     duration: 3,
-    //     x: 300,
-    //     ease: 'back',
-    //   },
-    //   '-=3',
-    // );
-    // const bounce = gsap.timeline({
-    //   repeat: 3,
-    //   delay: 3.5,
-    //   repeatDelay: 2,
-    // });
-    // bounce.from('.arrow', {
-    //   duration: 2,
-    //   y: -70,
-    //   opacity: 0,
-    //   ease: 'bounce',
-    // });
-  });
   return (
     <Layout title="Projects">
       <DynamicComponentWithNoSSR trigger=".projects">
@@ -75,8 +46,6 @@ const Index = () => {
             <FaArrowDown />
           </div>
           <div className="projects">
-            <hr className="trigger" />
-
             <div className="project">
               <div className="project__video project__left">
                 <img src={require('../images/barns2.jpg')} />
@@ -132,7 +101,6 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <hr className="trigger" />
             <div className="project">
               <div className="project__details project__left">
                 <div className="project__title">
@@ -193,7 +161,6 @@ const Index = () => {
                 <img src={require('../images/techblog.jpg')} />
               </div>
             </div>
-            <hr className="trigger" />
 
             <div className="project">
               <div className="project__video project__left">
@@ -247,8 +214,6 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <hr className="trigger" />
-
             <div className="project">
               <div className="project__details project__left">
                 <div className="project__title">

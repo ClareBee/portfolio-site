@@ -10,6 +10,7 @@ ScrollMagicPluginGsap(ScrollMagic, gsap);
 
 const ScrollMagicContext = ({ children, trigger }) => {
   useEffect(() => {
+    console.log('hi there');
     const tl = gsap.timeline();
     tl.from('#intro', {
       duration: 3,
@@ -34,14 +35,12 @@ const ScrollMagicContext = ({ children, trigger }) => {
           opacity: 0,
           ease: 'bounce',
         },
-        '-=0.5',
+        '-=0.75',
       );
+
     // const projects = gsap.timeline();
 
     const controller = new ScrollMagic.Controller();
-    // const projectTriggers = document.getElementsByClassName(
-    //   'trigger',
-    // );
     const projectTriggers = document.getElementsByClassName(
       'project',
     );
@@ -58,38 +57,27 @@ const ScrollMagicContext = ({ children, trigger }) => {
       new ScrollMagic.Scene({
         triggerElement: projectTriggers[i].querySelector(
           '.project__left',
-        ), // y value not modified, so we can use element as trigger as well
-        offset: 50, // start a little later
+        ),
+        offset: 50,
         triggerHook: 0.9,
       })
         .setClassToggle(projectTriggers[i], 'visible')
-        .setClassToggle(leftTrigger, 'visible') // add class toggle
+        .setClassToggle(leftTrigger, 'visible')
         .addTo(controller)
         .reverse(true);
 
       new ScrollMagic.Scene({
         triggerElement: projectTriggers[i].querySelector(
           '.project__right',
-        ), // y value not modified, so we can use element as trigger as well
-        offset: 50, // start a little later
+        ),
+        offset: 50,
         triggerHook: 0.9,
       })
         .setClassToggle(rightTrigger, 'visible')
         .addTo(controller)
         .reverse(true);
     }
-  });
-
-  // then we can control the whole thing easily...
-  // tl.pause();
-  // tl.resume();
-  // tl.seek(1.5);
-  // tl.reverse();
-  // controller.scrollTo("#anchor");
-  //
-  // // scroll to the beginning of a scene
-  // var scene = new ScrollMagic.Scene({offset: 200});
-  // controller.scrollTo(scene);
+  }, []);
   return <div>{children}</div>;
 };
 

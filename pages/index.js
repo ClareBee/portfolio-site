@@ -10,7 +10,6 @@ import {
   FaDesktop,
   FaStar,
   FaArrowDown,
-  FaArrowUp,
 } from 'react-icons/fa';
 // TODO lazy load this
 

@@ -1,51 +1,103 @@
-import Link from './Link';
+import React from 'react';
 import { useEffect } from 'react';
-import { gsap } from 'gsap/dist/gsap';
+
 import ScrollMagic from 'scrollmagic';
-// import 'plugins/animation.gsap.js';
+import { gsap } from 'gsap/dist/gsap';
+import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 
-const ScrollMagicPage = () => {
+console.log('gsap', gsap);
+ScrollMagicPluginGsap(ScrollMagic, gsap);
+
+const ScrollMagicContext = ({ children, trigger }) => {
   useEffect(() => {
-    const timelineComplete = () => {
-      console.log('completed');
-    };
-    const tl = gsap.timeline({ onComplete: timelineComplete });
-    const tl2 = gsap.timeline();
-    const controller = new ScrollMagic.Controller();
-    console.log('controller', controller);
-    tl.to('blockquote', { x: 200, opacity: 0 });
-    tl2.from('#image', { x: -200, opacity: 0 });
-    const scene = new ScrollMagic.Scene({
-      triggerElement: '.animate',
-      triggerHook: 'onLeave',
-      duration: '100%',
-    })
-      .setPin('.animate')
-      .on('enter', function(e) {
-        console.log('entering');
-        tl.play();
-      })
-      .on('leave', function(e) {
-        console.log('leaving');
-        tl.reverse();
-      })
-      .addTo(controller);
-
-    const scene2 = new ScrollMagic.Scene({
-      triggerElement: '.animate',
-    })
-      .on('enter', function(e) {
-        console.log('entering');
-        tl2.play();
-      })
-      .on('leave', function(e) {
-        console.log('leaving');
-        tl2.reverse();
-      })
-      .addTo(controller);
-    scene.on('progress', function(event) {
-      console.log('Scene progress changed to ' + event.progress);
+    const tl = gsap.timeline();
+    tl.from('#intro', {
+      duration: 3,
+      x: -300,
+      // TODO custom easing
+      ease: 'back',
+    }).from(
+      '.introduction__subtitle',
+      {
+        duration: 3,
+        x: 300,
+        ease: 'back',
+      },
+      '-=3',
+    );
+    // TODO less of a pause after previous timeline
+    const bounce = gsap.timeline({
+      repeat: 3,
+      delay: 3.5,
+      repeatDelay: 2,
     });
+    bounce.from('.arrow', {
+      duration: 2,
+      y: -70,
+      opacity: 0,
+      ease: 'bounce',
+    });
+    // const projects = gsap.timeline();
+
+    const controller = new ScrollMagic.Controller();
+    // const projectTriggers = document.getElementsByClassName(
+    //   'trigger',
+    // );
+    const projectTriggers = document.getElementsByClassName(
+      'project',
+    );
+    console.log('project', projectTriggers);
+    for (let i = 0; i < projectTriggers.length; i++) {
+      // create a scene for each element
+      new ScrollMagic.Scene({
+        triggerElement: projectTriggers[i], // y value not modified, so we can use element as trigger as well
+        offset: 50, // start a little later
+        triggerHook: 0.9,
+      })
+        .setClassToggle(projectTriggers[i], 'visible') // add class toggle
+        .addTo(controller);
+    }
+    // Array.prototype.forEach.call(projectTriggers, function(
+    //   projectTrigger,
+    // ) {
+    //   console.log('blah', projectTrigger);
+    //   const projectLHS = projectTrigger.querySelector(
+    //     '.project__left',
+    //   );
+    //   const projectRHS = projectTrigger.querySelector(
+    //     '.project__right',
+    //   );
+    //   console.log('project sides', projectLHS, projectRHS);
+    //   const project = gsap.timeline({ delay: 1.5 });
+    //   project.from(projectLHS, {
+    //     duration: 1.5,
+    //     x: -500,
+    //     opacity: 0,
+    //     ease: 'back.out(2)',
+    //   });
+    //   project.from(projectRHS, {
+    //     duration: 1.5,
+    //     x: 500,
+    //     opacity: 0,
+    //     ease: 'back.out(2)',
+    //   });
+    //   const scene = new ScrollMagic.Scene({
+    //     triggerElement: projectTrigger,
+    //     triggerHook: 'onEnter',
+    //     offset: 100, // show, when scrolled 10% into view
+    //   })
+    //     .on('start', function(e) {
+    //       project.play();
+    //     })
+    //     .on('leave', function(e) {
+    //       project.reverse();
+    //     })
+    //     // .setTween(project)
+    //     .addTo(controller);
+    //   scene.on('progress', function(event) {
+    //     console.log('Scene progress changed to ' + event.progress);
+    //   });
+    // });
   });
 
   // then we can control the whole thing easily...
@@ -58,16 +110,7 @@ const ScrollMagicPage = () => {
   // // scroll to the beginning of a scene
   // var scene = new ScrollMagic.Scene({offset: 200});
   // controller.scrollTo(scene);
-  return (
-    <div>
-      scroll magic example
-      <section style={{ height: '1000px' }}>Scroll down</section>
-      <section className="animate">
-        <blockquote>some text to animate</blockquote>
-        <img id="image" src="/test_image.jpg" height="100" />
-      </section>
-    </div>
-  );
+  return <div>{children}</div>;
 };
 
-export default ScrollMagicPage;
+export default ScrollMagicContext;

@@ -49,13 +49,35 @@ const ScrollMagicContext = ({ children, trigger }) => {
     console.log('project', projectTriggers);
     for (let i = 0; i < projectTriggers.length; i++) {
       // create a scene for each element
+      const leftTrigger = projectTriggers[i].querySelector(
+        '.project__left',
+      );
+      const rightTrigger = projectTriggers[i].querySelector(
+        '.project__right',
+      );
+      console.log('tir', leftTrigger);
       new ScrollMagic.Scene({
-        triggerElement: projectTriggers[i], // y value not modified, so we can use element as trigger as well
+        triggerElement: projectTriggers[i].querySelector(
+          '.project__left',
+        ), // y value not modified, so we can use element as trigger as well
         offset: 50, // start a little later
         triggerHook: 0.9,
       })
-        .setClassToggle(projectTriggers[i], 'visible') // add class toggle
-        .addTo(controller);
+        .setClassToggle(projectTriggers[i], 'visible')
+        .setClassToggle(leftTrigger, 'visible') // add class toggle
+        .addTo(controller)
+        .reverse(true);
+
+      new ScrollMagic.Scene({
+        triggerElement: projectTriggers[i].querySelector(
+          '.project__right',
+        ), // y value not modified, so we can use element as trigger as well
+        offset: 50, // start a little later
+        triggerHook: 0.9,
+      })
+        .setClassToggle(rightTrigger, 'visible')
+        .addTo(controller)
+        .reverse(true);
     }
     // Array.prototype.forEach.call(projectTriggers, function(
     //   projectTrigger,

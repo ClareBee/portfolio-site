@@ -16,7 +16,7 @@ import {
 const Index = () => {
   return (
     <Layout title="Projects">
-      <DynamicComponentWithNoSSR trigger=".projects">
+      <DynamicComponentWithNoSSR>
         <div className="index">
           <div className="introduction">
             <h2 className="heading-2" id="intro">

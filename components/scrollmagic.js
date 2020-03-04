@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
-
+import PropTypes from 'prop-types';
 import ScrollMagic from 'scrollmagic';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
@@ -8,7 +8,7 @@ import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 console.log('gsap', gsap);
 ScrollMagicPluginGsap(ScrollMagic, gsap);
 
-const ScrollMagicContext = ({ children, trigger }) => {
+const ScrollMagicContext = ({ children }) => {
   useEffect(() => {
     console.log('hi there');
     const tl = gsap.timeline();
@@ -81,4 +81,7 @@ const ScrollMagicContext = ({ children, trigger }) => {
   return <div>{children}</div>;
 };
 
+ScrollMagicContext.propTypes = {
+  children: PropTypes.object,
+};
 export default ScrollMagicContext;

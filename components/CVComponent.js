@@ -6,6 +6,7 @@ import {
   View,
   Document,
   StyleSheet,
+  Image,
   Font,
 } from '@react-pdf/renderer';
 import { useMediaQuery } from 'react-responsive';
@@ -35,12 +36,18 @@ const styles = StyleSheet.create({
   header: {
     fontFamily: 'Helvetica', // Helvetica/Times also available, w diff weights
     padding: 20,
+    width: '100%',
     background: palette.white,
     display: 'flex',
     color: palette.heading,
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  headerRight: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
   },
   name: {
     fontSize: 24,
@@ -53,14 +60,16 @@ const styles = StyleSheet.create({
     color: palette.secondary,
   },
   contactDetails: {
-    display: 'block',
     fontSize: 12,
+    marginRight: 10,
   },
   main: {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    padding: 20,
+    padding: 15,
+    paddingTop: 10,
+    paddingRight: 10,
     borderTop: `5pt solid ${palette.divider}`,
     fontSize: 12,
     color: palette.font,
@@ -69,19 +78,51 @@ const styles = StyleSheet.create({
     color: palette.font,
     fontSize: 12,
   },
+  codeContainer: {
+    width: '20%',
+  },
+  code: {
+    width: '100%',
+  },
   heading: {
+    width: '100%',
+
     fontFamily: 'Helvetica',
     fontStyle: 'italic',
     fontSize: 18,
     color: palette.heading,
+    marginBottom: 10,
+  },
+  skills: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+  },
+  skill: {
+    marginLeft: 10,
+    padding: 10,
+    border: `1pt solid ${palette.divider}`,
+    borderRadius: '3pt',
   },
   experience: {
-    borderBottom: `2pt solid ${palette.secondary}`,
-    display: 'flex',
+    borderBottom: `1pt solid ${palette.primary}`,
     width: '100%',
+    marginBottom: 10,
+  },
+  jobContainer: {
+    width: '100%',
+    display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-end',
+    marginBottom: 5,
+    borderLeft: `10pt solid ${palette.divider}`,
+    paddingLeft: 5,
+  },
+  positionContainer: {
+    width: '100%',
+    marginLeft: '10%',
   },
   position: {
     fontSize: 14,
@@ -90,6 +131,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: palette.heading,
     fontStyle: 'italic',
+  },
+  jobDescription: {
+    marginLeft: '10%',
+  },
+  listItem: {
+    width: '100%',
   },
 });
 
@@ -138,7 +185,7 @@ const CV = () => {
     : styles.contactDetails;
   return (
     <Document
-      title="ClareBee"
+      title="Clare Bee"
       subject="Software Developer CV 2020"
       author="ClareBee"
     >
@@ -148,9 +195,17 @@ const CV = () => {
             <Text style={styles.name}>ClareBee</Text>
             <Text style={styles.jobTitle}>Software Developer</Text>
           </View>
-          <View style={details}>
-            <Text>clarebee@protonmail.com</Text>
-            <Link>www.github.com/clarebee</Link>
+          <View style={styles.headerRight}>
+            <View style={details}>
+              <Text>clarebee@protonmail.com</Text>
+              <Link>www.github.com/clarebee</Link>
+            </View>
+            <View style={styles.codeContainer}>
+              <Image
+                style={styles.code}
+                src={require(`../images/qr-code.png`)}
+              />
+            </View>
           </View>
         </View>
         <View style={styles.main}>
@@ -166,44 +221,78 @@ const CV = () => {
           </Text>
         </View>
         <View style={styles.main}>
+          <Text style={styles.heading}>Skills</Text>
+          <View style={styles.skills}>
+            <Text style={styles.skill}>ReactJS</Text>
+            <Text style={styles.skill}>GraphQL</Text>
+            <Text style={styles.skill}>JAMStack</Text>
+            <Text style={styles.skill}>SCSS & CSS-in-JS</Text>
+            <Text style={styles.skill}>JavaScript Testing</Text>
+          </View>
+        </View>
+        <View style={styles.main}>
           <View style={styles.experience}>
-            <Text style={styles.heading}>Experience</Text>
+            <Text style={styles.heading}>Relevant Experience</Text>
+          </View>
+          <View style={styles.jobContainer}>
             <Text style={styles.position}>Position 1</Text>
+            <Text style={styles.duration}>12/03 - 17/08</Text>
+          </View>
+          <View style={styles.positionContainer}>
+            <Text style={styles.listItem}>
+              - Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Integer dolor metus
+            </Text>
+            <Text style={styles.listItem}>
+              - Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Integer dolor metus
+            </Text>
+            <Text style={styles.listItem}>
+              - Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Integer dolor metus
+            </Text>
+          </View>
+        </View>
+        <View style={styles.main}>
+          <View style={styles.experience}>
+            <Text style={styles.heading}>Relevant Education</Text>
+          </View>
+          <View style={styles.jobContainer}>
+            <Text style={styles.position}>CodeClan</Text>
             <Text style={styles.duration}>12/03 - 17/08</Text>
           </View>
           <Text>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Integer dolor metus, interdum at scelerisque in, porta at
-            lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Donec ultricies
-            massa et erat luctus hendrerit. Curabitur non consequat
-            enim. Vestibulum bibendum mattis dignissim. Proin id
-            sapien quis libero interdum porttitor.
           </Text>
         </View>
         <View style={styles.main}>
-          <Text style={styles.heading}>Education</Text>
+          <Text style={styles.heading}>
+            Other Education & Experience{' '}
+          </Text>
           <Text style={styles.duration}>12/03 - 17/08</Text>
           <Text>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Integer dolor metus, interdum at scelerisque in, porta at
           </Text>
-        </View>
-        <View style={styles.main}>
-          <Text style={styles.heading}>Education</Text>
-          <Text style={styles.duration}>12/03 - 17/08</Text>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Integer dolor metus, interdum at scelerisque in, porta at
-          </Text>
-        </View>
-        <View style={styles.main}>
-          <Text style={styles.heading}>Education</Text>
-          <Text style={styles.duration}>12/03 - 17/08</Text>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Integer dolor metus, interdum at scelerisque in, porta at
-          </Text>
+          <View style={styles.jobContainer}>
+            <Text style={styles.position}>Position 2</Text>
+            <Text style={styles.duration}>12/03 - 17/08</Text>
+          </View>
+          <View style={styles.positionContainer}>
+            <Text style={styles.listItem}>
+              - Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Integer dolor metus
+            </Text>
+            <Text style={styles.listItem}>
+              - Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Integer dolor metus
+            </Text>
+            <Text style={styles.listItem}>
+              - Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Integer dolor metus
+            </Text>
+          </View>
         </View>
       </Page>
     </Document>

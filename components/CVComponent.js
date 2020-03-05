@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
   contactDetails: {
     fontSize: 12,
     marginRight: 10,
+    marginBottom: 2.5,
   },
   main: {
     display: 'flex',
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
   headingContainer: {
     borderBottom: `1pt solid ${palette.primary}`,
     width: '100%',
-    marginBottom: 10,
+    marginBottom: 5,
   },
   heading: {
     width: '100%',
@@ -114,9 +115,10 @@ const styles = StyleSheet.create({
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'flex-end',
     marginBottom: 5,
+    marginTop: 5,
     borderLeft: `10pt solid ${palette.divider}`,
     paddingLeft: 5,
   },
@@ -128,8 +130,13 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '700',
   },
+  educationItem: {
+    width: '100%',
+    marginLeft: '5%',
+    fontSize: 10,
+  },
   duration: {
-    fontSize: 12,
+    fontSize: 10,
     color: palette.heading,
     fontStyle: 'italic',
   },
@@ -138,6 +145,7 @@ const styles = StyleSheet.create({
   },
   listItem: {
     width: '100%',
+    fontSize: 10,
   },
   otherContainer: {
     display: 'flex',
@@ -145,11 +153,13 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   otherDuration: {
-    color: palette.divider,
+    color: palette.heading,
     fontStyle: 'italic',
     marginRight: 20,
+    fontSize: 10,
   },
   otherSubHeading: {
+    marginTop: 5,
     color: palette.secondary,
   },
   otherContent: {
@@ -159,6 +169,8 @@ const styles = StyleSheet.create({
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
     marginBottom: 5,
   },
 });
@@ -228,7 +240,9 @@ const CV = () => {
           </View>
           <View style={styles.headerRight}>
             <View style={details}>
-              <Text>clarebee@protonmail.com</Text>
+              <Text style={styles.contactDetails}>
+                clarebee@protonmail.com
+              </Text>
               <Link>www.github.com/clarebee</Link>
             </View>
             <View style={styles.codeContainer}>
@@ -247,8 +261,7 @@ const CV = () => {
             lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor
             sit amet, consectetur adipiscing elit. Donec ultricies
             massa et erat luctus hendrerit. Curabitur non consequat
-            enim. Vestibulum bibendum mattis dignissim. Proin id
-            sapien quis libero interdum porttitor.
+            enim. Vestibulum bibendum mattis.
           </Text>
         </View>
         <View style={styles.main}>
@@ -258,6 +271,7 @@ const CV = () => {
             <Text style={styles.skill}>GraphQL</Text>
             <Text style={styles.skill}>JAMStack</Text>
             <Text style={styles.skill}>SCSS & CSS-in-JS</Text>
+            <Text style={styles.skill}>Ruby on Rails</Text>
             <Text style={styles.skill}>JavaScript Testing</Text>
           </View>
         </View>
@@ -265,9 +279,9 @@ const CV = () => {
           {headingContent('Relevant Experience')}
           <View style={styles.jobContainer}>
             <Text style={styles.position}>
-              Fullstack Developer, Castlight Financial
+              Fullstack Developer, Example Company
             </Text>
-            <Text style={styles.duration}>12/03 - 17/08</Text>
+            <Text style={styles.duration}>02/18 - 02/20</Text>
           </View>
           <View style={styles.positionContainer}>
             <Text style={styles.listItem}>
@@ -287,20 +301,18 @@ const CV = () => {
         <View style={styles.main}>
           {headingContent('Relevant Education & Training')}
           <View style={styles.jobContainer}>
-            <Text style={styles.position}>
-              CodeClan Software Development
-            </Text>
-            <Text style={styles.duration}>12/03 - 17/08</Text>
+            <Text style={styles.position}>Example Course Title</Text>
+            <Text style={styles.duration}>09/17 - 02/18</Text>
           </View>
-          <Text>
+          <Text style={styles.educationItem}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Integer dolor metus, interdum at scelerisque in, porta at
           </Text>
           <View style={styles.jobContainer}>
-            <Text style={styles.position}>CodeClan UX Course</Text>
-            <Text style={styles.duration}>12/03 - 17/08</Text>
+            <Text style={styles.position}>Other Course Title</Text>
+            <Text style={styles.duration}>08/17 - 09/17</Text>
           </View>
-          <Text>
+          <Text style={styles.educationItem}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Integer dolor metus, interdum at scelerisque in, porta at
           </Text>
@@ -308,7 +320,7 @@ const CV = () => {
             <Text style={styles.position}>Online</Text>
             <Text style={styles.duration}>Ongoing</Text>
           </View>
-          <Text>
+          <Text style={styles.educationItem}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Integer dolor metus, interdum at scelerisque in, porta at
           </Text>
@@ -317,11 +329,11 @@ const CV = () => {
           {headingContent('Other Experience')}
           <View style={styles.otherContainer}>
             <View style={styles.otherItem}>
-              <Text style={styles.otherDuration}>
-                02/2015 - 10/2016
-              </Text>
               <Text style={styles.otherSubHeading}>
-                Fraud Department Lloyds
+                Example Job Title
+              </Text>
+              <Text style={styles.otherDuration}>
+                02/2015 - 10/2017
               </Text>
             </View>
             <Text style={styles.otherContent}>
@@ -331,12 +343,11 @@ const CV = () => {
           </View>
           <View style={styles.otherContainer}>
             <View style={styles.otherItem}>
+              <Text style={styles.otherSubHeading}>
+                Other Example Job Title
+              </Text>
               <Text style={styles.otherDuration}>
                 02/2015 - 10/2016
-              </Text>
-              <Text style={styles.otherSubHeading}>
-                Administrator Glasgow Caledonian University &
-                Volunteer Action Fund
               </Text>
             </View>
             <Text style={styles.otherContent}>
@@ -346,15 +357,16 @@ const CV = () => {
           </View>
           <View style={styles.otherContainer}>
             <View style={styles.otherItem}>
+              <Text style={styles.otherSubHeading}>
+                Example Job Titem
+              </Text>
               <Text style={styles.otherDuration}>
                 02/2015 - 10/2016
               </Text>
-              <Text style={styles.otherSubHeading}>
-                English Language Teacher
-              </Text>
             </View>
             <Text style={styles.otherContent}>
-              Japan, Vietnam, Cambodia, Myanmar, Nepal, Taiwan
+              - Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Integer dolor metus
             </Text>
           </View>
         </View>
@@ -362,34 +374,32 @@ const CV = () => {
           {headingContent('Other Education')}
           <View style={styles.otherContainer}>
             <View style={styles.otherItem}>
+              <Text style={styles.otherSubHeading}>
+                MRes - Distinction in Example Course, University of
+                Examples
+              </Text>
               <Text style={styles.otherDuration}>
                 02/2015 - 10/2016
-              </Text>
-              <Text style={styles.otherSubHeading}>
-                MRes - Distinction in Human Rights, University of
-                Glasgow
               </Text>
             </View>
           </View>
           <View style={styles.otherContainer}>
             <View style={styles.otherItem}>
+              <Text style={styles.otherSubHeading}>
+                PhD & MA - Example Course - Example University
+              </Text>
               <Text style={styles.otherDuration}>
                 02/2015 - 10/2016
-              </Text>
-              <Text style={styles.otherSubHeading}>
-                PhD & MA - Distinction in French Literature &
-                Philosophy - King&apos;s College London
               </Text>
             </View>
           </View>
           <View style={styles.otherContainer}>
             <View style={styles.otherItem}>
+              <Text style={styles.otherSubHeading}>
+                BA Hons 1:1 - Example Course, University of Example
+              </Text>
               <Text style={styles.otherDuration}>
                 02/2015 - 10/2016
-              </Text>
-              <Text style={styles.otherSubHeading}>
-                BA Hons 1:1 - European Modern Languages, University of
-                Oxford
               </Text>
             </View>
           </View>

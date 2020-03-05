@@ -35,7 +35,9 @@ const styles = StyleSheet.create({
   },
   header: {
     fontFamily: 'Helvetica', // Helvetica/Times also available, w diff weights
-    padding: 20,
+    padding: 10,
+    paddingBottom: 20,
+    paddingTop: 15,
     width: '100%',
     background: palette.white,
     display: 'flex',
@@ -67,16 +69,15 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    padding: 15,
-    paddingTop: 10,
-    paddingRight: 10,
-    borderTop: `5pt solid ${palette.divider}`,
-    fontSize: 12,
+    padding: 10,
+    paddingBottom: 15,
+    borderTop: `3pt solid ${palette.divider}`,
+    fontSize: 11,
     color: palette.font,
   },
   body: {
     color: palette.font,
-    fontSize: 12,
+    fontSize: 11,
   },
   codeContainer: {
     width: '20%',
@@ -84,32 +85,31 @@ const styles = StyleSheet.create({
   code: {
     width: '100%',
   },
+  headingContainer: {
+    borderBottom: `1pt solid ${palette.primary}`,
+    width: '100%',
+    marginBottom: 10,
+  },
   heading: {
     width: '100%',
-
     fontFamily: 'Helvetica',
     fontStyle: 'italic',
-    fontSize: 18,
+    fontSize: 14,
     color: palette.heading,
     marginBottom: 10,
   },
   skills: {
     display: 'flex',
+    width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    flexWrap: 'wrap',
   },
   skill: {
-    marginLeft: 10,
-    padding: 10,
+    padding: 7,
     border: `1pt solid ${palette.divider}`,
     borderRadius: '3pt',
   },
-  experience: {
-    borderBottom: `1pt solid ${palette.primary}`,
-    width: '100%',
-    marginBottom: 10,
-  },
+
   jobContainer: {
     width: '100%',
     display: 'flex',
@@ -122,10 +122,11 @@ const styles = StyleSheet.create({
   },
   positionContainer: {
     width: '100%',
-    marginLeft: '10%',
+    marginLeft: '5%',
   },
   position: {
-    fontSize: 14,
+    fontSize: 12,
+    fontWeight: '700',
   },
   duration: {
     fontSize: 12,
@@ -133,10 +134,32 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
   },
   jobDescription: {
-    marginLeft: '10%',
+    marginLeft: '5%',
   },
   listItem: {
     width: '100%',
+  },
+  otherContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+  },
+  otherDuration: {
+    color: palette.divider,
+    fontStyle: 'italic',
+    marginRight: 20,
+  },
+  otherSubHeading: {
+    color: palette.secondary,
+  },
+  otherContent: {
+    marginLeft: '5%',
+  },
+  otherItem: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    marginBottom: 5,
   },
 });
 
@@ -183,6 +206,14 @@ const CV = () => {
   const details = isSmallScreen
     ? mobileStyles.contactDetails
     : styles.contactDetails;
+
+  const headingContent = text => {
+    return (
+      <View style={styles.headingContainer}>
+        <Text style={styles.heading}>{text}</Text>
+      </View>
+    );
+  };
   return (
     <Document
       title="Clare Bee"
@@ -221,7 +252,7 @@ const CV = () => {
           </Text>
         </View>
         <View style={styles.main}>
-          <Text style={styles.heading}>Skills</Text>
+          <Text style={styles.heading}>Main Skills</Text>
           <View style={styles.skills}>
             <Text style={styles.skill}>ReactJS</Text>
             <Text style={styles.skill}>GraphQL</Text>
@@ -231,11 +262,11 @@ const CV = () => {
           </View>
         </View>
         <View style={styles.main}>
-          <View style={styles.experience}>
-            <Text style={styles.heading}>Relevant Experience</Text>
-          </View>
+          {headingContent('Relevant Experience')}
           <View style={styles.jobContainer}>
-            <Text style={styles.position}>Position 1</Text>
+            <Text style={styles.position}>
+              Fullstack Developer, Castlight Financial
+            </Text>
             <Text style={styles.duration}>12/03 - 17/08</Text>
           </View>
           <View style={styles.positionContainer}>
@@ -254,12 +285,28 @@ const CV = () => {
           </View>
         </View>
         <View style={styles.main}>
-          <View style={styles.experience}>
-            <Text style={styles.heading}>Relevant Education</Text>
-          </View>
+          {headingContent('Relevant Education & Training')}
           <View style={styles.jobContainer}>
-            <Text style={styles.position}>CodeClan</Text>
+            <Text style={styles.position}>
+              CodeClan Software Development
+            </Text>
             <Text style={styles.duration}>12/03 - 17/08</Text>
+          </View>
+          <Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Integer dolor metus, interdum at scelerisque in, porta at
+          </Text>
+          <View style={styles.jobContainer}>
+            <Text style={styles.position}>CodeClan UX Course</Text>
+            <Text style={styles.duration}>12/03 - 17/08</Text>
+          </View>
+          <Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Integer dolor metus, interdum at scelerisque in, porta at
+          </Text>
+          <View style={styles.jobContainer}>
+            <Text style={styles.position}>Online</Text>
+            <Text style={styles.duration}>Ongoing</Text>
           </View>
           <Text>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -267,31 +314,84 @@ const CV = () => {
           </Text>
         </View>
         <View style={styles.main}>
-          <Text style={styles.heading}>
-            Other Education & Experience{' '}
-          </Text>
-          <Text style={styles.duration}>12/03 - 17/08</Text>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Integer dolor metus, interdum at scelerisque in, porta at
-          </Text>
-          <View style={styles.jobContainer}>
-            <Text style={styles.position}>Position 2</Text>
-            <Text style={styles.duration}>12/03 - 17/08</Text>
+          {headingContent('Other Experience')}
+          <View style={styles.otherContainer}>
+            <View style={styles.otherItem}>
+              <Text style={styles.otherDuration}>
+                02/2015 - 10/2016
+              </Text>
+              <Text style={styles.otherSubHeading}>
+                Fraud Department Lloyds
+              </Text>
+            </View>
+            <Text style={styles.otherContent}>
+              - Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Integer dolor metus
+            </Text>
           </View>
-          <View style={styles.positionContainer}>
-            <Text style={styles.listItem}>
+          <View style={styles.otherContainer}>
+            <View style={styles.otherItem}>
+              <Text style={styles.otherDuration}>
+                02/2015 - 10/2016
+              </Text>
+              <Text style={styles.otherSubHeading}>
+                Administrator Glasgow Caledonian University &
+                Volunteer Action Fund
+              </Text>
+            </View>
+            <Text style={styles.otherContent}>
               - Lorem ipsum dolor sit amet, consectetur adipiscing
               elit. Integer dolor metus
             </Text>
-            <Text style={styles.listItem}>
-              - Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Integer dolor metus
+          </View>
+          <View style={styles.otherContainer}>
+            <View style={styles.otherItem}>
+              <Text style={styles.otherDuration}>
+                02/2015 - 10/2016
+              </Text>
+              <Text style={styles.otherSubHeading}>
+                English Language Teacher
+              </Text>
+            </View>
+            <Text style={styles.otherContent}>
+              Japan, Vietnam, Cambodia, Myanmar, Nepal, Taiwan
             </Text>
-            <Text style={styles.listItem}>
-              - Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Integer dolor metus
-            </Text>
+          </View>
+        </View>
+        <View style={styles.main}>
+          {headingContent('Other Education')}
+          <View style={styles.otherContainer}>
+            <View style={styles.otherItem}>
+              <Text style={styles.otherDuration}>
+                02/2015 - 10/2016
+              </Text>
+              <Text style={styles.otherSubHeading}>
+                MRes - Distinction in Human Rights, University of
+                Glasgow
+              </Text>
+            </View>
+          </View>
+          <View style={styles.otherContainer}>
+            <View style={styles.otherItem}>
+              <Text style={styles.otherDuration}>
+                02/2015 - 10/2016
+              </Text>
+              <Text style={styles.otherSubHeading}>
+                PhD & MA - Distinction in French Literature &
+                Philosophy - King&apos;s College London
+              </Text>
+            </View>
+          </View>
+          <View style={styles.otherContainer}>
+            <View style={styles.otherItem}>
+              <Text style={styles.otherDuration}>
+                02/2015 - 10/2016
+              </Text>
+              <Text style={styles.otherSubHeading}>
+                BA Hons 1:1 - European Modern Languages, University of
+                Oxford
+              </Text>
+            </View>
           </View>
         </View>
       </Page>

@@ -117,8 +117,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
-    marginBottom: 5,
-    marginTop: 5,
+    margin: 5,
+    marginRight: 10,
     borderLeft: `10pt solid ${palette.divider}`,
     paddingLeft: 5,
   },
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   otherDuration: {
     color: palette.heading,
     fontStyle: 'italic',
-    marginRight: 20,
+    marginRight: 5,
     fontSize: 10,
   },
   otherSubHeading: {

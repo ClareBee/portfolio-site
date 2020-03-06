@@ -3,8 +3,10 @@ import { useEffect } from 'react';
 
 import { gsap } from 'gsap/dist/gsap';
 import { MotionPathPlugin } from 'gsap/dist/MotionPathPlugin.js';
+import { Draggable } from 'gsap/dist/Draggable.js';
 
 gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(Draggable);
 
 console.log('gsap', gsap);
 
@@ -41,6 +43,17 @@ const GsapWrapper = ({ children }) => {
     //   y: 'random(-200, 200)',
     //   stagger: 0.25,
     // });
+    Draggable.create('#foo', {
+      type: 'x',
+      bounds: document.getElementById('container'),
+      inertia: true,
+      onClick: function() {
+        console.log('clicked');
+      },
+      onDragEnd: function() {
+        console.log('drag ended');
+      },
+    });
     gsap.set('.poop', {
       width: 50,
       height: 50,

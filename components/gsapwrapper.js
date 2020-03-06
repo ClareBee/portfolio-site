@@ -54,15 +54,15 @@ const GsapWrapper = ({ children }) => {
         console.log('drag ended');
       },
     });
-    gsap.set('.poop', {
-      width: 50,
-      height: 50,
+    gsap.set('#navigator', {
+      width: 20,
+      height: 20,
       xPercent: -50,
       yPercent: -50,
       transformOrigin: '50% 50%',
     });
-    gsap.to('.poop', {
-      duration: 10,
+    gsap.to('#navigator', {
+      duration: 20,
       motionPath: {
         path: '#path',
         autoRotate: true,

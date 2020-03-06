@@ -8,8 +8,6 @@ import { Draggable } from 'gsap/dist/Draggable.js';
 gsap.registerPlugin(MotionPathPlugin);
 gsap.registerPlugin(Draggable);
 
-console.log('gsap', gsap);
-
 const GsapWrapper = ({ children }) => {
   useEffect(() => {
     gsap.registerPlugin(MotionPathPlugin);
@@ -43,12 +41,15 @@ const GsapWrapper = ({ children }) => {
     //   y: 'random(-200, 200)',
     //   stagger: 0.25,
     // });
-    Draggable.create('#foo', {
+    Draggable.create('#dragNavigator', {
       type: 'x',
       bounds: document.getElementById('container'),
       inertia: true,
       onClick: function() {
         console.log('clicked');
+      },
+      onDragStart: function() {
+        console.log('drag started');
       },
       onDragEnd: function() {
         console.log('drag ended');

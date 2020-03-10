@@ -54,35 +54,23 @@ const GsapWrapper = ({ children }) => {
         return a.id.split('-')[1] - b.id.split('-')[1];
       })
       .map(ell => {
-        console.log('ell', ell);
-        return ell;
+        return [+ell.getAttribute('cx'), +ell.getAttribute('cy')];
       });
     console.log(ellipsesPoints);
 
+    const createArray = () => {
+      const myPoints = [];
+      let origin = 0;
+      for (let i = 0; i <= 40; i++) {
+        myPoints.push((origin += 0.025));
+        i++;
+      }
+      console.log('mypoints', myPoints);
+      return myPoints;
+    };
     const progressPoints = myLittlePath => {
-      const steps = [
-        0,
-        0.02,
-        0.05,
-        0.1,
-        0.15,
-        0.2,
-        0.25,
-        0.3,
-        0.35,
-        0.4,
-        0.45,
-        0.55,
-        0.6,
-        0.65,
-        0.7,
-        0.75,
-        0.8,
-        0.85,
-        0.9,
-        0.95,
-        1,
-      ];
+      const steps = createArray();
+
       const result = steps.map(step => {
         return {
           percent: step,
@@ -123,12 +111,12 @@ const GsapWrapper = ({ children }) => {
         },
         onDragStart: function() {
           console.log('drag started');
-          Array.from(ellipses).forEach(ellipse => {
-            gsap.set(ellipse, {
-              scale: 1,
-              fill: '#da2497',
-            });
-          });
+          // Array.from(ellipses).forEach(ellipse => {
+          //   gsap.set(ellipse, {
+          //     scale: 1,
+          //     fill: '#da2497',
+          //   });
+          // });
         },
         onDragEnd: function() {
           console.log('dragended');
@@ -162,8 +150,8 @@ const GsapWrapper = ({ children }) => {
                   let progress;
                   steps.forEach(step => {
                     if (
-                      withinRange(step.position.x, ellipseX, 25) &&
-                      withinRange(step.position.y, ellipseY, 25)
+                      withinRange(step.position.x, ellipseX, 30) &&
+                      withinRange(step.position.y, ellipseY, 30)
                     ) {
                       console.log('matching', step);
                       progress = step.percent;
@@ -204,6 +192,10 @@ const GsapWrapper = ({ children }) => {
                       align: '#path',
                     },
                     onComplete: function() {
+                      gsap.to('#navigator', {
+                        opacity: 0,
+                        ease: 'power1',
+                      });
                       console.log('animation ended');
                       timeline.reverse();
                       gsap.set('#dragNavigator', {

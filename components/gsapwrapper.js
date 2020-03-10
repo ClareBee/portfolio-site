@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 
 import { gsap } from 'gsap/dist/gsap';
@@ -172,4 +173,7 @@ const GsapWrapper = ({ children }) => {
   return <div>{children}</div>;
 };
 
+GsapWrapper.propTypes = {
+  children: PropTypes.object,
+};
 export default GsapWrapper;

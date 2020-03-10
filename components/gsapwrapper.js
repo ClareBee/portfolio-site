@@ -14,7 +14,6 @@ const GsapWrapper = ({ children }) => {
     const timeline = gsap.timeline();
 
     const circles = document.querySelectorAll('.circle');
-    const ellipses = document.getElementsByTagName('ellipse');
     const overlapThreshold = '10%';
     const images = document.getElementsByTagName('rect');
     // TODO: set in css
@@ -22,14 +21,10 @@ const GsapWrapper = ({ children }) => {
       opacity: 0,
     });
 
-    // const ellipsesPoints = Array.from(ellipses)
-    //   .sort((a, b) => {
-    //     return a.id.split('-')[1] - b.id.split('-')[1];
-    //   })
-    //   .map(ell => {
-    //     return [+ell.getAttribute('cx'), +ell.getAttribute('cy')];
-    //   });
-    // console.log(ellipsesPoints);
+    const sortedImages = Array.from(images).sort((a, b) => {
+      return a.id.split('-')[1] - b.id.split('-')[1];
+    });
+    console.log(sortedImages);
 
     const createArray = () => {
       const myPoints = [];
@@ -88,7 +83,7 @@ const GsapWrapper = ({ children }) => {
         onDragEnd: function() {
           const imageTimeline = gsap.timeline();
           // TODO: sort images NB
-          imageTimeline.to(Array.from(images), {
+          imageTimeline.to(Array.from(sortedImages), {
             duration: 1.5,
             scale: 0.97,
             opacity: 1,
@@ -112,10 +107,6 @@ const GsapWrapper = ({ children }) => {
             xPercent: -50,
             yPercent: -50,
             transformOrigin: '50% 50%',
-          });
-          gsap.set(selectedEllipse, {
-            fill: 'green',
-            scale: 3,
           });
           const path = MotionPathPlugin.getRawPath('#path');
           console.log('path', path);
@@ -142,17 +133,6 @@ const GsapWrapper = ({ children }) => {
             return;
           }
           const lengthOfAnimation = time(20, progress);
-          const precedingPoints = Array.from(ellipses);
-          const tl = gsap.timeline({
-            repeat: 2,
-            repeatDelay: 1,
-          });
-          tl.to([...precedingPoints], {
-            duration: 1.5,
-            scale: 0.97,
-            ease: 'back',
-            stagger: 0.3,
-          });
 
           gsap.to('#navigator', {
             duration: lengthOfAnimation,
@@ -167,6 +147,9 @@ const GsapWrapper = ({ children }) => {
               gsap.to('#navigator', {
                 opacity: 0,
                 ease: 'power1',
+              });
+              gsap.set(selectedEllipse, {
+                scale: 3,
               });
               console.log('animation ended');
               gsap.set('#dragNavigator', {

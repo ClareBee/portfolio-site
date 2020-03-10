@@ -21,7 +21,6 @@ const Header = () => {
   });
 
   const toggleMode = () => {
-    const mode = checked ? 'dark' : 'light';
     setChecked(!checked);
     localStorage.setItem('theme', checked);
   };

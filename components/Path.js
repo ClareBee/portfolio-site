@@ -131,59 +131,67 @@ const Path = () => (
       transform="matrix(0.996065 0.0886277 -0.0857078 0.99632 16.7031 400.458)"
       fill="url(#pattern-5)"
     />
-    <text x="125" y="31" fill="black">
+    <text x="125" y="31" fill="var(--font-color)">
       GIGGLESWICK
     </text>
-    <text x="10" y="128" fill="black">
+    <text x="10" y="128" fill="var(--font-color)">
       OXFORD
     </text>
-    <text x="314" y="83" fill="black">
+    <text x="314" y="83" fill="var(--font-color)">
       PARIS
     </text>
-    <text x="88" y="265" fill="black">
+    <text x="88" y="265" fill="var(--font-color)">
       BOLOGNA
     </text>
-    <text x="12" y="392" fill="black">
+    <text x="12" y="392" fill="var(--font-color)">
       LONDON
     </text>
-    <text x="207" y="393" fill="black">
+    <text x="207" y="393" fill="var(--font-color)">
       CANADA
     </text>
-    <text x="484" y="143" fill="black">
+    <text x="484" y="143" fill="var(--font-color)">
       JAPAN
     </text>
-    <text x="584" y="302" fill="black">
+    <text x="584" y="302" fill="var(--font-color)">
       VIETNAM
     </text>
-    <text x="744" y="143" fill="black">
+    <text x="744" y="143" fill="var(--font-color)">
       NEPAL
     </text>
-    <text x="481" y="502" fill="black">
+    <text x="481" y="502" fill="var(--font-color)">
       MYANMAR
     </text>
-    <text x="106" y="586" fill="black">
+    <text x="106" y="586" fill="var(--font-color)">
       INDIA
     </text>
-    <text x="864" y="306" fill="black">
+    <text x="864" y="306" fill="var(--font-color)">
       CAMBODIA
     </text>
-    <text x="355" y="684" fill="black">
+    <text x="355" y="684" fill="var(--font-color)">
       TAIWAN
     </text>
-    <text x="819" y="436" fill="black">
+    <text x="819" y="436" fill="var(--font-color)">
       THAILAND
     </text>
-    <text x="848" y="635" fill="black">
+    <text x="848" y="635" fill="var(--font-color)">
       NEW ZEALAND
     </text>
-    <text x="615" y="748" fill="black">
+    <text x="615" y="748" fill="var(--font-color)">
       GLASGOW
     </text>
+    <ellipse
+      id="ellipse-1"
+      cx="23.1559"
+      cy="83.0098"
+      rx="4.1879"
+      ry="4.25919"
+      fill="#DA2497"
+    />
 
     <ellipse
-      id="ellipse-8"
-      cx="613.032"
-      cy="189.831"
+      id="ellipse-2"
+      cx="104.82"
+      cy="144.769"
       rx="4.1879"
       ry="4.25919"
       fill="#DA2497"
@@ -221,17 +229,9 @@ const Path = () => (
       fill="#DA2497"
     />
     <ellipse
-      id="ellipse-2"
-      cx="104.82"
-      cy="144.769"
-      rx="4.1879"
-      ry="4.25919"
-      fill="#DA2497"
-    />
-    <ellipse
-      id="ellipse-1"
-      cx="23.1559"
-      cy="83.0098"
+      id="ellipse-8"
+      cx="613.032"
+      cy="189.831"
       rx="4.1879"
       ry="4.25919"
       fill="#DA2497"
@@ -245,14 +245,6 @@ const Path = () => (
       fill="#DA2497"
     />
     <ellipse
-      id="ellipse-15"
-      cx="805.691"
-      cy="638.108"
-      rx="4.1879"
-      ry="4.25919"
-      fill="#DA2497"
-    />
-    <ellipse
       id="ellipse-14"
       cx="408.665"
       cy="718.25"
@@ -260,6 +252,15 @@ const Path = () => (
       ry="4.25919"
       fill="#DA2497"
     />
+    <ellipse
+      id="ellipse-15"
+      cx="805.691"
+      cy="638.108"
+      rx="4.1879"
+      ry="4.25919"
+      fill="#DA2497"
+    />
+
     <ellipse
       id="ellipse-16"
       cx="745.188"

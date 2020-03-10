@@ -25,15 +25,14 @@ const GsapWrapper = ({ children }) => {
     const sortedImages = Array.from(images).sort((a, b) => {
       return a.id.split('-')[1] - b.id.split('-')[1];
     });
-    console.log(sortedImages);
 
     const createArray = () => {
-      const myPoints = [];
+      let repeat = 1 / 0.025;
       let origin = 0;
-      for (let i = 0; i <= 40; i++) {
+      const myPoints = [origin];
+      while (--repeat > -1) {
         myPoints.push((origin += 0.025));
       }
-      console.log('mypoints', myPoints);
       return myPoints;
     };
     const progressPoints = myLittlePath => {
@@ -110,7 +109,6 @@ const GsapWrapper = ({ children }) => {
             transformOrigin: '50% 50%',
           });
           const path = MotionPathPlugin.getRawPath('#path');
-          console.log('path', path);
           const length = MotionPathPlugin.getLength(path);
           console.log('length', length);
 
@@ -118,16 +116,13 @@ const GsapWrapper = ({ children }) => {
           const ellipseX = selectedEllipse.getAttribute('cx');
           const steps = progressPoints(path);
 
-          let progress;
-          steps.forEach(step => {
-            if (
+          const matchingStep = steps.filter(
+            step =>
               withinRange(step.position.x, ellipseX, 30) &&
-              withinRange(step.position.y, ellipseY, 30)
-            ) {
-              console.log('matching', step);
-              progress = step.percent;
-            }
-          });
+              withinRange(step.position.y, ellipseY, 30),
+          );
+          console.log('matchingstep', matchingStep);
+          const progress = matchingStep[0].percent;
           if (progress === undefined) {
             // TODO: handle error
             console.log('why is it undefined?');
@@ -145,6 +140,7 @@ const GsapWrapper = ({ children }) => {
               align: '#path',
             },
             onComplete: function() {
+              // overlap previous animation
               gsap.to('#navigator', {
                 opacity: 0,
                 ease: 'power1',
@@ -174,6 +170,6 @@ const GsapWrapper = ({ children }) => {
 };
 
 GsapWrapper.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.array,
 };
 export default GsapWrapper;

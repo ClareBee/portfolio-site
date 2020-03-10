@@ -309,6 +309,9 @@ export default function About() {
               transform="matrix(0.996065 0.0886277 -0.0857078 0.99632 16.7031 400.458)"
               fill="url(#pattern14)"
             />
+            <text x="125" y="31" fill="black">
+              GIGGLESWICK
+            </text>
             <text x="10" y="128" fill="black">
               OXFORD
             </text>
@@ -330,38 +333,27 @@ export default function About() {
             <text x="584" y="302" fill="black">
               VIETNAM
             </text>
-
-            <text x="744" y="347" fill="black">
-              foo
+            <text x="744" y="143" fill="black">
+              NEPAL
             </text>
-            <path
-              d="M744.347 143.424H743.269L739.724 138.291V143.424H738.64V136.598H739.724L743.269 141.736V136.598H744.347V143.424ZM750.177 140.342H747.06V142.539H750.687V143.424H745.976V136.598H750.652V137.494H747.06V139.451H750.177V140.342ZM752.908 140.858V143.424H751.824V136.598H754.56C755.357 136.598 755.992 136.793 756.464 137.184C756.937 137.57 757.173 138.092 757.173 138.748C757.173 139.412 756.945 139.93 756.488 140.301C756.031 140.672 755.384 140.858 754.548 140.858H752.908ZM752.908 139.967H754.56C755.045 139.967 755.42 139.863 755.685 139.656C755.951 139.449 756.084 139.151 756.084 138.76C756.084 138.385 755.951 138.082 755.685 137.852C755.42 137.617 755.054 137.498 754.589 137.494H752.908V139.967ZM762.464 141.789H759.418L758.773 143.424H757.666L760.472 136.598H761.445L764.211 143.424H763.109L762.464 141.789ZM759.769 140.904H762.119L760.953 137.922L759.769 140.904ZM766.232 142.539H769.654V143.424H765.148V136.598H766.232V142.539Z"
-              fill="black"
-            />
             <text x="481" y="502" fill="black">
               MYANMAR
             </text>
-
             <text x="106" y="586" fill="black">
               INDIA
             </text>
-
             <text x="864" y="306" fill="black">
               CAMBODIA
             </text>
-
             <text x="355" y="684" fill="black">
               TAIWAN
             </text>
-
             <text x="819" y="436" fill="black">
               THAILAND
             </text>
-
             <text x="848" y="635" fill="black">
               NEW ZEALAND
             </text>
-
             <text x="615" y="748" fill="black">
               GLASGOW
             </text>
@@ -501,9 +493,6 @@ export default function About() {
               rx="3"
               fill="url(#pattern15)"
             />
-            <text x="125" y="31" fill="black">
-              GIGGLESWICK
-            </text>
             <defs>
               <pattern
                 id="pattern0"
@@ -512,7 +501,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image0"
+                  xlinkHref="#image-3"
                   transform="translate(0 -0.0107765) scale(0.00225225 0.00170543)"
                 />
               </pattern>
@@ -523,7 +512,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image1"
+                  xlinkHref="#image-4"
                   transform="translate(-0.0699046) scale(0.00226602 0.00166945)"
                 />
               </pattern>
@@ -534,7 +523,8 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image2"
+                  // 9
+                  xlinkHref="#image-9"
                   transform="translate(0 -0.0132665) scale(0.00125 0.00192595)"
                 />
               </pattern>
@@ -545,7 +535,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image3"
+                  xlinkHref="#image-11"
                   transform="translate(0 -0.0502922) scale(0.000976562 0.00144623)"
                 />
               </pattern>
@@ -556,7 +546,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image4"
+                  xlinkHref="#image-16"
                   transform="translate(0 -0.0765672) scale(0.000245399 0.000377335)"
                 />
               </pattern>
@@ -567,7 +557,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image5"
+                  xlinkHref="#image-8"
                   transform="translate(0 -0.296339) scale(0.000769231 0.00122514)"
                 />
               </pattern>
@@ -578,7 +568,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image6"
+                  xlinkHref="#image-13"
                   transform="translate(-0.0082669) scale(0.00385051 0.0052356)"
                 />
               </pattern>
@@ -589,7 +579,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image7"
+                  xlinkHref="#image-10"
                   transform="translate(0 -0.0657675) scale(0.000333333)"
                 />
               </pattern>
@@ -600,7 +590,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image8"
+                  xlinkHref="#image-12"
                   transform="translate(-0.0325821) scale(0.000693466 0.000976562)"
                 />
               </pattern>
@@ -611,7 +601,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image9"
+                  xlinkHref="#image-15"
                   transform="translate(-0.0861361) scale(0.00114592 0.00174216)"
                 />
               </pattern>
@@ -622,7 +612,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image10"
+                  xlinkHref="#image-2"
                   transform="translate(0 -0.0273314) scale(0.00416667 0.0059924)"
                 />
               </pattern>
@@ -633,7 +623,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image11"
+                  xlinkHref="#image-6"
                   transform="translate(-0.00281156) scale(0.000982054 0.00148148)"
                 />
               </pattern>
@@ -644,7 +634,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image12"
+                  xlinkHref="#image-7"
                   transform="translate(0 -0.0960208) scale(0.0010989)"
                 />
               </pattern>
@@ -655,7 +645,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image13"
+                  xlinkHref="#image-14"
                   transform="translate(-0.00843401) scale(0.00383724 0.00526316)"
                 />
               </pattern>
@@ -666,7 +656,7 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image14"
+                  xlinkHref="#image-5"
                   transform="translate(-0.188908) scale(0.00172227 0.0025)"
                 />
               </pattern>
@@ -677,102 +667,103 @@ export default function About() {
                 height="1"
               >
                 <use
-                  xlinkHref="#image15"
+                  xlinkHref="#image-1"
                   transform="translate(-0.0301288) scale(0.001724 0.002457)"
                 />
               </pattern>
               <image
-                id="image0"
+                id="image-3"
                 width="444"
                 height="599"
                 href={require('../images/paris.png')}
               />
               <image
-                id="image1"
+                id="image-4"
                 width="503"
                 height="599"
                 href={require('../images/bologna.png')}
               />
               <image
-                id="image2"
+                id="image-9"
                 width="800"
                 height="533"
                 href={require('../images/hanoi.png')}
               />
               <image
-                id="image3"
+                id="image-11"
                 width="1024"
                 height="761"
                 href={require('../images/myanmar.png')}
               />
               <image
-                id="image4"
+                id="image-16"
                 width="4075"
                 height="3056"
                 href={require('../images/glasgow.png')}
               />
               <image
-                id="image5"
+                id="image-8"
                 width="1300"
                 height="1300"
                 href={require('../images/nepal.png')}
               />
               <image
-                id="image6"
+                id="image-13"
                 width="264"
                 height="191"
                 href={require('../images/chiangmai.png')}
               />
               <image
-                id="image7"
+                id="image-10"
                 width="3000"
                 height="4000"
                 href={require('../images/india.png')}
               />
               <image
-                id="image8"
+                id="image-12"
                 width="1536"
                 height="1024"
                 href={require('../images/cambodia.png')}
               />
               <image
-                id="image9"
+                id="image-15"
                 width="1023"
                 height="574"
                 href={require('../images/newzealand.png')}
               />
               <image
-                id="image10"
+                id="image-2"
                 width="240"
                 height="176"
                 href={require('../images/oxford.png')}
               />
               <image
-                id="image11"
+                id="image-6"
                 width="1024"
                 height="675"
                 href={require('../images/canada.png')}
               />
               <image
-                id="image12"
+                id="image-7"
                 width="910"
                 height="1043"
                 href={require('../images/japan.png')}
               />
+              {/* check with hanoi  */}
               <image
-                id="image13"
+                id="image-14"
                 width="265"
                 height="190"
                 href={require('../images/tainan.png')}
               />
               <image
-                id="image14"
+                id="image-5"
                 width="800"
                 height="400"
                 href={require('../images/london.png')}
               />
               <image
-                id="image15"
+                id="image-1"
                 width="615"
                 height="407"
                 href={require('../images/giggleswick.png')}

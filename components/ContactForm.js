@@ -69,7 +69,7 @@ export default () => {
   return (
     <section className="contact-section">
       <form onSubmit={handleOnSubmit} className="form">
-        <h3 className="heading-3">Or a message via the form: </h3>
+        <hr className="divider" />
 
         <div className="form__form-control">
           <label htmlFor="email">Your Email</label>
@@ -103,9 +103,9 @@ export default () => {
           >
             {!status.submitting
               ? !status.submitted
-                ? 'Submit'
-                : 'Submitted'
-              : 'Submitting...'}
+                ? 'Send'
+                : 'Sent'
+              : 'Sending...'}
           </button>
         </div>
         {status.info.error && (

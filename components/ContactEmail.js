@@ -12,10 +12,6 @@ const ContactEmail = () => {
   return (
     <div className="clipboard-section">
       <div className="clipboard">
-        <h3 className="clipboard__header heading-3">
-          Send me an email:
-        </h3>
-
         <label className="clipboard__label">
           <input
             className="clipboard__input"

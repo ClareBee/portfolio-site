@@ -18,6 +18,7 @@ $xl-breakpoint: 1200px;
   --svg-color: #536390;
   --form-color: #eceff2;
   --pagination-color: #c1cad6;
+  --placeholder-color: #c1cad6;
 }
 
 [data-theme='dark'] {
@@ -27,4 +28,5 @@ $xl-breakpoint: 1200px;
   --heading-color: #c1cad6;
   --svg-color: #fdfdfd;
   --pagination-color: #536390;
+  --placeholder-color: #c1cad6;
 }

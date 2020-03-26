@@ -1,4 +1,21 @@
-.about-section {
-  background-color: gray;
-  height: 100vh;
+.draggable-container {
+  margin: 0 auto;
+  width: 90%;
+}
+.svg-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#navigator {
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+.placename {
+  opacity: 0;
+}
+
+.placeimage {
+  opacity: 0;
 }

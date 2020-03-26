@@ -37,7 +37,7 @@
 }
 
 .nav-links {
-  @include custom(989px) {
+  @include lg {
     display: none;
   }
 }
@@ -193,7 +193,7 @@
     width: 2rem;
   }
 
-  @include custom(989px) {
+  @include lg {
     display: inline-block;
   }
 }

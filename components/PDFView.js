@@ -21,7 +21,6 @@ const PDFView = () => {
 
   return (
     <div style={{ '--aspect-ratio': '16/9' }}>
-      hi
       {isTabletOrMobile && (
         <PDFViewer width="100%" style={{ height: '100vh' }}>
           <CV />

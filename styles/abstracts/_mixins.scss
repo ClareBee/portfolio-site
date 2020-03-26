@@ -30,7 +30,7 @@
 }
 
 @mixin custom($max-width-value) {
-  @media only screen and (max-width: $max-width-value+'px') {
+  @media only screen and (max-width: #{$max-width-value} + 'px') {
     @content;
   }
 }

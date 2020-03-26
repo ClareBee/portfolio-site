@@ -147,6 +147,7 @@ const Path = () => (
       fill="url(#pattern-5)"
     />
     <text
+      id="text-1"
       x="125"
       y="31"
       fill="var(--font-color)"
@@ -155,6 +156,7 @@ const Path = () => (
       GIGGLESWICK
     </text>
     <text
+      id="text-2"
       x="10"
       y="128"
       fill="var(--font-color)"
@@ -163,6 +165,7 @@ const Path = () => (
       OXFORD
     </text>
     <text
+      id="text-3"
       x="314"
       y="83"
       fill="var(--font-color)"
@@ -171,6 +174,7 @@ const Path = () => (
       PARIS
     </text>
     <text
+      id="text-4"
       x="88"
       y="265"
       fill="var(--font-color)"
@@ -179,6 +183,7 @@ const Path = () => (
       BOLOGNA
     </text>
     <text
+      id="text-5"
       x="12"
       y="392"
       fill="var(--font-color)"
@@ -187,6 +192,7 @@ const Path = () => (
       LONDON
     </text>
     <text
+      id="text-6"
       x="207"
       y="393"
       fill="var(--font-color)"
@@ -195,6 +201,7 @@ const Path = () => (
       CANADA
     </text>
     <text
+      id="text-7"
       x="484"
       y="143"
       fill="var(--font-color)"
@@ -203,6 +210,7 @@ const Path = () => (
       JAPAN
     </text>
     <text
+      id="text-8"
       x="584"
       y="302"
       fill="var(--font-color)"
@@ -211,6 +219,7 @@ const Path = () => (
       VIETNAM
     </text>
     <text
+      id="text-9"
       x="744"
       y="143"
       fill="var(--font-color)"
@@ -219,6 +228,7 @@ const Path = () => (
       NEPAL
     </text>
     <text
+      id="text-10"
       x="481"
       y="502"
       fill="var(--font-color)"
@@ -227,6 +237,7 @@ const Path = () => (
       MYANMAR
     </text>
     <text
+      id="text-11"
       x="106"
       y="586"
       fill="var(--font-color)"
@@ -235,6 +246,7 @@ const Path = () => (
       INDIA
     </text>
     <text
+      id="text-12"
       x="864"
       y="306"
       fill="var(--font-color)"
@@ -243,6 +255,7 @@ const Path = () => (
       CAMBODIA
     </text>
     <text
+      id="text-14"
       x="355"
       y="684"
       fill="var(--font-color)"
@@ -251,6 +264,7 @@ const Path = () => (
       TAIWAN
     </text>
     <text
+      id="text-13"
       x="819"
       y="436"
       fill="var(--font-color)"
@@ -259,6 +273,7 @@ const Path = () => (
       THAILAND
     </text>
     <text
+      id="text-15"
       x="848"
       y="635"
       fill="var(--font-color)"
@@ -267,6 +282,7 @@ const Path = () => (
       NEW ZEALAND
     </text>
     <text
+      id="text-16"
       x="615"
       y="748"
       fill="var(--font-color)"

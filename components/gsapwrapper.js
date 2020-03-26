@@ -31,16 +31,17 @@ const GsapWrapper = ({ children }) => {
       });
     };
 
-    const sortedImages = Array.from(images).sort((a, b) => {
-      return a.id.split('-')[1] - b.id.split('-')[1];
-    });
+    const sortedElements = elements =>
+      Array.from(elements).sort((a, b) => {
+        return a.id.split('-')[1] - b.id.split('-')[1];
+      });
 
     const journeyImages = progressNumber => {
-      return sortedImages.slice(0, progressNumber - 1);
+      return sortedElements(images).slice(0, progressNumber - 1);
     };
 
     const journeyNames = progressNumber => {
-      return Array.from(names).slice(0, progressNumber);
+      return sortedElements(names).slice(0, progressNumber);
     };
 
     const createArray = () => {

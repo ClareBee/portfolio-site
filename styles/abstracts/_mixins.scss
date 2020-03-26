@@ -53,8 +53,8 @@
   }
 }
 
-@mixin fade-in($duration) {
-  animation: fade-in $duration;
+@mixin fadeIn($duration) {
+  animation: #{$duration}s ease-in 1.75s forwards fadeIn;
 }
 
 @mixin absoluteCentre {

@@ -1,4 +1,21 @@
 .blog-post {
+  pre {
+    margin: 2rem 0 1rem 0;
+  }
+  h2 {
+    @extend %heading;
+    font-size: 2.5rem;
+    color: var(--font-color);
+    margin: 3rem 0 1rem 0;
+  }
+  li {
+    @extend %heading;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    a {
+      @include link-states(--heading-color, --primary-color);
+    }
+  }
   margin: 2rem 20%;
   &__header {
     display: flex;
@@ -12,6 +29,8 @@
   }
   &__img-container {
     // TODO: image loading
+    opacity: 0;
+    @include fadeIn(3);
     width: 250px;
     height: 150px;
     float: left;

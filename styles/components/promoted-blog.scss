@@ -12,8 +12,10 @@
     justify-content: space-around;
   }
   &__img {
+    opacity: 0;
     width: 30%;
     margin: 1rem;
+    @include fadeIn(2);
   }
   &__content {
     width: 55%;

@@ -19,8 +19,12 @@ const GsapWrapper = ({ children }) => {
     const circles = document.querySelectorAll('.circle');
     const overlapThreshold = '10%';
     const images = document.getElementsByTagName('rect');
+    const names = document.getElementsByTagName('text');
     // TODO: set in css
     gsap.set(images, {
+      opacity: 0,
+    });
+    gsap.set(names, {
       opacity: 0,
     });
 
@@ -92,6 +96,17 @@ const GsapWrapper = ({ children }) => {
             ease: 'back',
             stagger: 0.3,
           });
+          imageTimeline.to(
+            names,
+            {
+              duration: 1.5,
+              scale: 0.97,
+              opacity: 1,
+              ease: 'back',
+              stagger: 0.3,
+            },
+            '<-1',
+          );
           let i = circles.length;
           let progressNumber;
 

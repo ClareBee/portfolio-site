@@ -13,7 +13,10 @@ const GsapWrapper = dynamic(
 export default function About() {
   return (
     <Layout title="About">
-      <PageTitle title="About" subtitle="" />
+      <PageTitle
+        title="About"
+        subtitle="Drag the circle to see where I've studied & lived..."
+      />
       <GsapWrapper>
         <div className="draggable-container"></div>
         <Timeline />

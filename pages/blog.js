@@ -16,10 +16,7 @@ const Blog = ({
 }) => {
   return (
     <Layout title="Blog">
-      <PageTitle
-        title="Blog"
-        subtitle="Stuff learned en route from researcher to dev"
-      />
+      <PageTitle title="Blog" subtitle="Stuff learned en route" />
       <div className="blog-layout">
         {promotedBlog && <PromotedBlog blog={promotedBlog} />}
         <BlogRoll allBlogs={allBlogs} />

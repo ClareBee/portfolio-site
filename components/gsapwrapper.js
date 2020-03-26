@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
@@ -12,6 +13,7 @@ gsap.registerPlugin(Draggable);
 const GsapWrapper = ({ children }) => {
   useEffect(() => {
     gsap.registerPlugin(MotionPathPlugin);
+
     const timeline = gsap.timeline();
 
     const circles = document.querySelectorAll('.circle');
@@ -122,6 +124,7 @@ const GsapWrapper = ({ children }) => {
               withinRange(step.position.y, ellipseY, 30),
           );
           console.log('matchingstep', matchingStep);
+          // TODO: catch null error
           const progress = matchingStep[0].percent;
           if (progress === undefined) {
             // TODO: handle error

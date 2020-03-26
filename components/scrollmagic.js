@@ -11,6 +11,9 @@ ScrollMagicPluginGsap(ScrollMagic, gsap);
 const ScrollMagicContext = ({ children }) => {
   useEffect(() => {
     console.log('hi there');
+    gsap.set('.portrait__image', {
+      opacity: 0,
+    });
     const tl = gsap.timeline();
     tl.from('#intro', {
       duration: 3,
@@ -36,7 +39,19 @@ const ScrollMagicContext = ({ children }) => {
           ease: 'bounce',
         },
         '-=0.75',
-      );
+      )
+      .to(
+        '.portrait__image',
+        {
+          opacity: 1,
+          duration: 2.5,
+        },
+        '0',
+      )
+      .to('.footer', {
+        opacity: 1,
+        duration: 2,
+      });
 
     // const projects = gsap.timeline();
 

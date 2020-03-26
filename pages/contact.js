@@ -6,7 +6,10 @@ import ContactForm from '../components/ContactForm';
 export default function Contact() {
   return (
     <Layout title="Contact">
-      <PageTitle title="Contact" subtitle="" />
+      <PageTitle
+        title="Contact"
+        subtitle="Send me an email or use the form to get in touch."
+      />
       <ContactEmail />
       <ContactForm />
     </Layout>

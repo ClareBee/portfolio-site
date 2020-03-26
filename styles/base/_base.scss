@@ -54,7 +54,22 @@ textarea {
 }
 
 // add defaults for placeholder styling
+// TODO: check prefixes across app
+::-webkit-input-placeholder {
+  color: var(--placeholder-color);
+}
 
+:-ms-input-placeholder {
+  color: var(--placeholder-color);
+}
+::placeholder {
+  color: var(--placeholder-color);
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}
 // button defaults
 
 ::selection {

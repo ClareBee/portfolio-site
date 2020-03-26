@@ -182,6 +182,7 @@ const GsapWrapper = ({ children }) => {
               });
               gsap.set(selectedEllipse, {
                 scale: 3,
+                transformOrigin: '50% 50%',
               });
               gsap.set(timelineTarget, {
                 scale: 2,

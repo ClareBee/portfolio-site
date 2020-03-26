@@ -210,7 +210,7 @@ const Path = () => (
       JAPAN
     </text>
     <text
-      id="text-8"
+      id="text-9"
       x="584"
       y="302"
       fill="var(--font-color)"
@@ -219,7 +219,7 @@ const Path = () => (
       VIETNAM
     </text>
     <text
-      id="text-9"
+      id="text-8"
       x="744"
       y="143"
       fill="var(--font-color)"
@@ -457,7 +457,6 @@ const Path = () => (
         height="1"
       >
         <use
-          // 9
           xlinkHref="#image-9"
           transform="translate(0 -0.0132665) scale(0.00125 0.00192595)"
         />

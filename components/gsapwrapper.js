@@ -18,19 +18,30 @@ const GsapWrapper = ({ children }) => {
 
     const circles = document.querySelectorAll('.circle');
     const overlapThreshold = '10%';
-    const images = document.getElementsByTagName('rect');
-    const names = document.getElementsByTagName('text');
-    // TODO: set in css
-    gsap.set(images, {
-      opacity: 0,
-    });
-    gsap.set(names, {
-      opacity: 0,
-    });
+    const images = document.getElementsByClassName('placeimage');
+    const names = document.getElementsByClassName('placename');
+
+    // TODO: set in css for initial render
+    const resetPath = () => {
+      gsap.set(images, {
+        opacity: 0,
+      });
+      gsap.set(names, {
+        opacity: 0,
+      });
+    };
 
     const sortedImages = Array.from(images).sort((a, b) => {
       return a.id.split('-')[1] - b.id.split('-')[1];
     });
+
+    const journeyImages = progressNumber => {
+      return sortedImages.slice(0, progressNumber - 1);
+    };
+
+    const journeyNames = progressNumber => {
+      return Array.from(names).slice(0, progressNumber);
+    };
 
     const createArray = () => {
       let repeat = 1 / 0.025;
@@ -82,31 +93,12 @@ const GsapWrapper = ({ children }) => {
         },
         onDragStart: function() {
           console.log('drag started');
+          resetPath();
           gsap.set('#navigator', {
             opacity: 1,
           });
         },
         onDragEnd: function() {
-          const imageTimeline = gsap.timeline();
-          // TODO: sort images NB
-          imageTimeline.to(Array.from(sortedImages), {
-            duration: 1.5,
-            scale: 0.97,
-            opacity: 1,
-            ease: 'back',
-            stagger: 0.3,
-          });
-          imageTimeline.to(
-            names,
-            {
-              duration: 1.5,
-              scale: 0.97,
-              opacity: 1,
-              ease: 'back',
-              stagger: 0.3,
-            },
-            '<-1',
-          );
           let i = circles.length;
           let progressNumber;
 
@@ -117,6 +109,30 @@ const GsapWrapper = ({ children }) => {
           }
           const selectedEllipse = document.getElementById(
             `ellipse-${progressNumber}`,
+          );
+          const timelineTarget = document.getElementById(
+            `circle-${progressNumber}`,
+          );
+          const imageTimeline = gsap.timeline();
+          // TODO: sort images NB
+          imageTimeline.to(journeyImages(progressNumber), {
+            duration: 1.5,
+            scale: 0.97,
+            opacity: 1,
+            ease: 'back',
+            stagger: 0.3,
+          });
+          // TODO refine this timing
+          imageTimeline.to(
+            journeyNames(progressNumber),
+            {
+              duration: 2,
+              scale: 0.97,
+              opacity: 1,
+              ease: 'back',
+              stagger: 0.3,
+            },
+            '<-1',
           );
           gsap.set('#navigator', {
             width: 20,
@@ -165,6 +181,10 @@ const GsapWrapper = ({ children }) => {
               });
               gsap.set(selectedEllipse, {
                 scale: 3,
+              });
+              gsap.set(timelineTarget, {
+                scale: 2,
+                transformOrigin: '50% 50%',
               });
               console.log('animation ended');
               gsap.set('#dragNavigator', {

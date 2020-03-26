@@ -18,6 +18,9 @@ const Timeline = () => (
       y2="29.5"
       stroke="var(--font-color)"
     />
+    <text x="30" y="10" fill="var(--font-color)">
+      Childhood
+    </text>
     <circle
       id="circle-1"
       className="circle"
@@ -62,9 +65,8 @@ const Timeline = () => (
       id="circle-6"
       className="circle"
       cx="274.58"
-      cy="30.387"
+      cy="30"
       r="5"
-      transform="rotate(4.62657 274.58 30.387)"
       fill="var(--font-color)"
     />
     <circle

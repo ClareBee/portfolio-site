@@ -17,6 +17,7 @@ const Path = () => (
       height="90.1963"
       rx="3"
       transform="matrix(0.96206 0.272839 -0.264341 0.964429 254.278 67.9773)"
+      className="placeimage"
       fill="url(#pattern-3)"
     />
     <rect
@@ -25,6 +26,7 @@ const Path = () => (
       height="97.3901"
       rx="3"
       transform="matrix(0.995972 -0.0896616 0.0867334 0.996232 136.348 185.754)"
+      className="placeimage"
       fill="url(#pattern-4)"
     />
     <rect
@@ -33,6 +35,7 @@ const Path = () => (
       height="76.6576"
       rx="3"
       transform="matrix(0.996739 0.080691 -0.0780588 0.996949 520.896 308.011)"
+      className="placeimage"
       fill="url(#pattern-9)"
     />
     <rect
@@ -41,6 +44,7 @@ const Path = () => (
       height="74.248"
       rx="3"
       transform="matrix(0.996019 0.0891385 -0.0860884 0.996288 389.645 511.914)"
+      className="placeimage"
       fill="url(#pattern-11)"
     />
     <rect
@@ -49,6 +53,7 @@ const Path = () => (
       height="83.3251"
       rx="3"
       transform="matrix(0.997767 -0.0667898 0.0651703 0.997874 616.295 762.411)"
+      className="placeimage"
       fill="url(#pattern-16)"
     />
     <rect
@@ -57,6 +62,7 @@ const Path = () => (
       height="69.4214"
       rx="3"
       transform="matrix(0.998538 -0.0540587 0.0522424 0.998634 613.624 114.804)"
+      className="placeimage"
       fill="url(#pattern-8)"
     />
     <rect
@@ -65,6 +71,7 @@ const Path = () => (
       height="81.3313"
       rx="3"
       transform="matrix(0.992586 0.121541 -0.117573 0.993064 772.326 444.543)"
+      className="placeimage"
       fill="url(#pattern-13)"
     />
     <rect
@@ -73,6 +80,7 @@ const Path = () => (
       height="96.2431"
       rx="3"
       transform="matrix(0.995295 -0.0968863 0.0936949 0.995601 102.894 604.668)"
+      className="placeimage"
       fill="url(#pattern-10)"
     />
     <rect
@@ -81,6 +89,7 @@ const Path = () => (
       height="80.9072"
       rx="3"
       transform="matrix(0.993322 -0.115372 0.11149 0.993766 730.36 262.786)"
+      className="placeimage"
       fill="url(#pattern-12)"
     />
     <rect
@@ -89,6 +98,7 @@ const Path = () => (
       height="74.1046"
       rx="3"
       transform="matrix(0.997763 0.0668455 -0.0646467 0.997908 807.175 641.858)"
+      className="placeimage"
       fill="url(#pattern-15)"
     />
     <rect
@@ -97,6 +107,7 @@ const Path = () => (
       height="66.1454"
       rx="3"
       transform="matrix(0.994764 0.102199 -0.0987638 0.995111 10.7904 140.089)"
+      className="placeimage"
       fill="url(#pattern-2)"
     />
     <rect
@@ -105,6 +116,7 @@ const Path = () => (
       height="74.9583"
       rx="3"
       transform="matrix(0.998583 -0.0532243 0.0514623 0.998675 253.395 322.708)"
+      className="placeimage"
       fill="url(#pattern-6)"
     />
     <rect
@@ -113,6 +125,7 @@ const Path = () => (
       height="89.0036"
       rx="3"
       transform="matrix(0.995319 0.0966452 -0.0934617 0.995623 386.938 103.114)"
+      className="placeimage"
       fill="url(#pattern-7)"
     />
     <rect
@@ -121,6 +134,7 @@ const Path = () => (
       height="80.9185"
       rx="3"
       transform="matrix(0.997654 -0.0684582 0.0662059 0.997806 282.644 709.646)"
+      className="placeimage"
       fill="url(#pattern-14)"
     />
     <rect
@@ -129,54 +143,135 @@ const Path = () => (
       height="70.6936"
       rx="3"
       transform="matrix(0.996065 0.0886277 -0.0857078 0.99632 16.7031 400.458)"
+      className="placeimage"
       fill="url(#pattern-5)"
     />
-    <text x="125" y="31" fill="var(--font-color)">
+    <text
+      x="125"
+      y="31"
+      fill="var(--font-color)"
+      className="placename"
+    >
       GIGGLESWICK
     </text>
-    <text x="10" y="128" fill="var(--font-color)">
+    <text
+      x="10"
+      y="128"
+      fill="var(--font-color)"
+      className="placename"
+    >
       OXFORD
     </text>
-    <text x="314" y="83" fill="var(--font-color)">
+    <text
+      x="314"
+      y="83"
+      fill="var(--font-color)"
+      className="placename"
+    >
       PARIS
     </text>
-    <text x="88" y="265" fill="var(--font-color)">
+    <text
+      x="88"
+      y="265"
+      fill="var(--font-color)"
+      className="placename"
+    >
       BOLOGNA
     </text>
-    <text x="12" y="392" fill="var(--font-color)">
+    <text
+      x="12"
+      y="392"
+      fill="var(--font-color)"
+      className="placename"
+    >
       LONDON
     </text>
-    <text x="207" y="393" fill="var(--font-color)">
+    <text
+      x="207"
+      y="393"
+      fill="var(--font-color)"
+      className="placename"
+    >
       CANADA
     </text>
-    <text x="484" y="143" fill="var(--font-color)">
+    <text
+      x="484"
+      y="143"
+      fill="var(--font-color)"
+      className="placename"
+    >
       JAPAN
     </text>
-    <text x="584" y="302" fill="var(--font-color)">
+    <text
+      x="584"
+      y="302"
+      fill="var(--font-color)"
+      className="placename"
+    >
       VIETNAM
     </text>
-    <text x="744" y="143" fill="var(--font-color)">
+    <text
+      x="744"
+      y="143"
+      fill="var(--font-color)"
+      className="placename"
+    >
       NEPAL
     </text>
-    <text x="481" y="502" fill="var(--font-color)">
+    <text
+      x="481"
+      y="502"
+      fill="var(--font-color)"
+      className="placename"
+    >
       MYANMAR
     </text>
-    <text x="106" y="586" fill="var(--font-color)">
+    <text
+      x="106"
+      y="586"
+      fill="var(--font-color)"
+      className="placename"
+    >
       INDIA
     </text>
-    <text x="864" y="306" fill="var(--font-color)">
+    <text
+      x="864"
+      y="306"
+      fill="var(--font-color)"
+      className="placename"
+    >
       CAMBODIA
     </text>
-    <text x="355" y="684" fill="var(--font-color)">
+    <text
+      x="355"
+      y="684"
+      fill="var(--font-color)"
+      className="placename"
+    >
       TAIWAN
     </text>
-    <text x="819" y="436" fill="var(--font-color)">
+    <text
+      x="819"
+      y="436"
+      fill="var(--font-color)"
+      className="placename"
+    >
       THAILAND
     </text>
-    <text x="848" y="635" fill="var(--font-color)">
+    <text
+      x="848"
+      y="635"
+      fill="var(--font-color)"
+      className="placename"
+    >
       NEW ZEALAND
     </text>
-    <text x="615" y="748" fill="var(--font-color)">
+    <text
+      x="615"
+      y="748"
+      fill="var(--font-color)"
+      className="placename"
+    >
       GLASGOW
     </text>
     <ellipse

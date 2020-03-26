@@ -14,6 +14,9 @@ const ScrollMagicContext = ({ children }) => {
     gsap.set('.portrait__image', {
       opacity: 0,
     });
+    gsap.set('.arrow', {
+      opacity: 1,
+    });
     const tl = gsap.timeline();
     tl.from('#intro', {
       duration: 3,

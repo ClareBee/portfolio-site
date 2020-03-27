@@ -187,7 +187,6 @@ const mobileStyles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-// Create Document Component
 const CV = () => {
   const handleMediaQueryChange = () => {
     console.log('changing');

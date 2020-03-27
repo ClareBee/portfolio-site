@@ -1,6 +1,5 @@
 import Layout from '../components/Layout';
 import PDFView from '../components/PDFView';
-import Spinner from '../components/Spinner';
 import PageTitle from '../components/PageTitle';
 
 export default function CVPage() {

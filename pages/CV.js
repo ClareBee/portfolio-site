@@ -1,6 +1,5 @@
 import Layout from '../components/Layout';
 import PDFView from '../components/PDFView';
-import Spinner from '../components/Spinner';
 import PageTitle from '../components/PageTitle';
 
 export default function CVPage() {
@@ -8,7 +7,7 @@ export default function CVPage() {
     <Layout title="CV">
       <PageTitle
         title="CV"
-        subtitle="Made with React PDF. For genuine CV contact me directly"
+        subtitle="Proof of Concept, made with React PDF. For genuine CV contact me directly"
       />
       <PDFView />
     </Layout>

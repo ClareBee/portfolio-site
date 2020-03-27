@@ -7,15 +7,9 @@ import {
   Document,
   StyleSheet,
   Image,
-  Font,
 } from '@react-pdf/renderer';
 import { useMediaQuery } from 'react-responsive';
 
-// Font.register({
-//   family: 'Oswald',
-//   src: 'https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf'
-// });
-// Create styles
 const palette = {
   background: '#ECEFF2',
   white: '#FDFDFD',
@@ -193,21 +187,11 @@ const mobileStyles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-// Create Document Component
 const CV = () => {
   const handleMediaQueryChange = () => {
     console.log('changing');
   };
-  const isBigScreen = useMediaQuery(
-    { minDeviceWidth: 1824 },
-    undefined,
-    handleMediaQueryChange,
-  );
-  const isMediumScreen = useMediaQuery(
-    { maxWidth: 800 },
-    undefined,
-    handleMediaQueryChange,
-  );
+
   const isSmallScreen = useMediaQuery(
     { maxWidth: 420 },
     undefined,

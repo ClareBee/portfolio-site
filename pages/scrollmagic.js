@@ -10,7 +10,6 @@ function ScrollMagic() {
   return (
     <Layout title="scroll" location>
       <DynamicComponentWithNoSSR />
-      <p>HOME PAGE is here!</p>
     </Layout>
   );
 }

@@ -1,13 +1,14 @@
-@keyframes fade-in {
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }
-  33% {
-    opacity: .5;
+
+  25% {
+    opacity: 0.1;
   }
 
-  66% {
-    opacity: .75;
+  75% {
+    opacity: 0.75;
   }
 
   100% {

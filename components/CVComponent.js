@@ -192,16 +192,7 @@ const CV = () => {
   const handleMediaQueryChange = () => {
     console.log('changing');
   };
-  const isBigScreen = useMediaQuery(
-    { minDeviceWidth: 1824 },
-    undefined,
-    handleMediaQueryChange,
-  );
-  const isMediumScreen = useMediaQuery(
-    { maxWidth: 800 },
-    undefined,
-    handleMediaQueryChange,
-  );
+
   const isSmallScreen = useMediaQuery(
     { maxWidth: 420 },
     undefined,

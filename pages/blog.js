@@ -31,7 +31,7 @@ const Blog = ({
 
 Blog.propTypes = {
   allBlogs: PropTypes.array,
-  currentPage: PropTypes.string,
+  currentPage: PropTypes.number,
   pagesArray: PropTypes.array,
   promotedBlog: PropTypes.object,
 };

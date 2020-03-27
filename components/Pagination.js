@@ -17,6 +17,6 @@ const Pagination = ({ pagesArray, currentPage }) => {
 
 Pagination.propTypes = {
   pagesArray: PropTypes.array,
-  currentPage: PropTypes.string,
+  currentPage: PropTypes.number,
 };
 export default Pagination;

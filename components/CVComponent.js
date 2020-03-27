@@ -7,15 +7,9 @@ import {
   Document,
   StyleSheet,
   Image,
-  Font,
 } from '@react-pdf/renderer';
 import { useMediaQuery } from 'react-responsive';
 
-// Font.register({
-//   family: 'Oswald',
-//   src: 'https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf'
-// });
-// Create styles
 const palette = {
   background: '#ECEFF2',
   white: '#FDFDFD',

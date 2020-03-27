@@ -3,7 +3,7 @@ title: 'Linting NextJS'
 subtitle: 'Setting up linting for a NextJS app with TypeScript & SCSS'
 author: Clare
 date: 2020-02-18
-banner: test_image.jpg
+banner: test_image.png
 alt_text: 'linting'
 tags: [scss, javascript, linting, typescript]
 promoted: true
@@ -11,13 +11,13 @@ promoted: true
 
 This project started off written in ReactJS, but I wanted the option to incorporate TypeScript at a later date. Linting therefore needed to be 'flexible' and cope with both!
 
-While CSS-in-JS seems to be the most popular choice of styling for NextJS Apps, I decided to use SCSS in the project. I'd used Emotion and Styled-Components elsewhere, and was starting to worry that I was losing my knowledge of the fundamentals :)
+While CSS-in-JS seems to be the most popular choice of styling for NextJS Apps, I decided to use SCSS in the project. I'd used Emotion and Styled-Components elsewhere, and was starting to worry I was losing my knowledge of the fundamentals :)
 
-I therefore also needed to my linting set up to be able to cope with Sass written with SCSS syntax.
+I therefore also needed to linting to be able to cope with Sass written with SCSS syntax.
 
 ## ESLint
 
-I found out TSLint has been deprecated in favour of ESLint
+TSLint has been deprecated in favour of ESLint, so I needed some extra dependencies:
 
 ```
 npm i eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev
@@ -51,7 +51,7 @@ module.exports = {
 };
 ```
 
-Making it play nicely with React
+## Making it play nicely with React
 
 ```
 npm install eslint-plugin-react --save-dev
@@ -81,7 +81,7 @@ File: .eslintrc.js
 }
 ```
 
-Adjusting it for NextJS
+## Adjusting it for NextJS
 
 File: .eslintrc.js
 
@@ -94,7 +94,8 @@ File: .eslintrc.js
 }
 ```
 
-Other Bits & Bobs
+## Other Bits & Bobs
+
 I'm using 'require' to load images and 'document' for GSAP, so needed the following lines
 
 File: .eslintrc.js
@@ -108,7 +109,7 @@ File: .eslintrc.js
 }
 ```
 
-- I had snake case props coming from my markdown frontmatter, so needed to convert them to camel case when destructuring:
+I had snake case props coming from my markdown frontmatter, so needed to convert them to camel case when destructuring:
 
 ```javascript
 const props = {
@@ -131,9 +132,9 @@ This still left the issue of the error in PropTypes, so I ended up including it 
 }
 ```
 
-### When you reach a limit!
+## When you reach a limit!
 
-- I had an unnamed component error when trying to implement lazy loading, so chose to disable ESLint for this section only!
+I had an unnamed component error when trying to implement lazy loading, so chose to disable ESLint for this section only!
 
 ```javascript
 /*eslint-disable */
@@ -142,8 +143,6 @@ This still left the issue of the error in PropTypes, so I ended up including it 
 
 /*eslint-enable */
 ```
-
---
 
 ## Adding Prettier
 
@@ -183,7 +182,7 @@ module.exports = {
 npm i stylelint --save-dev
 ```
 
-SCSS (instead of CSS-in-JS) as wanted to keep things close to the fundamentals
+I chose SCSS (instead of CSS-in-JS):
 
 ```
 npm i stylelint-scss --save-dev
@@ -233,5 +232,4 @@ npm i husky --save-dev
 
 - https://eslint.org/
 - https://github.com/yannickcr/eslint-plugin-react
-
 - https://github.com/bjankord/stylelint-config-sass-guidelines

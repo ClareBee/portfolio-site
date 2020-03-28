@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import Spinner from './Spinner';
+import Spinner from '../components/Spinner';
 import { useMediaQuery } from 'react-responsive';
 import {
   PDFDownloadLink,

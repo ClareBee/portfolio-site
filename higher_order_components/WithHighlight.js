@@ -16,7 +16,7 @@ const WithHighlight = ({ language, value }) => {
 };
 
 WithHighlight.propTypes = {
-  language: PropTypes.string.isRequired,
+  language: PropTypes.string,
   value: PropTypes.string,
 };
 export default WithHighlight;

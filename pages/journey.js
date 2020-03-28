@@ -1,10 +1,10 @@
 import dynamic from 'next/dynamic';
-import Layout from '../components/Layout';
-import PageTitle from '../components/PageTitle';
+import Layout from '../layout/Layout';
+import PageTitle from '../layout/PageTitle';
 import Timeline from '../components/Timeline';
 import Path from '../components/Path';
 const GsapWrapper = dynamic(
-  () => import('../components/gsapwrapper'),
+  () => import('../higher_order_components/gsapwrapper'),
   {
     ssr: false,
   },
@@ -23,7 +23,7 @@ export default function Journey() {
           <div className="svg-container">
             <Path />
           </div>
-          <div id="navigator"></div>
+          <div id="pathNavigator"></div>
         </GsapWrapper>
       </div>
     </Layout>

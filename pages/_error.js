@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import Layout from '../components/Layout';
-import PageTitle from '../components/PageTitle';
+import Layout from '../layout/Layout';
+import PageTitle from '../layout/PageTitle';
 
 function Error({ statusCode }) {
   return (

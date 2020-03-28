@@ -1,9 +1,9 @@
 import matter from 'gray-matter';
 import PropTypes from 'prop-types';
-import Layout from '../components/Layout';
-import PageTitle from '../components/PageTitle';
+import Layout from '../layout/Layout';
+import PageTitle from '../layout/PageTitle';
 import PromotedBlog from '../components/PromotedBlog';
-import Pagination from '../components/Pagination';
+import Pagination from '../layout/Pagination';
 import BlogRoll from '../components/BlogRoll';
 
 const PAGE_TOTAL = 2;
@@ -31,7 +31,7 @@ const Blog = ({
 
 Blog.propTypes = {
   allBlogs: PropTypes.array,
-  currentPage: PropTypes.number,
+  currentPage: PropTypes.string,
   pagesArray: PropTypes.array,
   promotedBlog: PropTypes.object,
 };
@@ -86,7 +86,7 @@ Blog.getInitialProps = async function(context) {
   return {
     allBlogs: blogPosts,
     pagesArray,
-    currentPage: query,
+    currentPage: String(query),
     promotedBlog,
     ...siteConfig,
   };

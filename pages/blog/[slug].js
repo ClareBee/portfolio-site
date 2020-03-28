@@ -1,8 +1,8 @@
 import matter from 'gray-matter';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
-import Layout from '../../components/Layout';
-import WithHighlight from '../../components/WithHighlight';
+import Layout from '../../layout/Layout';
+import WithHighlight from '../../higher_order_components/WithHighlight';
 
 function reformatDate(fullDate) {
   const date = new Date(fullDate);

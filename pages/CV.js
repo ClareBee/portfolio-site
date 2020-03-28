@@ -1,6 +1,6 @@
-import Layout from '../components/Layout';
-import PDFView from '../components/PDFView';
-import PageTitle from '../components/PageTitle';
+import Layout from '../layout/Layout';
+import PageTitle from '../layout/PageTitle';
+import PDFView from '../higher_order_components/PDFView';
 
 export default function CVPage() {
   return (

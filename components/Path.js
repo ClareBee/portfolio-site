@@ -682,7 +682,6 @@ const Path = () => (
         height="1043"
         href={require('../images/japan.png')}
       />
-      {/* check with hanoi  */}
       <image
         id="image-14"
         width="265"

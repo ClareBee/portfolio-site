@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import Layout from '../components/Layout';
+import Layout from '../layout/Layout';
 const DynamicComponentWithNoSSR = dynamic(
-  () => import('../components/scrollmagic'),
+  () => import('../higher_order_components/scrollmagic'),
   { ssr: false },
 );
 import {
@@ -37,6 +37,8 @@ const Index = () => {
             <div className="portrait__border">
               <img
                 className="portrait__image"
+                width="240"
+                height="240"
                 src={require('../images/opacity_portrait.png')}
               />
             </div>

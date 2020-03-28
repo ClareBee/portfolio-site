@@ -76,6 +76,9 @@ const Header = () => {
       <Link href="/about">
         <a className="link">About</a>
       </Link>
+      <Link href="/journey">
+        <a className="link">Journey</a>
+      </Link>
       <Link href="/CV">
         <a className="link">CV</a>
       </Link>
@@ -125,9 +128,17 @@ const Header = () => {
             <hr className="divider" />
           </li>
           <li className="navigation__item">
+            <Link href="/journey">
+              <a className="navigation__link">
+                <span>03</span>Journey
+              </a>
+            </Link>
+            <hr className="divider" />
+          </li>
+          <li className="navigation__item">
             <Link href="/CV">
               <a className="navigation__link">
-                <span>04</span>CV
+                <span>05</span>CV
               </a>
             </Link>
             <hr className="divider" />
@@ -135,7 +146,7 @@ const Header = () => {
           <li className="navigation__item">
             <Link href="/contact">
               <a className="navigation__link">
-                <span>05</span>Contact
+                <span>06</span>Contact
               </a>
             </Link>
             <hr className="divider" />

@@ -57,8 +57,6 @@ export default () => {
       .then(response => {
         gtag.event({
           action: 'submit_form',
-          category: 'Contact',
-          label: 'success',
         });
         handleServerResponse(
           true,
@@ -68,8 +66,6 @@ export default () => {
       .catch(error => {
         gtag.event({
           action: 'form_error',
-          category: 'Contact',
-          label: 'error',
         });
         handleServerResponse(
           false,

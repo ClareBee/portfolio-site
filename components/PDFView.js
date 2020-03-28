@@ -49,8 +49,6 @@ const PDFView = () => {
               }
               gtag.event({
                 action: 'mobile_pdf',
-                category: 'PDF',
-                label: 'PDF viewed on mobile or tablet',
               });
               return 'Download CV as PDF';
             }}

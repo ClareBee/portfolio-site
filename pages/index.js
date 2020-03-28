@@ -49,11 +49,7 @@ const Index = () => {
           <div className="projects">
             <div className="project">
               <div className="project__video project__left">
-                <img
-                  src={require('../images/barns2.jpg')}
-                  width="250"
-                  height="250"
-                />
+                <img src={require('../images/barns2.jpg')} />
               </div>
               <div className="project__details project__right">
                 <div className="project__title">

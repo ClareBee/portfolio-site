@@ -23,3 +23,11 @@
     width: 100%;
   }
 }
+
+.msg {
+  border: 2px solid var(--primary-color);
+  border-radius: 3px;
+  padding: 0.5rem 1.5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+}

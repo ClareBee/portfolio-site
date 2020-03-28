@@ -7,6 +7,8 @@ import {
   StyleSheet,
 } from '@react-pdf/renderer';
 import CV from '../components/CVComponent';
+import * as gtag from '../lib/gtag';
+
 const styles = StyleSheet.create({
   button: {
     fontSize: 15,
@@ -45,6 +47,9 @@ const PDFView = () => {
               if (error) {
                 return 'Try refreshing the page';
               }
+              gtag.event({
+                action: 'mobile_pdf',
+              });
               return 'Download CV as PDF';
             }}
           </PDFDownloadLink>

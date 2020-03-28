@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import fetch from 'isomorphic-unfetch';
+import * as gtag from '../lib/gtag';
 
 export default () => {
   const [status, setStatus] = useState({
@@ -58,12 +59,22 @@ export default () => {
           true,
           'Thanks, your message has been sent.',
         );
+        gtag.event({
+          action: 'submit_form',
+          category: 'Contact',
+          label: response,
+        });
       })
       .catch(error => {
         handleServerResponse(
           false,
           "Sorry, we weren't able to send your message!",
         );
+        gtag.event({
+          action: 'form_error',
+          category: 'Contact',
+          label: error,
+        });
       });
   };
   return (

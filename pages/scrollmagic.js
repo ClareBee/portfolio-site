@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic';
-import Layout from '../components/Layout';
+import Layout from '../layout/Layout';
 
 const DynamicComponentWithNoSSR = dynamic(
-  () => import('../components/scrollmagic'),
+  () => import('../higher_order_components/scrollmagic'),
   { ssr: false },
 );
 

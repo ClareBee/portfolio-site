@@ -5,12 +5,10 @@ import ScrollMagic from 'scrollmagic';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 
-console.log('gsap', gsap);
 ScrollMagicPluginGsap(ScrollMagic, gsap);
 
 const ScrollMagicContext = ({ children }) => {
   useEffect(() => {
-    console.log('hi there');
     gsap.set('.portrait__image', {
       opacity: 0,
     });
@@ -62,7 +60,6 @@ const ScrollMagicContext = ({ children }) => {
     const projectTriggers = document.getElementsByClassName(
       'project',
     );
-    console.log('project', projectTriggers);
     for (let i = 0; i < projectTriggers.length; i++) {
       // create a scene for each element
       const leftTrigger = projectTriggers[i].querySelector(
@@ -71,11 +68,9 @@ const ScrollMagicContext = ({ children }) => {
       const rightTrigger = projectTriggers[i].querySelector(
         '.project__right',
       );
-      console.log('tir', leftTrigger);
+
       new ScrollMagic.Scene({
-        triggerElement: projectTriggers[i].querySelector(
-          '.project__left',
-        ),
+        triggerElement: leftTrigger,
         offset: 50,
         triggerHook: 0.9,
       })
@@ -85,9 +80,7 @@ const ScrollMagicContext = ({ children }) => {
         .reverse(true);
 
       new ScrollMagic.Scene({
-        triggerElement: projectTriggers[i].querySelector(
-          '.project__right',
-        ),
+        triggerElement: rightTrigger,
         offset: 50,
         triggerHook: 0.9,
       })

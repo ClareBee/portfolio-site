@@ -4,7 +4,7 @@ import PageTitle from '../layout/PageTitle';
 
 function Error({ statusCode }) {
   return (
-    <Layout>
+    <Layout title="error">
       <PageTitle title="Oops" subtitle="Something went wrong!" />
       <div className="status-code">
         <p>
@@ -27,6 +27,6 @@ Error.getInitialProps = ({ res, err }) => {
 };
 
 Error.propTypes = {
-  statusCode: PropTypes.string,
+  statusCode: PropTypes.number,
 };
 export default Error;

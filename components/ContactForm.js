@@ -55,26 +55,26 @@ export default () => {
       body: JSON.stringify({ data: inputs }),
     })
       .then(response => {
+        gtag.event({
+          action: 'submit_form',
+          category: 'Contact',
+          label: 'success',
+        });
         handleServerResponse(
           true,
           'Thanks, your message has been sent.',
         );
-        gtag.event({
-          action: 'submit_form',
-          category: 'Contact',
-          label: response,
-        });
       })
       .catch(error => {
+        gtag.event({
+          action: 'form_error',
+          category: 'Contact',
+          label: 'error',
+        });
         handleServerResponse(
           false,
           "Sorry, we weren't able to send your message!",
         );
-        gtag.event({
-          action: 'form_error',
-          category: 'Contact',
-          label: error,
-        });
       });
   };
   return (

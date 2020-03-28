@@ -1,0 +1,45 @@
+.accordion {
+  margin-bottom: 4rem;
+
+  &__item {
+    margin: 1rem 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  &__chevron svg {
+    margin-right: 1.5rem;
+    color: var(--primary-color);
+    transition: transform 400ms;
+  }
+  .expanded &__chevron svg {
+    transform: rotate(90deg);
+  }
+
+  &__question {
+    position: relative;
+    font-size: 1.75rem;
+    transition: all 0.4s ease;
+  }
+
+  &__answer {
+    opacity: 0;
+    max-height: 0;
+    line-height: 2.5rem;
+    padding-left: 2rem;
+    overflow-y: hidden;
+    transition: all 0.45s ease-in-out;
+    font-size: 1.5rem;
+  }
+
+  .expanded &__question {
+    margin-bottom: 1.5rem;
+  }
+
+  .expanded &__answer {
+    max-height: 1000px;
+    opacity: 1;
+  }
+}

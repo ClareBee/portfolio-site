@@ -1,9 +1,7 @@
 @charset 'UTF-8';
 
 // 1. Configuration and helpers
-@import
-  'abstracts/variables',
-  'abstracts/functions',
+@import 'abstracts/variables', 'abstracts/functions',
   'abstracts/mixins';
 
 // 2. Vendors
@@ -11,37 +9,21 @@
 //   'vendors/normalize';
 
 // 3. Base stuff
-@import
-  'base/base',
-  'base/animations',
-  'base/fonts',
-  'base/typography',
-  'base/helpers';
+@import 'base/base', 'base/animations', 'base/fonts',
+  'base/typography', 'base/helpers';
 
 // 4. Layout-related sections
-@import
-  'layouts/header',
-  'layouts/footer',
-  'layouts/layout';
+@import 'layouts/header', 'layouts/footer', 'layouts/layout';
 
 // 5. Components
-@import
-  'components/blog-roll',
-  'components/button',
-  'components/clipboard',
-  'components/contact-form',
-  'components/icons',
-  'components/link',
-  'components/promoted-blog',
-  'components/spinner';
-
+@import 'components/accordion', 'components/blog-roll',
+  'components/button', 'components/clipboard',
+  'components/contact-form', 'components/icons', 'components/link',
+  'components/promoted-blog', 'components/spinner';
 
 // 6. Page-specific styles
-@import
-  'pages/index',
-  'pages/blog',
-  'pages/blog-post',
-  'pages/about';
+@import 'pages/index', 'pages/blog', 'pages/blog-post',
+  'pages/journey';
 
 // 7. Themes
 // @import

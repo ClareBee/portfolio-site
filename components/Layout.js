@@ -1,10 +1,16 @@
 import Head from 'next/head';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Header from './Header';
 import Footer from './Footer';
 import '../styles.scss';
+import { CSSTransition } from 'react-transition-group';
 
 const Layout = ({ title, children }) => {
+  const [pageTitle, setPageTitle] = useState('');
+  useEffect(() => {
+    setPageTitle(title);
+  }, [pageTitle]);
   return (
     <div className="container">
       <Head>
@@ -25,7 +31,14 @@ const Layout = ({ title, children }) => {
         />
       </Head>
       <Header />
-      <div className="content">{children}</div>
+      <CSSTransition
+        in={pageTitle}
+        timeout={200}
+        classNames="my-node"
+        unmountOnExit
+      >
+        <div className="content">{children}</div>
+      </CSSTransition>
       <Footer />
     </div>
   );

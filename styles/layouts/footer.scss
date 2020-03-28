@@ -1,4 +1,5 @@
 .footer {
+  opacity: 0;
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
@@ -9,5 +10,9 @@
   }
   @include sm {
     flex-direction: column-reverse;
+  }
+  transition: opacity 1s ease-in;
+  &__show {
+    opacity: 1;
   }
 }

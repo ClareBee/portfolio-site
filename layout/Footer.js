@@ -1,7 +1,10 @@
 import Icons from '../components/Icons';
+import PropTypes from 'prop-types';
 
-const Footer = () => (
-  <div className="footer">
+const Footer = ({ footerVisibility }) => (
+  <div
+    className={footerVisibility ? 'footer footer__show' : 'footer'}
+  >
     <p>
       &copy; 2020{' '}
       <a
@@ -33,4 +36,7 @@ const Footer = () => (
   </div>
 );
 
+Footer.propTypes = {
+  footerVisibility: PropTypes.bool.isRequired,
+};
 export default Footer;

@@ -8,13 +8,9 @@ import { MotionPathPlugin } from 'gsap/dist/MotionPathPlugin.js';
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin.js';
 import { Draggable } from 'gsap/dist/Draggable.js';
 
-gsap.registerPlugin(MotionPathPlugin);
-gsap.registerPlugin(Draggable);
-console.log('scroll', ScrollToPlugin);
 const GsapWrapper = ({ children }) => {
   useEffect(() => {
-    gsap.registerPlugin(MotionPathPlugin);
-    gsap.registerPlugin(ScrollToPlugin);
+    gsap.registerPlugin(MotionPathPlugin, ScrollToPlugin, Draggable);
 
     const circles = document.querySelectorAll('.circle');
     const overlapThreshold = '10%';
@@ -125,6 +121,7 @@ const GsapWrapper = ({ children }) => {
             transformOrigin: '50% 50%',
           });
 
+          // TODO: see if gsap 3.2 has method for this
           // determine distance along path for navigator to travel:
           const path = MotionPathPlugin.getRawPath('#path');
           const length = MotionPathPlugin.getLength(path);
@@ -155,7 +152,7 @@ const GsapWrapper = ({ children }) => {
               scale: 0.97,
               opacity: 1,
               ease: 'back',
-              stagger: 0.3,
+              stagger: 0.35,
             })
             .to(
               journeyNames(progressNumber),
@@ -164,7 +161,7 @@ const GsapWrapper = ({ children }) => {
                 scale: 0.97,
                 opacity: 1,
                 ease: 'back',
-                stagger: 0.3,
+                stagger: 0.35,
               },
               '<-1',
             );
@@ -179,6 +176,7 @@ const GsapWrapper = ({ children }) => {
               start: 0,
               end: progress,
               align: '#path',
+              alignOrigin: [0.5, 0.5],
             },
             onComplete: function() {
               // overlap previous animation?
@@ -202,19 +200,22 @@ const GsapWrapper = ({ children }) => {
                 clearProps: 'all',
                 ease: 'power1',
               });
+
+              // scroll to timeline again
               gsap.to(window, {
-                duration: lengthOfAnimation,
+                duration: 2,
                 scrollTo: { y: 0, offsetY: 100 },
+                delay: 0.5,
               });
             },
           });
+
+          // scroll into view if below the initial points
           const scrollTarget = '#' + selectedEllipse.id;
-          console.log(typeof progressNumber);
-          console.log('id', selectedEllipse.id);
-          if ([1, 2, 3, 4].includes(Number(progressNumber))) return;
+          if (Number(progressNumber) <= 4) return;
           gsap.to(window, {
             duration: 3,
-            scrollTo: { y: scrollTarget, offsetY: 100 },
+            scrollTo: { y: scrollTarget, offsetY: 200 },
           });
         },
       });

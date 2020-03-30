@@ -1,18 +1,18 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
-const PromotedBlog = ({
+function PromotedBlog({
   blog,
   blog: {
     document: { content },
   },
-}) => {
+}) {
   const promotedBlog = blog.document.data;
   const { alt_text: altText } = promotedBlog;
 
-  function truncateSummary(content) {
+  const truncateSummary = content => {
     return content.slice(0, 250).trimEnd() + '...';
-  }
+  };
   const tags = promotedBlog.tags.map(tag => {
     return (
       <li key={tag} className="tag-icon">
@@ -40,14 +40,13 @@ const PromotedBlog = ({
             </h2>
             <p>{truncateSummary(content)}</p>
             <div className="blog-list__read-more">Read More</div>
-
             <ul className="tag-icons">{tags}</ul>
           </div>
         </div>
       </a>
     </Link>
   );
-};
+}
 
 PromotedBlog.propTypes = {
   blog: PropTypes.shape({

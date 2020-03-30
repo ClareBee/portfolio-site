@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import AccordionItem from './AccordionItem';
 
-const Accordion = () => {
+function Accordion() {
   const [content, setContent] = useState([
     {
       question: 'My background before changing career',
@@ -81,6 +81,6 @@ const Accordion = () => {
       ))}
     </div>
   );
-};
+}
 
 export default Accordion;

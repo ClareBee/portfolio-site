@@ -54,8 +54,6 @@ const ScrollMagicContext = ({ children }) => {
         duration: 2,
       });
 
-    // const projects = gsap.timeline();
-
     let controller = new ScrollMagic.Controller();
     const projectTriggers = document.getElementsByClassName(
       'project',

@@ -54,7 +54,7 @@ export default () => {
       },
       body: JSON.stringify({ data: inputs }),
     })
-      .then(response => {
+      .then(_response => {
         gtag.event({
           action: 'submit_form',
         });
@@ -63,7 +63,7 @@ export default () => {
           'Thanks, your message has been sent.',
         );
       })
-      .catch(error => {
+      .catch(_error => {
         gtag.event({
           action: 'form_error',
         });

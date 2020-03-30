@@ -60,11 +60,10 @@ const ScrollMagicContext = ({ children }) => {
 
     // const projects = gsap.timeline();
 
-    const controller = new ScrollMagic.Controller();
+    let controller = new ScrollMagic.Controller();
     const projectTriggers = document.getElementsByClassName(
       'project',
     );
-    // if (!isTabletOrMobile) {
     for (let i = 0; i < projectTriggers.length; i++) {
       // create a scene for each element
       const leftTrigger = projectTriggers[i].querySelector(
@@ -93,7 +92,9 @@ const ScrollMagicContext = ({ children }) => {
         .addTo(controller)
         .reverse(true);
     }
-    // }
+    return function cleanup() {
+      controller = controller.destroy(true);
+    };
   }, []);
   return <div>{children}</div>;
 };

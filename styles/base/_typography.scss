@@ -29,6 +29,9 @@ pre {
   @extend %heading;
   font-size: 4.5rem;
   color: var(--svg-color);
+  @include sm {
+    font-size: 3.5rem;
+  }
 }
 
 .heading-2 {
@@ -48,6 +51,9 @@ pre {
   @extend %heading;
   color: var(--heading-color);
   font-size: 1.9rem;
+  @include sm {
+    font-size: 1.5rem;
+  }
 }
 
 .heading-5 {

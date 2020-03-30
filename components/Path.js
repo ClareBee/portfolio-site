@@ -209,15 +209,7 @@ const Path = () => (
     >
       JAPAN
     </text>
-    <text
-      id="text-9"
-      x="584"
-      y="302"
-      fill="var(--font-color)"
-      className="placename"
-    >
-      VIETNAM
-    </text>
+
     <text
       id="text-8"
       x="744"
@@ -228,16 +220,16 @@ const Path = () => (
       NEPAL
     </text>
     <text
-      id="text-10"
-      x="481"
-      y="502"
+      id="text-9"
+      x="584"
+      y="302"
       fill="var(--font-color)"
       className="placename"
     >
-      MYANMAR
+      VIETNAM
     </text>
     <text
-      id="text-11"
+      id="text-10"
       x="106"
       y="586"
       fill="var(--font-color)"
@@ -245,6 +237,16 @@ const Path = () => (
     >
       INDIA
     </text>
+    <text
+      id="text-11"
+      x="481"
+      y="502"
+      fill="var(--font-color)"
+      className="placename"
+    >
+      MYANMAR
+    </text>
+
     <text
       id="text-12"
       x="864"

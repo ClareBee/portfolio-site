@@ -5,14 +5,16 @@ import { useEffect } from 'react';
 
 import { gsap } from 'gsap/dist/gsap';
 import { MotionPathPlugin } from 'gsap/dist/MotionPathPlugin.js';
+import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin.js';
 import { Draggable } from 'gsap/dist/Draggable.js';
 
 gsap.registerPlugin(MotionPathPlugin);
 gsap.registerPlugin(Draggable);
-
+console.log('scroll', ScrollToPlugin);
 const GsapWrapper = ({ children }) => {
   useEffect(() => {
     gsap.registerPlugin(MotionPathPlugin);
+    gsap.registerPlugin(ScrollToPlugin);
 
     const circles = document.querySelectorAll('.circle');
     const overlapThreshold = '10%';
@@ -200,7 +202,19 @@ const GsapWrapper = ({ children }) => {
                 clearProps: 'all',
                 ease: 'power1',
               });
+              gsap.to(window, {
+                duration: lengthOfAnimation,
+                scrollTo: { y: 0, offsetY: 100 },
+              });
             },
+          });
+          const scrollTarget = '#' + selectedEllipse.id;
+          console.log(typeof progressNumber);
+          console.log('id', selectedEllipse.id);
+          if ([1, 2, 3, 4].includes(Number(progressNumber))) return;
+          gsap.to(window, {
+            duration: 3,
+            scrollTo: { y: scrollTarget, offsetY: 100 },
           });
         },
       });

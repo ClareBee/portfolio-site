@@ -1,9 +1,13 @@
 import matter from 'gray-matter';
+import dynamic from 'next/dynamic';
+
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Layout from '../../layout/Layout';
-import WithHighlight from '../../higher_order_components/WithHighlight';
-
+const DynamicHighlight = dynamic(
+  () => import('../../higher_order_components/WithHighlight'),
+  { ssr: false },
+);
 function reformatDate(fullDate) {
   const date = new Date(fullDate);
   const options = { day: 'numeric', month: 'long', year: 'numeric' };
@@ -33,7 +37,7 @@ const Blog = ({ data, content, siteTitle }) => {
         <div className="blog-post__content-container">
           <ReactMarkdown
             source={markdownContent}
-            renderers={{ code: WithHighlight }}
+            renderers={{ code: DynamicHighlight }}
           />
         </div>
       </article>
@@ -48,7 +52,7 @@ Blog.getInitialProps = async function(context) {
   // gray-matter parses yaml frontmatter from md file
   const data = matter(content.default);
   return {
-    siteTitle: config.title,
+    siteTitle: config.site,
     ...data,
   };
 };

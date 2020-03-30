@@ -26,7 +26,6 @@ const BlogRoll = ({ allBlogs }) => {
             key={blog.slug}
             href="/blog/[id]"
             as={`/blog/${blog.slug}`}
-            // href={{ pathname: `/blog/${blog.slug}` }}
           >
             <a className="blog">
               <li>

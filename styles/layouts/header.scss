@@ -9,9 +9,9 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    min-width: 25%;
-    @include sm {
-      min-width: 50%;
+    min-width: 20%;
+    @include sm-md {
+      min-width: 10%;
     }
   }
   &__logo-text {
@@ -23,11 +23,11 @@
   }
 }
 
-.mode-switch-container {
+.theme-switch-container {
   display: inline-block;
 }
 
-.mode-switch input {
+.theme-switch input {
   display: none;
 }
 
@@ -45,6 +45,8 @@
     display: none;
   }
 }
+
+// hamburger menu on tablet/mobile
 .hamburger {
   display: none;
   &__checkbox {
@@ -133,11 +135,11 @@
       transform: translateX(1rem);
     }
   }
+
+  // functionality
   &__checkbox:checked {
     display: relative;
   }
-
-  // functionality
   &__checkbox:checked ~ &__background {
     transform: scale(80);
   }
@@ -151,7 +153,7 @@
     box-shadow: 0px 3px 15px rgba(83, 99, 144, 0.2);
   }
 
-  // icon
+  // hamburger icon
   &__icon {
     position: relative;
     margin-top: 1rem;
@@ -187,7 +189,7 @@
     }
   }
 
-  &__msg {
+  &__text {
     color: var(--font-color);
     display: inline-block;
     margin-top: 1rem;
@@ -217,15 +219,10 @@
     z-index: 10;
   }
   .lightbulb {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     margin-right: 5rem;
+    transform: scale(0.7);
   }
-  // .navigation {
-  //   &__button,
-  //   &__background {
-  //     right: 7rem;
-  //   }
-  // }
 }
 
 @keyframes rotateLogo {

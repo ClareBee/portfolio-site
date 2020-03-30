@@ -96,7 +96,7 @@ const Header = () => {
         id="navi-toggle"
       />
       <label htmlFor="navi-toggle" className="hamburger__button">
-        <span className="hamburger__msg">MENU</span>
+        <span className="hamburger__text">MENU</span>
         <span className="hamburger__icon">&nbsp;</span>
       </label>
       <div className="hamburger__background">&nbsp;</div>
@@ -161,8 +161,8 @@ const Header = () => {
       {logoLink()}
       <div className="header__links">
         {navLinks()}
-        <div className="mode-switch-container">
-          <label className="mode-switch" htmlFor="checkbox">
+        <div className="theme-switch-container">
+          <label className="theme-switch" htmlFor="checkbox">
             <Checkbox checked={checked} onChange={toggleMode} />
             <div className="lightbulb">
               <FaLightbulb />

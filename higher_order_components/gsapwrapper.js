@@ -8,13 +8,10 @@ import { MotionPathPlugin } from 'gsap/dist/MotionPathPlugin.js';
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin.js';
 import { Draggable } from 'gsap/dist/Draggable.js';
 
-gsap.registerPlugin(MotionPathPlugin);
-gsap.registerPlugin(Draggable);
-console.log('scroll', ScrollToPlugin);
+gsap.registerPlugin(MotionPathPlugin, Draggable);
 const GsapWrapper = ({ children }) => {
   useEffect(() => {
-    gsap.registerPlugin(MotionPathPlugin);
-    gsap.registerPlugin(ScrollToPlugin);
+    gsap.registerPlugin(MotionPathPlugin, ScrollToPlugin);
 
     const circles = document.querySelectorAll('.circle');
     const overlapThreshold = '10%';
@@ -149,13 +146,14 @@ const GsapWrapper = ({ children }) => {
           const imageTimeline = gsap.timeline();
           const placesDuration =
             lengthOfAnimation > 2 ? lengthOfAnimation : 2;
+          console.log(lengthOfAnimation > 2);
           imageTimeline
             .to(journeyImages(progressNumber), {
               duration: placesDuration,
               scale: 0.97,
               opacity: 1,
               ease: 'back',
-              stagger: 0.3,
+              stagger: 0.35,
             })
             .to(
               journeyNames(progressNumber),
@@ -164,11 +162,10 @@ const GsapWrapper = ({ children }) => {
                 scale: 0.97,
                 opacity: 1,
                 ease: 'back',
-                stagger: 0.3,
+                stagger: 0.35,
               },
               '<-1',
             );
-
           // motion path animation
           // TODO: include in timeline?
           gsap.to('#pathNavigator', {
@@ -179,6 +176,7 @@ const GsapWrapper = ({ children }) => {
               start: 0,
               end: progress,
               align: '#path',
+              alignOrigin: [0.5, 0.5],
             },
             onComplete: function() {
               // overlap previous animation?
@@ -203,18 +201,17 @@ const GsapWrapper = ({ children }) => {
                 ease: 'power1',
               });
               gsap.to(window, {
-                duration: lengthOfAnimation,
+                duration: 2,
                 scrollTo: { y: 0, offsetY: 100 },
+                delay: 0.5,
               });
             },
           });
           const scrollTarget = '#' + selectedEllipse.id;
-          console.log(typeof progressNumber);
-          console.log('id', selectedEllipse.id);
           if ([1, 2, 3, 4].includes(Number(progressNumber))) return;
           gsap.to(window, {
             duration: 3,
-            scrollTo: { y: scrollTarget, offsetY: 100 },
+            scrollTo: { y: scrollTarget, offsetY: 200 },
           });
         },
       });

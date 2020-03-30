@@ -1,5 +1,7 @@
 {
-  "title":"Portfolio",
-  "description":"Portfolio site",
-  "author": "ClareBee"
+  "site": "ClareBee Portfolio",
+  "description": "Portfolio site for ClareBee, Software Developer",
+  "author": "ClareBee",
+  "url": "www.INSERT.com",
+  "twitterHandle": "@clarie_bee"
 }

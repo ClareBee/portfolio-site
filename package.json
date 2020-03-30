@@ -1,7 +1,7 @@
 {
   "name": "clare-bee-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio site with blog and contact form",
+  "description": "Portfolio site",
   "main": "index.js",
   "scripts": {
     "dev": "next",

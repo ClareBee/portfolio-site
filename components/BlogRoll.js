@@ -2,7 +2,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
-const BlogRoll = ({ allBlogs }) => {
+function BlogRoll({ allBlogs }) {
   function truncateSummary(content) {
     return content.slice(0, 150).trimEnd() + '...';
   }
@@ -53,7 +53,7 @@ const BlogRoll = ({ allBlogs }) => {
         ))}
     </ul>
   );
-};
+}
 
 BlogRoll.propTypes = {
   allBlogs: PropTypes.array.isRequired,

@@ -1,7 +1,7 @@
-import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
+import { FaChevronRight } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-const AccordionItem = ({ item, index, toggleItem }) => {
+function AccordionItem({ item, index, toggleItem }) {
   return (
     <div
       key={item.id}
@@ -20,7 +20,7 @@ const AccordionItem = ({ item, index, toggleItem }) => {
       <div className="accordion__answer">{item.answer}</div>
     </div>
   );
-};
+}
 
 AccordionItem.propTypes = {
   item: PropTypes.shape({

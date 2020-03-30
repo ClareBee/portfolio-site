@@ -20,9 +20,6 @@
   circle {
     transform-origin: center center;
     animation: rotateLogo 10s linear infinite;
-    @include sm {
-      transform: scale(0.5);
-    }
   }
 }
 
@@ -139,6 +136,10 @@
       background-position: 100%;
       color: var(--secondary-color);
       transform: translateX(1rem);
+    }
+    &.selected {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--secondary-color);
     }
   }
 

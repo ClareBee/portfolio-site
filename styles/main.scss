@@ -5,12 +5,10 @@
   'abstracts/mixins';
 
 // 2. Vendors
-// @import
-//   'vendors/normalize';
 
 // 3. Base stuff
-@import 'base/base', 'base/animations', 'base/fonts',
-  'base/typography', 'base/helpers';
+@import 'base/base', 'base/animations', 'base/typography',
+  'base/helpers';
 
 // 4. Layout-related sections
 @import 'layouts/header', 'layouts/footer', 'layouts/layout';
@@ -26,5 +24,3 @@
   'pages/journey';
 
 // 7. Themes
-// @import
-//   'themes/default';

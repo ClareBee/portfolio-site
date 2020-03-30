@@ -45,22 +45,17 @@
 .portrait {
   width: 100%;
   flex: 1 1 auto;
-
+  margin-bottom: 4rem;
   padding: 2rem 2rem 1rem 4rem;
   display: flex;
   align-items: bottom;
   justify-content: flex-end;
   // TODO non janky image load
-  // @include fade-in(4s);
-  // opacity: 0;
   &__border {
     height: 250px;
     width: 250px;
     border-radius: 50%;
     padding: 0.5rem;
-    // box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-
-    // TODO: consider animation on hover?
     background: linear-gradient(
       to right bottom,
       var(--white-color) 0%,
@@ -104,7 +99,6 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    // align-items: flex-start;
     align-items: stretch;
     @include sm {
       flex-direction: row-reverse;
@@ -209,9 +203,4 @@
       @include link-states(--primary-color, --font-color);
     }
   }
-}
-
-.top-arrow {
-  writing-mode: vertical-lr;
-  float: right;
 }

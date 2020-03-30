@@ -6,7 +6,7 @@ const Checkbox = props => (
   <input type="checkbox" id="checkbox" {...props} />
 );
 
-const Header = () => {
+function Header() {
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
@@ -173,6 +173,6 @@ const Header = () => {
       </nav>
     </header>
   );
-};
+}
 
 export default Header;

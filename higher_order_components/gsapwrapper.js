@@ -8,10 +8,9 @@ import { MotionPathPlugin } from 'gsap/dist/MotionPathPlugin.js';
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin.js';
 import { Draggable } from 'gsap/dist/Draggable.js';
 
-gsap.registerPlugin(MotionPathPlugin, Draggable);
 const GsapWrapper = ({ children }) => {
   useEffect(() => {
-    gsap.registerPlugin(MotionPathPlugin, ScrollToPlugin);
+    gsap.registerPlugin(MotionPathPlugin, ScrollToPlugin, Draggable);
 
     const circles = document.querySelectorAll('.circle');
     const overlapThreshold = '10%';
@@ -122,6 +121,7 @@ const GsapWrapper = ({ children }) => {
             transformOrigin: '50% 50%',
           });
 
+          // TODO: see if gsap 3.2 has method for this
           // determine distance along path for navigator to travel:
           const path = MotionPathPlugin.getRawPath('#path');
           const length = MotionPathPlugin.getLength(path);
@@ -146,7 +146,6 @@ const GsapWrapper = ({ children }) => {
           const imageTimeline = gsap.timeline();
           const placesDuration =
             lengthOfAnimation > 2 ? lengthOfAnimation : 2;
-          console.log(lengthOfAnimation > 2);
           imageTimeline
             .to(journeyImages(progressNumber), {
               duration: placesDuration,
@@ -166,6 +165,7 @@ const GsapWrapper = ({ children }) => {
               },
               '<-1',
             );
+
           // motion path animation
           // TODO: include in timeline?
           gsap.to('#pathNavigator', {
@@ -200,6 +200,8 @@ const GsapWrapper = ({ children }) => {
                 clearProps: 'all',
                 ease: 'power1',
               });
+
+              // scroll to timeline again
               gsap.to(window, {
                 duration: 2,
                 scrollTo: { y: 0, offsetY: 100 },
@@ -207,8 +209,10 @@ const GsapWrapper = ({ children }) => {
               });
             },
           });
+
+          // scroll into view if below the initial points
           const scrollTarget = '#' + selectedEllipse.id;
-          if ([1, 2, 3, 4].includes(Number(progressNumber))) return;
+          if (Number(progressNumber) <= 4) return;
           gsap.to(window, {
             duration: 3,
             scrollTo: { y: scrollTarget, offsetY: 200 },

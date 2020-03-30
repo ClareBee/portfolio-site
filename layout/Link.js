@@ -1,12 +1,11 @@
 import Link from 'next/link';
-import React from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
 const nestedPath = (href, router) =>
   href.match('blog') && router.pathname.match('blog');
 
-const NextLink = ({ href, children }) => {
+function NextLink({ href, children }) {
   const router = useRouter();
   let className = children.props.className || '';
   if (
@@ -20,7 +19,7 @@ const NextLink = ({ href, children }) => {
       {React.cloneElement(children, { className })}
     </Link>
   );
-};
+}
 
 NextLink.propTypes = {
   href: PropTypes.string.isRequired,

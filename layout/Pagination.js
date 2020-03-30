@@ -2,12 +2,23 @@ import PropTypes from 'prop-types';
 import Link from './Link';
 
 const Pagination = ({ pagesArray, currentPage }) => {
+  const sequence = (active, presentPage, index) => {
+    if (active) return;
+    return index < Number(presentPage) ? 'prev' : 'next';
+  };
   const pageLinks = () => {
-    return pagesArray.map((page, index) => {
-      const style = index + 1 === Number(currentPage) ? 'active' : '';
+    return pagesArray.map((_page, index) => {
+      const isCurrent = index + 1 === Number(currentPage);
+      const style = isCurrent ? 'active' : '';
+
       return (
         <Link key={index} href={`/blog?page=${index + 1}`}>
-          <a className={style}>{index + 1}</a>
+          <a
+            className={style}
+            rel={sequence(isCurrent, currentPage, index)}
+          >
+            {index + 1}
+          </a>
         </Link>
       );
     });

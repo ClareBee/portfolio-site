@@ -3,10 +3,13 @@
 // base is 16px
 $xsm-breakpoint: 320px;
 $sm-breakpoint: 600px;
-$sm-md-breakpoint: 770px;
+$sm-md-breakpoint: 768px;
 $md-breakpoint: 916px;
 $lg-breakpoint: 976px;
-$xl-breakpoint: 1200px;
+// TODO: check these
+$xl-breakpoint: 1024px;
+$xxl-breakpoint: 1200px;
+
 // COLOURS
 
 :root {

@@ -14,15 +14,6 @@ function Meta({ title }) {
         name="viewport"
         content="initial-scale=1.0, width=device-width"
       />
-      <link
-        rel="shortcut icon"
-        type="image/x-icon"
-        href={require('../images/circle.png')}
-      />
-      <link
-        href="https://fonts.googleapis.com/css?family=Montserrat:300,400|Roboto&display=swap"
-        rel="stylesheet"
-      />
       <meta property="og:type" content="website" />
       <meta name="og:title" property="og:title" content={title} />
       <meta
@@ -32,23 +23,70 @@ function Meta({ title }) {
       />
       <meta property="og:site_name" content={site} />
       <meta property="og:url" content={url} />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:site" content={site} />
-      <meta name="twitter:creator" content={twitterHandle} />
-      <link
-        rel="apple-touch-icon"
-        href={require('../images/circle.png')}
-      />
+      <meta property="og:locale" content="en_GB" />
       <meta
         property="og:image"
         content={require('../images/landing_page.jpg')}
       />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630"></meta>
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:site" content={twitterHandle} />
+      <meta name="twitter:creator" content={twitterHandle} />
       <meta
         name="twitter:image"
         content={require('../images/landing_page.jpg')}
       />
+      <meta name="msapplication-TileColor" content="#2b5797" />
+      <meta
+        name="msapplication-config"
+        content="/browserconfig.xml"
+      />
+      <meta name="theme-color" content="#ffffff"></meta>
+      <meta
+        name="msapplication-config"
+        content="/browserconfig.xml"
+      />
+
+      <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:300,400|Roboto&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        rel="shortcut icon"
+        type="image/x-icon"
+        href={require('../images/circle.png')}
+      />
+      <link
+        rel="apple-touch-icon"
+        href={require('../images/circle.png')}
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="114x114"
+        href={require('../images/apple-touch-icon.png')}
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href={require('../images/favicon-32x32.png')}
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href={require('../images/favicon-16x16.png')}
+      />
+      <link rel="manifest" href="/manifest.json" />
+      <link
+        rel="mask-icon"
+        href={require('../images/safari-pinned-tab.svg')}
+        color="#5bbad5"
+      />
+
       <link rel="canonical" href={url} />
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       <script

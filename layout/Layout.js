@@ -23,9 +23,12 @@ const Layout = ({ title, children }) => {
         classNames="my-node"
         unmountOnExit
       >
-        <div className="content">{children}</div>
+        <main className="content">{children}</main>
       </CSSTransition>
       <Footer footerVisibility={footerVisibility} />
+      <noscript>
+        You need to enable JavaScript to run this app.
+      </noscript>
     </div>
   );
 };

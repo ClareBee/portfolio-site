@@ -157,9 +157,9 @@ const Header = () => {
   );
 
   return (
-    <div className="header">
+    <header className="header">
       {logoLink()}
-      <div className="header__links">
+      <nav className="header__links">
         {navLinks()}
         <div className="theme-switch-container">
           <label className="theme-switch" htmlFor="checkbox">
@@ -170,8 +170,8 @@ const Header = () => {
           </label>
         </div>
         {hamburgerMenu()}
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };
 

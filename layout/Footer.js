@@ -2,7 +2,7 @@ import Icons from '../components/Icons';
 import PropTypes from 'prop-types';
 
 const Footer = ({ footerVisibility }) => (
-  <div
+  <footer
     className={footerVisibility ? 'footer footer__show' : 'footer'}
   >
     <p>
@@ -33,7 +33,7 @@ const Footer = ({ footerVisibility }) => (
       </a>
     </p>
     <Icons />
-  </div>
+  </footer>
 );
 
 Footer.propTypes = {

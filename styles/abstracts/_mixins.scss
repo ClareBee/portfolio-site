@@ -10,6 +10,11 @@
     @content;
   }
 }
+@mixin sm-md {
+  @media only screen and (max-width: #{$sm-md-breakpoint}) {
+    @content;
+  }
+}
 
 @mixin md {
   @media only screen and (max-width: #{$md-breakpoint}) {

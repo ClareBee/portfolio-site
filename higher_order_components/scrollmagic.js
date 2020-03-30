@@ -4,10 +4,14 @@ import PropTypes from 'prop-types';
 import ScrollMagic from 'scrollmagic';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
+import { useMediaQuery } from 'react-responsive';
 
 ScrollMagicPluginGsap(ScrollMagic, gsap);
 
 const ScrollMagicContext = ({ children }) => {
+  const isTabletOrMobile = useMediaQuery({
+    query: '(max-width: 1224px)',
+  });
   useEffect(() => {
     gsap.set('.portrait__image', {
       opacity: 0,
@@ -60,6 +64,7 @@ const ScrollMagicContext = ({ children }) => {
     const projectTriggers = document.getElementsByClassName(
       'project',
     );
+    // if (!isTabletOrMobile) {
     for (let i = 0; i < projectTriggers.length; i++) {
       // create a scene for each element
       const leftTrigger = projectTriggers[i].querySelector(
@@ -71,7 +76,7 @@ const ScrollMagicContext = ({ children }) => {
 
       new ScrollMagic.Scene({
         triggerElement: leftTrigger,
-        offset: 50,
+        // offset: 50,
         triggerHook: 0.9,
       })
         .setClassToggle(projectTriggers[i], 'visible')
@@ -81,13 +86,14 @@ const ScrollMagicContext = ({ children }) => {
 
       new ScrollMagic.Scene({
         triggerElement: rightTrigger,
-        offset: 50,
+        // offset: 50,
         triggerHook: 0.9,
       })
         .setClassToggle(rightTrigger, 'visible')
         .addTo(controller)
         .reverse(true);
     }
+    // }
   }, []);
   return <div>{children}</div>;
 };

@@ -11,7 +11,6 @@ import {
   FaStar,
   FaArrowDown,
 } from 'react-icons/fa';
-// TODO lazy load this
 
 const Index = () => {
   return (

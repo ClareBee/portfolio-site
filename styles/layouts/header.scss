@@ -1,5 +1,5 @@
 .header {
-  font-size: 18px;
+  font-size: 1.8rem;
   letter-spacing: 0.15rem;
   flex: none; // prevents shrinkage http://bit.ly/1Mn35US for details
   display: flex;
@@ -9,6 +9,10 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    min-width: 20%;
+    @include sm-md {
+      min-width: 10%;
+    }
   }
   &__logo-text {
     @include hover-svg(var(--svg-color), var(--primary-color), 0.5s);
@@ -19,11 +23,11 @@
   }
 }
 
-.mode-switch-container {
+.theme-switch-container {
   display: inline-block;
 }
 
-.mode-switch input {
+.theme-switch input {
   display: none;
 }
 
@@ -41,7 +45,9 @@
     display: none;
   }
 }
-.navigation {
+
+// hamburger menu on tablet/mobile
+.hamburger {
   display: none;
   &__checkbox {
     display: none;
@@ -52,7 +58,7 @@
     width: 7rem;
     position: fixed;
     top: 1.5rem;
-    right: 9rem;
+    right: 2rem;
     border-radius: 50%;
     z-index: 2000;
     text-align: center;
@@ -65,7 +71,7 @@
     border-radius: 50%;
     position: fixed;
     top: 2rem;
-    right: 9.5rem;
+    right: 2.5rem;
     background-image: radial-gradient(
       var(--primary-color),
       var(--secondary-color)
@@ -131,6 +137,9 @@
   }
 
   // functionality
+  &__checkbox:checked {
+    display: relative;
+  }
   &__checkbox:checked ~ &__background {
     transform: scale(80);
   }
@@ -144,7 +153,7 @@
     box-shadow: 0px 3px 15px rgba(83, 99, 144, 0.2);
   }
 
-  // icon
+  // hamburger icon
   &__icon {
     position: relative;
     margin-top: 1rem;
@@ -180,7 +189,7 @@
     }
   }
 
-  &__msg {
+  &__text {
     color: var(--font-color);
     display: inline-block;
     margin-top: 1rem;
@@ -202,24 +211,17 @@
   }
 }
 
-@media only screen and (max-width: $sm-breakpoint) {
-  .header {
+@include sm-md {
+  .hamburger {
     position: fixed;
-    width: 100%;
     top: 0;
     left: 0;
     z-index: 10;
-    background: var(--bg-color);
-    border-bottom: 2px solid var(--svg-color);
   }
   .lightbulb {
-    margin-top: 2rem;
-  }
-  .navigation {
-    &__button,
-    &__background {
-      right: 5rem;
-    }
+    margin-top: 0.5rem;
+    margin-right: 5rem;
+    transform: scale(0.7);
   }
 }
 

@@ -77,12 +77,15 @@
     padding: 1.5rem;
     overflow: hidden;
   }
+  @include sm-md {
+    margin-bottom: 8rem;
+  }
   @include sm {
     justify-content: center;
     padding: 2rem 0;
   }
 }
-// TODO: implement
+
 .arrow {
   opacity: 0;
   margin: 2rem auto;
@@ -103,39 +106,29 @@
     justify-content: space-between;
     // align-items: flex-start;
     align-items: stretch;
+    @include sm {
+      flex-direction: row-reverse;
+      border-bottom: 5px solid var(--primary-color);
+    }
+    @include sm-md {
+      padding: 1rem;
+      margin: 1rem;
+      padding-top: 2rem;
+      margin-top: 2rem;
+    }
     &__left {
       opacity: 0;
-      -webkit-transform: translateX(-100px);
-      -moz-transform: translateX(-100px);
-      -ms-transform: translateX(-100px);
-      -o-transform: translateX(-100px);
       transform: translateX(-100px);
-      -webkit-transition: all 1s ease-out;
-      -moz-transition: all 1s ease-out;
-      -ms-transition: all 1s ease-out;
-      -o-transition: all 1s ease-out;
       transition: all 1s ease-out;
     }
     &__right {
       opacity: 0;
-      -webkit-transform: translateX(100px);
-      -moz-transform: translateX(100px);
-      -ms-transform: translateX(100px);
-      -o-transform: translateX(100px);
       transform: translateX(100px);
-      -webkit-transition: all 1s ease-out;
-      -moz-transition: all 1s ease-out;
-      -ms-transition: all 1s ease-out;
-      -o-transition: all 1s ease-out;
       transition: all 1s ease-out;
     }
     &__left.visible,
     &__right.visible {
       opacity: 1;
-      -webkit-transform: none;
-      -moz-transform: none;
-      -ms-transform: none;
-      -o-transform: none;
       transform: none;
     }
     &__video {
@@ -147,6 +140,11 @@
       img {
         border-radius: 3px;
       }
+
+      @include sm {
+        width: 100%;
+        padding: 1rem;
+      }
     }
     &__details {
       width: 47%;
@@ -155,6 +153,10 @@
       display: flex;
       flex-flow: column nowrap;
       justify-content: space-between;
+      @include sm {
+        padding: 1rem;
+        width: 100%;
+      }
     }
     &__description {
       flex: 1;

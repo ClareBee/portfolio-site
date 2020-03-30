@@ -20,6 +20,9 @@
   circle {
     transform-origin: center center;
     animation: rotateLogo 10s linear infinite;
+    @include sm {
+      transform: scale(0.5);
+    }
   }
 }
 
@@ -125,6 +128,9 @@
       span {
         margin-right: 1.5rem;
         display: inline-block;
+      }
+      @include sm {
+        font-size: 1.5rem;
       }
     }
 

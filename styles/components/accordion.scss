@@ -7,12 +7,18 @@
     background-color: var(--bg-color);
     border-radius: 5px;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    @include sm {
+      margin: 1rem 0rem;
+    }
   }
 
   &__chevron svg {
     margin-right: 1.5rem;
     color: var(--primary-color);
     transition: transform 400ms;
+    @include sm {
+      margin-right: 0.5rem;
+    }
   }
   .expanded &__chevron svg {
     transform: rotate(90deg);

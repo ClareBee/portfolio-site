@@ -1,5 +1,8 @@
 .journey {
   margin: 1rem 2rem 4rem 2rem;
+  @include sm-md {
+    margin: 0rem;
+  }
 }
 .draggable-container {
   margin: 0 auto;

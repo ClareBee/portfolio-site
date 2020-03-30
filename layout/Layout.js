@@ -9,8 +9,10 @@ import { GA_TRACKING_ID } from '../lib/gtag';
 
 const Layout = ({ title, children }) => {
   const [pageTitle, setPageTitle] = useState('');
+  const [footerVisibility, setFooterVisibility] = useState(false);
   useEffect(() => {
     setPageTitle(title);
+    setFooterVisibility(true);
   }, [pageTitle]);
   return (
     <div className="container">
@@ -57,7 +59,7 @@ const Layout = ({ title, children }) => {
       >
         <div className="content">{children}</div>
       </CSSTransition>
-      <Footer />
+      <Footer footerVisibility={footerVisibility} />
     </div>
   );
 };

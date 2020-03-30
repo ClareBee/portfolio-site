@@ -14,19 +14,18 @@ const GsapWrapper = ({ children }) => {
   useEffect(() => {
     gsap.registerPlugin(MotionPathPlugin);
 
-    const timeline = gsap.timeline();
-
     const circles = document.querySelectorAll('.circle');
     const overlapThreshold = '10%';
     const images = document.getElementsByClassName('placeimage');
     const names = document.getElementsByClassName('placename');
 
-    // TODO: set in css for initial render
     const resetPath = () => {
-      gsap.set(images, {
+      gsap.to(images, {
+        duration: 1,
         opacity: 0,
       });
-      gsap.set(names, {
+      gsap.to(names, {
+        duration: 1,
         opacity: 0,
       });
     };
@@ -43,9 +42,9 @@ const GsapWrapper = ({ children }) => {
     const journeyNames = progressNumber => {
       return sortedElements(names).slice(0, progressNumber);
     };
-
+    //divide path up into sections:
     const createArray = () => {
-      let repeat = 1 / 0.025;
+      let repeat = 1 / 0.02;
       let origin = 0;
       const myPoints = [origin];
       while (--repeat > -1) {
@@ -89,17 +88,16 @@ const GsapWrapper = ({ children }) => {
         type: 'x',
         bounds: document.getElementById('container'),
         inertia: true,
-        onClick: function() {
-          console.log('clicked');
-        },
         onDragStart: function() {
-          console.log('drag started');
+          // clear places
           resetPath();
-          gsap.set('#navigator', {
+          // make path navigator visible
+          gsap.set('#pathNavigator', {
             opacity: 1,
           });
         },
         onDragEnd: function() {
+          // capture progress along timeline
           let i = circles.length;
           let progressNumber;
 
@@ -114,34 +112,18 @@ const GsapWrapper = ({ children }) => {
           const timelineTarget = document.getElementById(
             `circle-${progressNumber}`,
           );
-          const imageTimeline = gsap.timeline();
-          // TODO: sort images NB
-          imageTimeline.to(journeyImages(progressNumber), {
-            duration: 1.5,
-            scale: 0.97,
-            opacity: 1,
-            ease: 'back',
-            stagger: 0.3,
-          });
-          // TODO refine this timing
-          imageTimeline.to(
-            journeyNames(progressNumber),
-            {
-              duration: 2,
-              scale: 0.97,
-              opacity: 1,
-              ease: 'back',
-              stagger: 0.3,
-            },
-            '<-1',
-          );
-          gsap.set('#navigator', {
+          if (!selectedEllipse) return;
+
+          // mark visited place
+          gsap.set('#pathNavigator', {
             width: 20,
             height: 20,
             xPercent: -50,
             yPercent: -50,
             transformOrigin: '50% 50%',
           });
+
+          // determine distance along path for navigator to travel:
           const path = MotionPathPlugin.getRawPath('#path');
           const length = MotionPathPlugin.getLength(path);
           console.log('length', length);
@@ -155,17 +137,39 @@ const GsapWrapper = ({ children }) => {
               withinRange(step.position.x, ellipseX, 30) &&
               withinRange(step.position.y, ellipseY, 30),
           );
-          console.log('matchingstep', matchingStep);
-          // TODO: catch null error
+          if (!matchingStep) return;
           const progress = matchingStep[0].percent;
-          if (progress === undefined) {
-            // TODO: handle error
-            console.log('why is it undefined?');
-            return;
-          }
+
+          // calculate relative timing
           const lengthOfAnimation = time(20, progress);
 
-          gsap.to('#navigator', {
+          // stagger appearance of places
+          const imageTimeline = gsap.timeline();
+          const placesDuration =
+            lengthOfAnimation > 2 ? lengthOfAnimation : 2;
+          imageTimeline
+            .to(journeyImages(progressNumber), {
+              duration: placesDuration,
+              scale: 0.97,
+              opacity: 1,
+              ease: 'back',
+              stagger: 0.3,
+            })
+            .to(
+              journeyNames(progressNumber),
+              {
+                duration: placesDuration,
+                scale: 0.97,
+                opacity: 1,
+                ease: 'back',
+                stagger: 0.3,
+              },
+              '<-1',
+            );
+
+          // motion path animation
+          // TODO: include in timeline?
+          gsap.to('#pathNavigator', {
             duration: lengthOfAnimation,
             motionPath: {
               path: '#path',
@@ -175,8 +179,9 @@ const GsapWrapper = ({ children }) => {
               align: '#path',
             },
             onComplete: function() {
-              // overlap previous animation
-              gsap.to('#navigator', {
+              // overlap previous animation?
+              gsap.to('#pathNavigator', {
+                duration: 1,
                 opacity: 0,
                 ease: 'power1',
               });
@@ -188,9 +193,12 @@ const GsapWrapper = ({ children }) => {
                 scale: 2,
                 transformOrigin: '50% 50%',
               });
-              console.log('animation ended');
-              gsap.set('#dragNavigator', {
+              // hide drag navigator
+              gsap.to('#dragNavigator', {
+                duration: 0.5,
+                opacity: 0,
                 clearProps: 'all',
+                ease: 'power1',
               });
             },
           });
@@ -200,12 +208,6 @@ const GsapWrapper = ({ children }) => {
     dragEvent();
   }, []);
 
-  // then we can control the whole thing easily...
-  // tl.pause();
-  // tl.resume();
-  // tl.seek(1.5);
-  // tl.reverse();
-  //
   return <div>{children}</div>;
 };
 

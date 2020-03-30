@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import Spinner from './Spinner';
+import Spinner from '../components/Spinner';
 import { useMediaQuery } from 'react-responsive';
 import {
   PDFDownloadLink,
@@ -30,7 +30,7 @@ const PDFView = () => {
   });
 
   return (
-    <div>
+    <div className="pdf-view">
       {!isDesktopOrLaptop && (
         <div className="error download">
           The PDF Viewer is only available on desktop or laptop, but

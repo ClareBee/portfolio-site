@@ -1,5 +1,5 @@
-import Layout from '../components/Layout';
-import PageTitle from '../components/PageTitle';
+import Layout from '../layout/Layout';
+import PageTitle from '../layout/PageTitle';
 import Accordion from '../components/Accordion';
 
 export default function About() {

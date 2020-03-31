@@ -4,7 +4,11 @@
 
 ## View Live:
 
+Deployed with Zeit:
+
 https://clarebee.com/
+
+[![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
 
 ## Get Started Locally:
 
@@ -57,7 +61,7 @@ Portfolio site targetting ReactJS & JAMStack projects. WIP.
 
 ### Homepage
 
-<img src="/screenshots/homepage.jpg" alt="homepage" />
+<img src="/screenshots/home_page.jpg" alt="homepage" />
 
 ### Dark Mode
 

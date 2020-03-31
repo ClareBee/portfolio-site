@@ -30,7 +30,7 @@
     transition: all 0.4s ease;
   }
 
-  &__answer {
+  &__answers {
     opacity: 0;
     max-height: 0;
     line-height: 2.5rem;
@@ -40,11 +40,30 @@
     font-size: 1.5rem;
   }
 
+  &__answer {
+    margin: 1rem 0;
+  }
+
+  &__answer:last-child {
+    width: 100%;
+    font-weight: bold;
+    color: var(--primary-color);
+    background: var(--white-color);
+    padding: 0.5rem;
+    border-radius: 3px;
+    &::before {
+      content: '\25A3';
+      margin-right: 1rem;
+      font-weight: bold;
+      display: inline-block;
+    }
+  }
+
   .expanded &__question {
     margin-bottom: 1.5rem;
   }
 
-  .expanded &__answer {
+  .expanded &__answers {
     max-height: 1000px;
     opacity: 1;
   }

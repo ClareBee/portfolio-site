@@ -73,7 +73,7 @@
     overflow: hidden;
   }
   @include sm-md {
-    margin-bottom: 8rem;
+    margin-bottom: 6rem;
   }
   @include sm {
     justify-content: center;
@@ -101,7 +101,6 @@
     justify-content: space-between;
     align-items: stretch;
     @include sm {
-      flex-direction: row-reverse;
       border-bottom: 5px solid var(--primary-color);
     }
     @include sm-md {

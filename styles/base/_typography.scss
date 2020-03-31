@@ -51,6 +51,7 @@ pre {
   @extend %heading;
   color: var(--heading-color);
   font-size: 1.9rem;
+  line-height: 1.25;
   @include sm {
     font-size: 1.5rem;
   }

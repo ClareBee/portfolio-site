@@ -17,7 +17,13 @@ function AccordionItem({ item, index, toggleItem }) {
 
         {item.question}
       </div>
-      <div className="accordion__answer">{item.answer}</div>
+      <div className="accordion__answers">
+        {item.answers.map((answer, index) => (
+          <div className="accordion__answer" key={index + item.id}>
+            {answer}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -27,7 +33,7 @@ AccordionItem.propTypes = {
     id: PropTypes.number.isRequired,
     expanded: PropTypes.bool.isRequired,
     question: PropTypes.string.isRequired,
-    answer: PropTypes.string.isRequired,
+    answers: PropTypes.array.isRequired,
   }),
   index: PropTypes.number,
   toggleItem: PropTypes.func,

@@ -38,6 +38,12 @@
     margin: 1rem 2rem;
     @include hover-svg(var(--svg-color), var(--primary-color), 0.4s);
   }
+  @include sm-md {
+    margin-right: 7rem;
+  }
+  @include sm {
+    transform: scale(0.7);
+  }
 }
 
 .nav-links {
@@ -218,19 +224,19 @@
   }
 }
 
-@include sm-md {
-  .hamburger {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-  }
-  .lightbulb {
-    margin-top: 0.5rem;
-    margin-right: 5rem;
-    transform: scale(0.7);
-  }
-}
+// @include sm-md {
+//   .hamburger {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     z-index: 10;
+//   }
+//   .lightbulb {
+//     margin-top: 0.5rem;
+//     margin-right: 5rem;
+//     transform: scale(0.7);
+//   }
+// }
 
 @keyframes rotateLogo {
   from {

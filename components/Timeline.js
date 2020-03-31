@@ -1,9 +1,12 @@
 const Timeline = () => (
   <svg
-    viewBox="0 0 811 45"
+    viewBox="0 0 811 55"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
+    <text x="0" y="10" fill="var(--font-color)">
+      TIMELINE &rarr;
+    </text>
     <circle
       cx="15"
       cy="30"
@@ -18,9 +21,6 @@ const Timeline = () => (
       y2="29.5"
       stroke="var(--font-color)"
     />
-    <text x="30" y="10" fill="var(--font-color)">
-      Childhood
-    </text>
     <circle
       id="circle-1"
       className="circle"

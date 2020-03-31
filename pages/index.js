@@ -34,12 +34,24 @@ const Index = () => {
           </div>
           <div className="portrait">
             <div className="portrait__border">
-              <img
-                className="portrait__image"
-                width="240"
-                height="240"
-                src={require('../images/opacity_portrait.png')}
-              />
+              <picture>
+                <source
+                  srcSet={require('../images/opacity_portrait.png?webp')}
+                  type="image/webp"
+                />
+                <source
+                  srcSet={require('../images/opacity_portrait.png')}
+                  type="image/png"
+                />
+                <img
+                  className="portrait__image"
+                  width="240"
+                  height="240"
+                  src={require('../images/opacity_portrait.png')}
+                  alt="portrait"
+                  id="portrait"
+                />
+              </picture>
             </div>
           </div>
           <div className="arrow">

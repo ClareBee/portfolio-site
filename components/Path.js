@@ -428,6 +428,7 @@ const Path = () => (
       height="75.8135"
       rx="3"
       fill="url(#pattern-1)"
+      className="placeimage"
     />
     <defs>
       <pattern

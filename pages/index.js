@@ -109,7 +109,6 @@ const Index = () => {
                     Website
                     <FaDesktop />
                   </a>
-                  <a className="project__read-more">Read more</a>
                 </div>
               </div>
             </div>
@@ -143,10 +142,6 @@ const Index = () => {
                       <FaStar />
                       Code syntax highlighting with Prism.js
                     </li>
-                    <li>
-                      <FaStar />
-                      Styling with TailwindCSS
-                    </li>
                   </ul>
                 </div>
                 <div className="project__links">
@@ -166,7 +161,6 @@ const Index = () => {
                     Website
                     <FaDesktop />
                   </a>
-                  <a className="project__read-more">Read more</a>
                 </div>
               </div>
               <div className="project__video project__right">
@@ -203,6 +197,10 @@ const Index = () => {
                       <FaStar />
                       Code syntax highlighting with Highlight.js
                     </li>
+                    <li>
+                      <FaStar />
+                      In-depth studies of CSSGrid and Flexbox
+                    </li>
                   </ul>
                 </div>
                 <div className="project__links">
@@ -222,7 +220,6 @@ const Index = () => {
                     Website
                     <FaDesktop />
                   </a>
-                  <a className="project__read-more">Read more</a>
                 </div>
               </div>
             </div>
@@ -277,7 +274,6 @@ const Index = () => {
                     Website
                     <FaDesktop />
                   </a>
-                  <a className="project__read-more">Read more</a>
                 </div>
               </div>
               <div className="project__video project__right">

@@ -16,12 +16,13 @@ const ScrollMagicContext = ({ children }) => {
       opacity: 1,
     });
     const tl = gsap.timeline();
-    tl.from('#intro', {
-      duration: 3,
-      x: -300,
-      // TODO custom easing
-      ease: 'back',
-    })
+    tl.from('.introduction', { ease: 'linear', autoAlpha: 0 })
+      .from('#intro', {
+        duration: 3,
+        x: -300,
+        // TODO custom easing
+        ease: 'back',
+      })
       .from(
         '.introduction__subtitle',
         {

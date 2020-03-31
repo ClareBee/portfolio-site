@@ -7,11 +7,17 @@ import { gsap } from 'gsap/dist/gsap';
 import { MotionPathPlugin } from 'gsap/dist/MotionPathPlugin.js';
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin.js';
 import { Draggable } from 'gsap/dist/Draggable.js';
+gsap.registerPlugin(Draggable);
 
 const GsapWrapper = ({ children }) => {
   useEffect(() => {
     gsap.registerPlugin(MotionPathPlugin, ScrollToPlugin, Draggable);
-
+    // ensure smooth loading
+    const initialTimeline = gsap.timeline();
+    initialTimeline.from('.introduction', {
+      ease: 'linear',
+      autoAlpha: 0,
+    });
     const circles = document.querySelectorAll('.circle');
     const overlapThreshold = '10%';
     const images = document.getElementsByClassName('placeimage');
@@ -19,11 +25,11 @@ const GsapWrapper = ({ children }) => {
 
     const resetPath = () => {
       gsap.to(images, {
-        duration: 1,
+        duration: 0.7,
         opacity: 0,
       });
       gsap.to(names, {
-        duration: 1,
+        duration: 0.7,
         opacity: 0,
       });
     };
@@ -34,7 +40,7 @@ const GsapWrapper = ({ children }) => {
       });
 
     const journeyImages = progressNumber => {
-      return sortedElements(images).slice(0, progressNumber - 1);
+      return sortedElements(images).slice(0, progressNumber);
     };
 
     const journeyNames = progressNumber => {
@@ -85,7 +91,8 @@ const GsapWrapper = ({ children }) => {
       Draggable.create('#dragNavigator', {
         type: 'x',
         bounds: document.getElementById('container'),
-        inertia: true,
+        allowContextMenu: false,
+        cursor: 'grab',
         onDragStart: function() {
           // clear places
           resetPath();

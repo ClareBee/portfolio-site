@@ -12,7 +12,10 @@ function Meta({ title }) {
       <meta charSet="utf-8" />
       <meta
         name="viewport"
-        content="initial-scale=1.0, width=device-width"
+        content="height=device-height, 
+                      width=device-width, initial-scale=1.0, 
+                      minimum-scale=1.0, maximum-scale=1.0, 
+                      user-scalable=no, target-densitydpi=device-dpi"
       />
       <meta property="og:type" content="website" />
       <meta name="og:title" property="og:title" content={title} />

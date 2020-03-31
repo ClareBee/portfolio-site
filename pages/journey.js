@@ -14,7 +14,7 @@ export default function Journey() {
     <Layout title="Journey">
       <PageTitle
         title="Journey"
-        subtitle="Drag the pink circle to any of the black dots to discover where I've lived and worked..."
+        subtitle="Discover where I've lived and worked. Drag the big pink circle along the timeline to any of the dots..."
       />
       <div className="journey">
         <GsapWrapper>

@@ -12,7 +12,12 @@ gsap.registerPlugin(Draggable);
 const GsapWrapper = ({ children }) => {
   useEffect(() => {
     gsap.registerPlugin(MotionPathPlugin, ScrollToPlugin, Draggable);
-
+    // ensure smooth loading
+    const initialTimeline = gsap.timeline();
+    initialTimeline.from('.introduction', {
+      ease: 'linear',
+      autoAlpha: 0,
+    });
     const circles = document.querySelectorAll('.circle');
     const overlapThreshold = '10%';
     const images = document.getElementsByClassName('placeimage');
@@ -20,11 +25,11 @@ const GsapWrapper = ({ children }) => {
 
     const resetPath = () => {
       gsap.to(images, {
-        duration: 1,
+        duration: 0.7,
         opacity: 0,
       });
       gsap.to(names, {
-        duration: 1,
+        duration: 0.7,
         opacity: 0,
       });
     };
@@ -35,7 +40,7 @@ const GsapWrapper = ({ children }) => {
       });
 
     const journeyImages = progressNumber => {
-      return sortedElements(images).slice(0, progressNumber - 1);
+      return sortedElements(images).slice(0, progressNumber);
     };
 
     const journeyNames = progressNumber => {

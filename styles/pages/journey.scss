@@ -18,6 +18,14 @@
   background-color: var(--primary-color);
 }
 
+#dragNavigator {
+  @include sm {
+    transform: translateY(-20px) scale(1.8);
+    transform-origin: 50% 50%;
+    margin-bottom: -10px;
+  }
+}
+
 .placename {
   opacity: 0;
 }

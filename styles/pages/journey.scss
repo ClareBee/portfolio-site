@@ -20,9 +20,8 @@
 
 #dragNavigator {
   @include sm {
-    transform: translateY(-20px) scale(1.8);
+    transform: translateY(-30px) scale(2.5);
     transform-origin: 50% 50%;
-    margin-bottom: -10px;
   }
 }
 

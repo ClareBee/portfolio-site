@@ -7,6 +7,7 @@ import { gsap } from 'gsap/dist/gsap';
 import { MotionPathPlugin } from 'gsap/dist/MotionPathPlugin.js';
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin.js';
 import { Draggable } from 'gsap/dist/Draggable.js';
+gsap.registerPlugin(Draggable);
 
 const GsapWrapper = ({ children }) => {
   useEffect(() => {
@@ -85,7 +86,8 @@ const GsapWrapper = ({ children }) => {
       Draggable.create('#dragNavigator', {
         type: 'x',
         bounds: document.getElementById('container'),
-        inertia: true,
+        allowContextMenu: false,
+        cursor: 'grab',
         onDragStart: function() {
           // clear places
           resetPath();

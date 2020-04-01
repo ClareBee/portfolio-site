@@ -1,4 +1,10 @@
 // breakpoints
+
+@mixin landscape {
+  @media only screen and (orientation: landscape) {
+    @content;
+  }
+}
 @mixin xsm {
   @media only screen and (max-width: #{$xsm-breakpoint}) {
     @content;

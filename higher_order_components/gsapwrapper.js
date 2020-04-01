@@ -14,14 +14,10 @@ const GsapWrapper = ({ children }) => {
     gsap.registerPlugin(MotionPathPlugin, ScrollToPlugin, Draggable);
     // ensure smooth loading
     const initialTimeline = gsap.timeline();
-    initialTimeline
-      .from('.introduction', {
-        ease: 'linear',
-        autoAlpha: 0,
-      })
-      .to('images', {
-        autoAlpha: 0,
-      });
+    initialTimeline.from('.introduction', {
+      ease: 'linear',
+      autoAlpha: 0,
+    });
     const circles = document.querySelectorAll('.circle');
     const overlapThreshold = '10%';
     const images = document.getElementsByClassName('placeimage');

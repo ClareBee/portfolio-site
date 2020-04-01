@@ -102,6 +102,7 @@ function Meta({ title }) {
           `,
         }}
       />
+      <script src="/chrome-fix.js" />
     </Head>
   );
 }

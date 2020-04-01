@@ -19,6 +19,9 @@
 }
 
 #dragNavigator {
+  &:hover {
+    cursor: 'pointer' !important;
+  }
   @include sm {
     transform: translateY(-30px) scale(2.5);
     transform-origin: 50% 50%;
@@ -26,9 +29,9 @@
 }
 
 .placename {
-  opacity: 0;
+  visibility: hidden;
 }
 
 .placeimage {
-  opacity: 0;
+  visibility: hidden;
 }

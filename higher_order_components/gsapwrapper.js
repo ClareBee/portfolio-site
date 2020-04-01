@@ -14,10 +14,14 @@ const GsapWrapper = ({ children }) => {
     gsap.registerPlugin(MotionPathPlugin, ScrollToPlugin, Draggable);
     // ensure smooth loading
     const initialTimeline = gsap.timeline();
-    initialTimeline.from('.introduction', {
-      ease: 'linear',
-      autoAlpha: 0,
-    });
+    initialTimeline
+      .from('.introduction', {
+        ease: 'linear',
+        autoAlpha: 0,
+      })
+      .to('images', {
+        autoAlpha: 0,
+      });
     const circles = document.querySelectorAll('.circle');
     const overlapThreshold = '10%';
     const images = document.getElementsByClassName('placeimage');
@@ -91,8 +95,8 @@ const GsapWrapper = ({ children }) => {
       Draggable.create('#dragNavigator', {
         type: 'x',
         bounds: document.getElementById('container'),
+        cursor: 'pointer',
         allowContextMenu: false,
-        cursor: 'grab',
         onDragStart: function() {
           // clear places
           resetPath();
@@ -157,7 +161,7 @@ const GsapWrapper = ({ children }) => {
             .to(journeyImages(progressNumber), {
               duration: placesDuration,
               scale: 0.97,
-              opacity: 1,
+              autoAlpha: 1,
               ease: 'back',
               stagger: 0.35,
             })
@@ -166,7 +170,7 @@ const GsapWrapper = ({ children }) => {
               {
                 duration: placesDuration,
                 scale: 0.97,
-                opacity: 1,
+                autoAlpha: 1,
                 ease: 'back',
                 stagger: 0.35,
               },
@@ -200,29 +204,29 @@ const GsapWrapper = ({ children }) => {
                 scale: 2,
                 transformOrigin: '50% 50%',
               });
-              // hide drag navigator
+              // move dragnavigator back to start
               gsap.to('#dragNavigator', {
                 duration: 0.5,
-                opacity: 0,
                 clearProps: 'all',
                 ease: 'power1',
               });
 
               // scroll to timeline again
               gsap.to(window, {
-                duration: 2,
+                duration: 2.5,
                 scrollTo: { y: 0, offsetY: 100 },
-                delay: 0.5,
+                delay: 1,
               });
             },
           });
 
           // scroll into view if below the initial points
           const scrollTarget = '#' + selectedEllipse.id;
-          if (Number(progressNumber) <= 4) return;
+          if (Number(progressNumber) <= 3) return;
           gsap.to(window, {
             duration: 3,
             scrollTo: { y: scrollTarget, offsetY: 200 },
+            delay: 0.3,
           });
         },
       });

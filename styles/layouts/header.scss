@@ -92,7 +92,6 @@
     top: 0;
     left: 0;
     z-index: 1500;
-
     // hides it until check box clicked
     pointer-events: none;
     opacity: 0;
@@ -104,6 +103,10 @@
     @include absoluteCentre;
     width: 100%;
     text-align: center;
+    @include landscape {
+      height: 100vh;
+      overflow: scroll;
+    }
   }
 
   &__item {
@@ -133,6 +136,9 @@
         display: inline-block;
       }
       @include sm {
+        font-size: 1.5rem;
+      }
+      @include landscape {
         font-size: 1.5rem;
       }
     }

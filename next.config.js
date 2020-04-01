@@ -12,13 +12,11 @@ const nextConfig = {
   },
 };
 
-const sass = require('@zeit/next-sass');
-
 const bundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
 module.exports = withPlugins(
-  [[sass], [optimizedImages], [bundleAnalyzer]],
+  [[optimizedImages], [bundleAnalyzer]],
   nextConfig,
 );

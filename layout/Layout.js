@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Meta from './Meta';
 import Header from './Header';
 import Footer from './Footer';
-import '../styles.scss';
 import { CSSTransition } from 'react-transition-group';
 
 const Layout = ({ title, children }) => {

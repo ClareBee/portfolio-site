@@ -1,6 +1,6 @@
 const Timeline = () => (
   <svg
-    viewBox="0 0 811 85"
+    viewBox="0 0 811 95"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >

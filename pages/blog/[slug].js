@@ -1,63 +1,64 @@
 import matter from 'gray-matter';
+import fs from 'fs';
+import path from 'path';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Layout from '../../layout/Layout';
 import Spinner from '../../components/Spinner';
+import { useRouter } from 'next/router';
+
 import { reformatDate, formatToSlug } from '../../utils/format';
-/*eslint-disable */
-const glob = require('glob');
-/*eslint-enable*/
+
 const DynamicHighlight = dynamic(
   () => import('../../higher_order_components/WithHighlight'),
   { ssr: false },
 );
 
 const Blog = ({ data, content, siteTitle }) => {
-  if (!data)
+  const router = useRouter();
+
+  // until getStaticProps() finishes running
+  if (router.isFallback) {
     return (
       <Layout title="loading">
         <Spinner />
       </Layout>
     );
+  }
+
   return (
     <Layout title={siteTitle}>
       <article className="blog-post">
-        {data ? (
-          <>
-            <div className="blog-post__header">
-              <h1 className="heading-1">{data.title}</h1>
-              <p>{reformatDate(data.date)}</p>
-            </div>
-            <hr className="divider" />
-            <h4 className="heading-4 blog-post__subtitle">
-              {data.subtitle}
-            </h4>
-            <div className="blog-post__img-container">
-              <img
-                src={require(`../../images/${data.banner}`)}
-                alt={data.alt_text}
-              />
-            </div>
-            <div className="blog-post__content-container">
-              <ReactMarkdown
-                source={content}
-                renderers={{ code: DynamicHighlight }}
-              />
-            </div>
-          </>
-        ) : (
-          <p>loading</p>
-        )}
+        <div className="blog-post__header">
+          <h1 className="heading-1">{data.title}</h1>
+          <p>{reformatDate(data.date)}</p>
+        </div>
+        <hr className="divider" />
+        <h4 className="heading-4 blog-post__subtitle">
+          {data.subtitle}
+        </h4>
+        <div className="blog-post__img-container">
+          <img
+            src={require(`../../images/${data.banner}`)}
+            alt={data.alt_text}
+          />
+        </div>
+        <div className="blog-post__content-container">
+          <ReactMarkdown
+            source={content}
+            renderers={{ code: DynamicHighlight }}
+          />
+        </div>
       </article>
     </Layout>
   );
 };
 
 export async function getStaticPaths() {
-  //get all .md files in the posts dir
-  const blogs = glob.sync('src/blog_posts/**/*.md');
-  const blogSlugs = blogs.map(file => formatToSlug(file));
+  const blogsDirectory = path.join(process.cwd(), 'blog_posts');
+  const filenames = fs.readdirSync(blogsDirectory);
+  const blogSlugs = filenames.map(file => formatToSlug(file));
   const paths = blogSlugs.map(slug => `/blog/${slug}`);
   return {
     paths,

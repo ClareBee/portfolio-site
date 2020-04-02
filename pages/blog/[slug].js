@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Layout from '../../layout/Layout';
 import Spinner from '../../components/Spinner';
-import { reformatDate } from '../../utils/format';
+import { reformatDate, formatToSlug } from '../../utils/format';
 /*eslint-disable */
 const glob = require('glob');
 /*eslint-enable*/
@@ -57,13 +57,7 @@ const Blog = ({ data, content, siteTitle }) => {
 export async function getStaticPaths() {
   //get all .md files in the posts dir
   const blogs = glob.sync('src/blog_posts/**/*.md');
-  const blogSlugs = blogs.map(file =>
-    file
-      .replace(/^.*[\\/]/, '')
-      .split('.')
-      .slice(0, -1)
-      .join('.'),
-  );
+  const blogSlugs = blogs.map(file => formatToSlug(file));
   const paths = blogSlugs.map(slug => `/blog/${slug}`);
   return {
     paths,

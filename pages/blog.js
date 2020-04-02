@@ -5,6 +5,7 @@ import PageTitle from '../layout/PageTitle';
 import PromotedBlog from '../components/PromotedBlog';
 import Pagination from '../layout/Pagination';
 import BlogRoll from '../components/BlogRoll';
+import { formatToSlug } from '../utils/format';
 
 const PAGE_TOTAL = 2;
 
@@ -58,11 +59,8 @@ Blog.getInitialProps = async function(context) {
     const values = needed.map(context);
     const data = needed.map((key, index) => {
       // Create slug from filename
-      const slug = key
-        .replace(/^.*[\\/]/, '')
-        .split('.')
-        .slice(0, -1)
-        .join('.');
+      const slug = formatToSlug(key);
+
       const value = values[index];
       // gray-matter parses yaml metadata & markdownbody
       const document = matter(value.default);

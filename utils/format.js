@@ -22,7 +22,7 @@ export const queryFromUrl = url => {
   ).entries()) {
     query[key] = value;
   }
-  console.log('query inside format', query);
+  console.log('query', query);
   return query;
 };
 

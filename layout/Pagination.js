@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import Link from './Link';
 
 const Pagination = ({ pagesArray, currentPage }) => {
-  console.log('array', pagesArray, currentPage);
   const sequence = (active, presentPage, index) => {
     if (active) return;
     return index < Number(presentPage) ? 'prev' : 'next';

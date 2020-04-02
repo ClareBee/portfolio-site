@@ -5,7 +5,6 @@ export const reformatDate = fullDate => {
 };
 
 export const formatToSlug = fileName => {
-  console.log('filename', fileName);
   return fileName
     .replace(/^.*[\\/]/, '')
     .split('.')

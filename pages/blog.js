@@ -66,7 +66,7 @@ export async function getStaticProps() {
       page: Math.ceil(PAGE_TOTAL / (index + 1)),
     };
   });
-  // TODO: address case when promoted Blog not in first page batch
+
   const promotedBlog = allBlogs.find(
     blog => blog.document.data.promoted,
   );

@@ -49,10 +49,10 @@ export async function getStaticProps() {
   const allBlogs = filenames.reverse().map((filename, index) => {
     const filePath = path.join(blogDirectory, filename);
     const fileContents = fs.readFileSync(filePath, 'utf8');
-    // const values = needed.map(context);
-    const parsedMarkdown = matter(fileContents);
-    const permittedValues = ['data', 'content', 'excerpt'];
     const slug = formatToSlug(filename);
+    const parsedMarkdown = matter(fileContents);
+    // grey-matter inserts non-json-friendly orig property so needs whitelisting
+    const permittedValues = ['data', 'content', 'excerpt'];
     const document = Object.keys(parsedMarkdown)
       .filter(key => permittedValues.includes(key))
       .reduce((obj, key) => {
@@ -83,58 +83,3 @@ export async function getStaticProps() {
 }
 
 export default Blog;
-
-// Blog.getInitialProps = async function(context) {
-//   const siteConfig = await import(`../data/config.json`);
-//   console.log(context);
-//   const query = context.query.page ? context.query.page : 1;
-//   // get total posts to display
-// const startingIndex = query * PAGE_TOTAL - PAGE_TOTAL;
-// const endingIndex = startingIndex + PAGE_TOTAL;
-// let total;
-
-//   //get posts & context from folder
-//   const blogPosts = (context => {
-//     console.log('context', context);
-//     const keys = context.keys();
-//     console.log('keys', keys);
-//     total = keys.length;
-//     // date ordering not needed as file tree orders acc to date prefix
-//     const needed = context
-//       .keys()
-//       .reverse()
-//       .slice(startingIndex, endingIndex);
-//     const values = needed.map(context);
-//     const data = needed.map((key, index) => {
-//       // Create slug from filename
-//       const slug = formatToSlug(key);
-
-//       const value = values[index];
-//       // gray-matter parses yaml metadata & markdownbody
-//       const document = matter(value.default);
-//       return {
-//         document,
-//         slug,
-//         page: Math.ceil(PAGE_TOTAL / (index + 1)),
-//       };
-//     });
-//     return data;
-//   })(require.context('../blog_posts', true, /\.md$/));
-
-//   // TODO: address case when promoted Blog not in first page batch
-//   const promotedBlog = blogPosts.find(
-//     blog => blog.document.data.promoted,
-//   );
-
-//   const pagesArray = Array.from(
-//     Array(Number(Math.ceil(total / PAGE_TOTAL))),
-//   );
-
-//   return {
-//     allBlogs: blogPosts,
-//     pagesArray,
-//     currentPage: String(query),
-//     promotedBlog,
-//     ...siteConfig,
-//   };
-// };

@@ -23,7 +23,7 @@ function NextLink({ href, children }) {
 }
 
 NextLink.propTypes = {
-  href: PropTypes.string.isRequired,
+  href: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   children: PropTypes.shape({
     type: PropTypes.string,
     props: PropTypes.shape({

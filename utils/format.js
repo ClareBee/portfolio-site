@@ -25,3 +25,12 @@ export const queryFromUrl = url => {
 
   return query;
 };
+
+export const whitelisted = (original, permitted) => {
+  return Object.keys(original)
+    .filter(key => permitted.includes(key))
+    .reduce((obj, key) => {
+      obj[key] = original[key];
+      return obj;
+    }, {});
+};

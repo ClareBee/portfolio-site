@@ -8,7 +8,7 @@ const Pagination = ({ pagesArray, currentPage }) => {
   };
   const pageLinks = () => {
     return pagesArray.map((_page, index) => {
-      const isCurrent = index + 1 === Number(currentPage);
+      const isCurrent = index + 1 === currentPage;
       const style = isCurrent ? 'active' : '';
 
       return (
@@ -34,6 +34,6 @@ const Pagination = ({ pagesArray, currentPage }) => {
 
 Pagination.propTypes = {
   pagesArray: PropTypes.array,
-  currentPage: PropTypes.string,
+  currentPage: PropTypes.number,
 };
 export default Pagination;

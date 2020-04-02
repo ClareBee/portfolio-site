@@ -7,26 +7,28 @@ import PageTitle from '../layout/PageTitle';
 import PromotedBlog from '../components/PromotedBlog';
 import Pagination from '../layout/Pagination';
 import BlogRoll from '../components/BlogRoll';
-import { formatToSlug } from '../utils/format';
+import { formatToSlug, queryFromUrl } from '../utils/format';
+import { useRouter } from 'next/router';
 
 const PAGE_TOTAL = 2;
 
-const Blog = ({
-  allBlogs,
-  currentPage,
-  pagesArray,
-  promotedBlog,
-}) => {
+const Blog = ({ allBlogs, pagesArray, promotedBlog }) => {
+  const router = useRouter();
+  // https//github.com/zeit/next.js/issues/4804
+  const { page } = queryFromUrl(router.asPath);
+  const startingIndex = page * PAGE_TOTAL - PAGE_TOTAL;
+  const endingIndex = startingIndex + PAGE_TOTAL;
+  const blogsPerPage = allBlogs.slice(startingIndex, endingIndex);
+
   return (
     <Layout title="Blog">
       <PageTitle title="Blog" subtitle="Stuff learned en route" />
       <div className="blog-layout">
-        {promotedBlog && <PromotedBlog blog={promotedBlog} />}
-        <BlogRoll allBlogs={allBlogs} />
-        <Pagination
-          pagesArray={pagesArray}
-          currentPage={currentPage}
-        />
+        {page === '1' && promotedBlog && (
+          <PromotedBlog blog={promotedBlog} />
+        )}
+        <BlogRoll allBlogs={blogsPerPage} />
+        <Pagination pagesArray={pagesArray} currentPage={page} />
       </div>
     </Layout>
   );
@@ -34,28 +36,19 @@ const Blog = ({
 
 Blog.propTypes = {
   allBlogs: PropTypes.array,
-  currentPage: PropTypes.string,
   pagesArray: PropTypes.array,
   promotedBlog: PropTypes.object,
 };
 
-export async function getStaticProps({ ...params }) {
-  console.log('params', params);
+export async function getStaticProps() {
   const siteConfig = await import(`../data/config.json`);
-  const query = params.query ? params.query.page : 1;
-
   const blogDirectory = path.join(process.cwd(), 'blog_posts');
   const filenames = fs.readdirSync(blogDirectory);
-  const startingIndex = query * PAGE_TOTAL - PAGE_TOTAL;
-  const endingIndex = startingIndex + PAGE_TOTAL;
   const total = filenames.length;
-  console.log(total);
-
-  const allBlogs = filenames.map((filename, index) => {
+  const pagesArray = new Array(Number(Math.ceil(total / PAGE_TOTAL)));
+  const allBlogs = filenames.reverse().map((filename, index) => {
     const filePath = path.join(blogDirectory, filename);
     const fileContents = fs.readFileSync(filePath, 'utf8');
-    console.log('filepath', filePath);
-    const needed = filenames.slice(startingIndex, endingIndex);
     // const values = needed.map(context);
     const parsedMarkdown = matter(fileContents);
     const permittedValues = ['data', 'content', 'excerpt'];
@@ -77,15 +70,12 @@ export async function getStaticProps({ ...params }) {
   const promotedBlog = allBlogs.find(
     blog => blog.document.data.promoted,
   );
-  const pagesArray = Array.from(
-    Array(Number(Math.ceil(allBlogs.length / PAGE_TOTAL))),
-  );
 
   return {
     props: {
       allBlogs,
-      pagesArray: [],
-      promotedBlog,
+      pagesArray,
+      promotedBlog: promotedBlog ? promotedBlog : allBlogs[0],
       currentPage: String(query),
       ...siteConfig,
     },

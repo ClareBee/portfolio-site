@@ -2,9 +2,10 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
-const nestedPath = (href, router) =>
-  href.match('blog') && router.pathname.match('blog');
-
+const nestedPath = (href, router) => {
+  if (!href.pathname) return false;
+  return href.pathname.match('blog') && router.pathname.match('blog');
+};
 function NextLink({ href, children }) {
   const router = useRouter();
   let className = children.props.className || '';

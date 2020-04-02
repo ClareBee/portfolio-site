@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import Link from './Link';
 
 const Pagination = ({ pagesArray, currentPage }) => {
+  console.log('array', pagesArray, currentPage);
   const sequence = (active, presentPage, index) => {
     if (active) return;
     return index < Number(presentPage) ? 'prev' : 'next';
@@ -12,7 +13,13 @@ const Pagination = ({ pagesArray, currentPage }) => {
       const style = isCurrent ? 'active' : '';
 
       return (
-        <Link key={index} href={`/blog?page=${index + 1}`}>
+        <Link
+          key={index}
+          href={{
+            pathname: `/blog`,
+            query: { page: index + 1 },
+          }}
+        >
           <a
             className={style}
             rel={sequence(isCurrent, currentPage, index)}

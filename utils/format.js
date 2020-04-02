@@ -12,3 +12,17 @@ export const formatToSlug = fileName => {
     .slice(0, -1)
     .join('.');
 };
+
+export const queryFromUrl = url => {
+  const [, ...queryStrings] = url.split('?');
+  const queryString = queryStrings.join('?');
+  const query = {};
+
+  for (const [key, value] of new URLSearchParams(
+    queryString,
+  ).entries()) {
+    query[key] = value;
+  }
+
+  return query;
+};

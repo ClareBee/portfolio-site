@@ -2,7 +2,7 @@
 title: 'Linting NextJS'
 subtitle: 'Setting up linting for a NextJS app with TypeScript & SCSS'
 author: Clare
-date: 2020-02-18
+date: '2020-02-18'
 banner: test_image.png
 alt_text: 'linting'
 tags: [scss, javascript, linting, typescript]

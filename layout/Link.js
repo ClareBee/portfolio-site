@@ -2,9 +2,10 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
-const nestedPath = (href, router) =>
-  href.match('blog') && router.pathname.match('blog');
-
+const nestedPath = (href, router) => {
+  if (!href.pathname) return false;
+  return href.pathname.match('blog') && router.pathname.match('blog');
+};
 function NextLink({ href, children }) {
   const router = useRouter();
   let className = children.props.className || '';
@@ -22,7 +23,7 @@ function NextLink({ href, children }) {
 }
 
 NextLink.propTypes = {
-  href: PropTypes.string.isRequired,
+  href: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   children: PropTypes.shape({
     type: PropTypes.string,
     props: PropTypes.shape({

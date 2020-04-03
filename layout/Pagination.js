@@ -8,11 +8,17 @@ const Pagination = ({ pagesArray, currentPage }) => {
   };
   const pageLinks = () => {
     return pagesArray.map((_page, index) => {
-      const isCurrent = index + 1 === Number(currentPage);
+      const isCurrent = index + 1 === currentPage;
       const style = isCurrent ? 'active' : '';
 
       return (
-        <Link key={index} href={`/blog?page=${index + 1}`}>
+        <Link
+          key={index}
+          href={{
+            pathname: `/blog`,
+            query: { page: index + 1 },
+          }}
+        >
           <a
             className={style}
             rel={sequence(isCurrent, currentPage, index)}
@@ -28,6 +34,6 @@ const Pagination = ({ pagesArray, currentPage }) => {
 
 Pagination.propTypes = {
   pagesArray: PropTypes.array,
-  currentPage: PropTypes.string,
+  currentPage: PropTypes.number,
 };
 export default Pagination;

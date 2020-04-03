@@ -2,7 +2,7 @@
 title: 'First'
 subtitle: 'Brief text to describe content'
 author: Clare
-date: 2020-01-02
+date: '2020-01-02'
 banner: test_image.png
 alt_text: 'test'
 tags: [css, javascript]

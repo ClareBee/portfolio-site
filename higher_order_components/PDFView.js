@@ -20,7 +20,7 @@ const PDFView = () => {
             document={<CV />}
             fileName="clare_bee_CV.pdf"
           >
-            {({ _blob, _url, loading, error }) => {
+            {({ loading, error }) => {
               if (loading) {
                 return 'Loading...';
               }

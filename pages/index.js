@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import Layout from '../layout/Layout';
+import PictureSet from '../components/PictureSet';
 const DynamicComponentWithNoSSR = dynamic(
   () => import('../higher_order_components/scrollmagic'),
   { ssr: false },
@@ -34,24 +35,14 @@ const Index = () => {
           </div>
           <div className="portrait">
             <div className="portrait__border">
-              <picture>
-                <source
-                  srcSet={require('../images/opacity_portrait.png?webp')}
-                  type="image/webp"
-                />
-                <source
-                  srcSet={require('../images/opacity_portrait.png')}
-                  type="image/png"
-                />
-                <img
-                  className="portrait__image"
-                  width="240"
-                  height="240"
-                  src={require('../images/opacity_portrait.png')}
-                  alt="portrait"
-                  id="portrait"
-                />
-              </picture>
+              <PictureSet
+                pictureName="opacity_portrait.png"
+                styleSelector="portrait__image"
+                id="portrait"
+                altText="portrait"
+                width="240"
+                height="240"
+              />
             </div>
           </div>
           <div className="arrow">
@@ -60,7 +51,10 @@ const Index = () => {
           <div className="projects">
             <div className="project">
               <div className="project__video project__left">
-                <img src={require('../images/barns2.jpg')} />
+                <PictureSet
+                  pictureName="barns2.jpg"
+                  altText="Barn site"
+                />
               </div>
               <div className="project__details project__right">
                 <div className="project__title">
@@ -164,13 +158,19 @@ const Index = () => {
                 </div>
               </div>
               <div className="project__video project__right">
-                <img src={require('../images/techblog.jpg')} />
+                <PictureSet
+                  pictureName="techblog.jpg"
+                  altText="Tech blog"
+                />
               </div>
             </div>
 
             <div className="project">
               <div className="project__video project__left">
-                <img src={require('../images/eleventy2.jpg')} />
+                <PictureSet
+                  pictureName="eleventy2.jpg"
+                  altText="Eleventy site"
+                />
               </div>
               <div className="project__details project__right">
                 <div className="project__title">
@@ -277,7 +277,10 @@ const Index = () => {
                 </div>
               </div>
               <div className="project__video project__right">
-                <img src={require('../images/jekyll.jpg')} />
+                <PictureSet
+                  pictureName="jekyll.jpg"
+                  altText="Jekyll blog"
+                />
               </div>
             </div>
           </div>

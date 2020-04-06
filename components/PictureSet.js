@@ -19,8 +19,8 @@ const PictureSet = ({
       />
       <img
         className={styleSelector}
-        width={width ? width : null}
-        height={height ? height : null}
+        width={width}
+        height={height}
         src={require(`../images/${pictureName}`)}
         alt={altText}
         id={id}

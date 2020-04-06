@@ -36,7 +36,7 @@ const Index = () => {
           <div className="portrait">
             <div className="portrait__border">
               <PictureSet
-                pictureName="opacity_portrait.png"
+                pictureName="rsz_opacity_portrait_copy.png"
                 styleSelector="portrait__image"
                 id="portrait"
                 altText="portrait"
@@ -52,7 +52,7 @@ const Index = () => {
             <div className="project">
               <div className="project__video project__left">
                 <PictureSet
-                  pictureName="barns2.jpg"
+                  pictureName="rsz_barns2.jpg"
                   altText="Barn site"
                 />
               </div>
@@ -159,7 +159,7 @@ const Index = () => {
               </div>
               <div className="project__video project__right">
                 <PictureSet
-                  pictureName="techblog.jpg"
+                  pictureName="rsz_techblog.jpg"
                   altText="Tech blog"
                 />
               </div>
@@ -168,7 +168,7 @@ const Index = () => {
             <div className="project">
               <div className="project__video project__left">
                 <PictureSet
-                  pictureName="eleventy2.jpg"
+                  pictureName="rsz_eleventy2.jpg"
                   altText="Eleventy site"
                 />
               </div>
@@ -278,7 +278,7 @@ const Index = () => {
               </div>
               <div className="project__video project__right">
                 <PictureSet
-                  pictureName="jekyll.jpg"
+                  pictureName="rsz_jekyll.jpg"
                   altText="Jekyll blog"
                 />
               </div>

@@ -14,9 +14,9 @@ function Meta({ title }) {
         name="viewport"
         content="height=device-height, 
                       width=device-width, initial-scale=1.0, 
-                      minimum-scale=1.0, maximum-scale=1.0, 
-                      user-scalable=no, target-densitydpi=device-dpi"
+                      minimum-scale=1.0, maximum-scale=5.0"
       />
+      <meta name="Description" content={description} />
       <meta property="og:type" content="website" />
       <meta name="og:title" property="og:title" content={title} />
       <meta

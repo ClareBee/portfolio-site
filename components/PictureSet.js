@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 const PictureSet = ({
   pictureName,
   styleSelector,
@@ -26,6 +27,15 @@ const PictureSet = ({
       />
     </picture>
   );
+};
+
+PictureSet.propTypes = {
+  pictureName: PropTypes.string.isRequired,
+  styleSelector: PropTypes.string,
+  altText: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.height,
 };
 
 export default PictureSet;

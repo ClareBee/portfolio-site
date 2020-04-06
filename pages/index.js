@@ -41,7 +41,7 @@ const Index = () => {
                 id="portrait"
                 altText="portrait"
                 width="240"
-                height="240"
+                height="223"
               />
             </div>
           </div>

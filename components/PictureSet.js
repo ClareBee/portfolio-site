@@ -35,7 +35,7 @@ PictureSet.propTypes = {
   altText: PropTypes.string.isRequired,
   id: PropTypes.string,
   width: PropTypes.string,
-  height: PropTypes.height,
+  height: PropTypes.string,
 };
 
 export default PictureSet;

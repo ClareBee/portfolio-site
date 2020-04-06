@@ -224,7 +224,7 @@ const Index = () => {
                     href="https://adventures-in-layouts.netlify.com/"
                     target="blank"
                     rel="noopener noreferrer"
-                    title="Eleventy stie"
+                    title="Eleventy site"
                   >
                     Website
                     <FaDesktop />

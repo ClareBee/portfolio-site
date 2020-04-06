@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import PictureSet from './PictureSet';
 
 function PromotedBlog({
   blog,
@@ -11,7 +12,7 @@ function PromotedBlog({
   const { alt_text: altText } = promotedBlog;
 
   const truncateSummary = content => {
-    return content.slice(0, 250).trimEnd() + '...';
+    return content.slice(0, 250) + '...';
   };
   const tags = promotedBlog.tags.map(tag => {
     return (
@@ -25,9 +26,9 @@ function PromotedBlog({
       <a className="promoted">
         <div className="promoted__container">
           <div className="promoted__img">
-            <img
-              src={require(`../images/${promotedBlog.banner}`)}
-              alt={altText}
+            <PictureSet
+              pictureName={promotedBlog.banner}
+              altText={altText}
             />
           </div>
           <div className="promoted__content">

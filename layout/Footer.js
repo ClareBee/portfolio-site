@@ -11,6 +11,7 @@ const Footer = ({ footerVisibility }) => (
         href="https://github.com/ClareBee"
         target="_blank"
         rel="noopener noreferrer"
+        title="ClareBee GitHub Profile"
       >
         {' '}
         ClareBee
@@ -20,6 +21,7 @@ const Footer = ({ footerVisibility }) => (
         href="https://nextjs.org/"
         target="_blank"
         rel="noopener noreferrer"
+        title="Next Homepage"
       >
         NextJS
       </a>{' '}
@@ -28,6 +30,7 @@ const Footer = ({ footerVisibility }) => (
         href="https://zeit.co"
         target="_blank"
         rel="noopener noreferrer"
+        title="Zeit Homepage"
       >
         ZEIT
       </a>

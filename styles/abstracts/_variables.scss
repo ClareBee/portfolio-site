@@ -12,6 +12,10 @@ $xxl-breakpoint: 1200px;
 
 // COLOURS
 
+// fallbacks for IE
+$primaryColor: #da2497;
+$secondaryColor: #536390;
+
 :root {
   --primary-color: #da2497;
   --secondary-color: #536390;

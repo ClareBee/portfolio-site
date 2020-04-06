@@ -7,9 +7,15 @@
   li {
     width: 100%;
     padding: 0.75rem;
+    border-left: 3px solid transparent;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      border-left: 3px solid var(--primary-color);
+    }
   }
   &__read-more {
     text-align: right;
+    font-weight: bold;
     color: var(--primary-color);
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -23,8 +29,7 @@
 
 .blog {
   margin: 1.5rem 0;
-  border-left: 3px solid transparent;
-  transition: all 0.5s ease-in-out;
+
   &__header {
     display: flex;
     justify-content: space-between;
@@ -42,9 +47,6 @@
     font-size: 1.25rem;
   }
 
-  &:hover {
-    border-left: 3px solid var(--primary-color);
-  }
   @include md {
     &__date {
       font-size: 0.85rem;

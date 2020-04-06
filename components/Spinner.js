@@ -1,6 +1,11 @@
 const Spinner = () => (
   <div className="spinner">
-    <img src="/spinner.svg" alt="spinner" />
+    <div className="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 );
 

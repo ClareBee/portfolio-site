@@ -1,10 +1,14 @@
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import Layout from '../layout/Layout';
+import PictureSet from '../components/PictureSet';
+import Spinner from '../components/Spinner';
+/* eslint-disable */
 const DynamicComponentWithNoSSR = dynamic(
   () => import('../higher_order_components/scrollmagic'),
-  { ssr: false },
+  { loading: () => <Spinner />, ssr: false },
 );
+/* eslint-enable */
 import {
   FaGithub,
   FaDesktop,
@@ -22,7 +26,7 @@ const Index = () => {
               Hi! I&apos;m{' '}
               <span className="introduction__content highlight">
                 <Link href="/about">
-                  <a>Clare</a>
+                  <a title="About page">Clare</a>
                 </Link>
               </span>
               , a <span className="bold">Software</span> Developer in
@@ -34,24 +38,14 @@ const Index = () => {
           </div>
           <div className="portrait">
             <div className="portrait__border">
-              <picture>
-                <source
-                  srcSet={require('../images/opacity_portrait.png?webp')}
-                  type="image/webp"
-                />
-                <source
-                  srcSet={require('../images/opacity_portrait.png')}
-                  type="image/png"
-                />
-                <img
-                  className="portrait__image"
-                  width="240"
-                  height="240"
-                  src={require('../images/opacity_portrait.png')}
-                  alt="portrait"
-                  id="portrait"
-                />
-              </picture>
+              <PictureSet
+                pictureName="rsz_opacity_portrait.png"
+                styleSelector="portrait__image"
+                id="portrait"
+                altText="portrait"
+                width="240"
+                height="223"
+              />
             </div>
           </div>
           <div className="arrow">
@@ -60,7 +54,10 @@ const Index = () => {
           <div className="projects">
             <div className="project">
               <div className="project__video project__left">
-                <img src={require('../images/barns2.jpg')} />
+                <PictureSet
+                  pictureName="rsz_barns2.jpg"
+                  altText="Barn site"
+                />
               </div>
               <div className="project__details project__right">
                 <div className="project__title">
@@ -97,6 +94,7 @@ const Index = () => {
                     href="https://github.com/ClareBee/barns"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="GitHub Repository"
                   >
                     GitHub
                     <FaGithub />
@@ -105,6 +103,7 @@ const Index = () => {
                     href="https://www.disappearingbarns.co.uk/"
                     target="blank"
                     rel="noopener noreferrer"
+                    title="DisappearingBarns live site"
                   >
                     Website
                     <FaDesktop />
@@ -149,6 +148,7 @@ const Index = () => {
                     href="https://github.com/ClareBee/front-end"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="GitHub Repository"
                   >
                     GitHub
                     <FaGithub />
@@ -157,6 +157,7 @@ const Index = () => {
                     href="https://clare-bee-blog.netlify.com/posts"
                     target="blank"
                     rel="noopener noreferrer"
+                    title="Blog site"
                   >
                     Website
                     <FaDesktop />
@@ -164,13 +165,19 @@ const Index = () => {
                 </div>
               </div>
               <div className="project__video project__right">
-                <img src={require('../images/techblog.jpg')} />
+                <PictureSet
+                  pictureName="rsz_techblog.jpg"
+                  altText="Tech blog"
+                />
               </div>
             </div>
 
             <div className="project">
               <div className="project__video project__left">
-                <img src={require('../images/eleventy2.jpg')} />
+                <PictureSet
+                  pictureName="rsz_eleventy2.jpg"
+                  altText="Eleventy site"
+                />
               </div>
               <div className="project__details project__right">
                 <div className="project__title">
@@ -208,6 +215,7 @@ const Index = () => {
                     href="https://github.com/ClareBee/eleventy_layouts"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="GitHub Repository"
                   >
                     GitHub
                     <FaGithub />
@@ -216,6 +224,7 @@ const Index = () => {
                     href="https://adventures-in-layouts.netlify.com/"
                     target="blank"
                     rel="noopener noreferrer"
+                    title="Eleventy site"
                   >
                     Website
                     <FaDesktop />
@@ -262,6 +271,7 @@ const Index = () => {
                     href="https://github.com/ClareBee/css-experiments"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="GitHub Repository"
                   >
                     GitHub
                     <FaGithub />
@@ -270,6 +280,7 @@ const Index = () => {
                     href="https://clarebee.github.io/css-experiments/"
                     target="blank"
                     rel="noopener noreferrer"
+                    title="Jekyll site"
                   >
                     Website
                     <FaDesktop />
@@ -277,7 +288,10 @@ const Index = () => {
                 </div>
               </div>
               <div className="project__video project__right">
-                <img src={require('../images/jekyll.jpg')} />
+                <PictureSet
+                  pictureName="rsz_jekyll.jpg"
+                  altText="Jekyll blog"
+                />
               </div>
             </div>
           </div>

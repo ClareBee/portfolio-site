@@ -14,7 +14,7 @@ const GsapWrapper = ({ children }) => {
     gsap.registerPlugin(MotionPathPlugin, ScrollToPlugin, Draggable);
     // ensure smooth loading
     const initialTimeline = gsap.timeline();
-    initialTimeline.from('.introduction', {
+    initialTimeline.from('.journey', {
       ease: 'linear',
       autoAlpha: 0,
     });

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import PictureSet from './PictureSet';
 
 function PromotedBlog({
   blog,
@@ -25,9 +26,9 @@ function PromotedBlog({
       <a className="promoted">
         <div className="promoted__container">
           <div className="promoted__img">
-            <img
-              src={require(`../images/${promotedBlog.banner}`)}
-              alt={altText}
+            <PictureSet
+              pictureName={promotedBlog.banner}
+              altText={altText}
             />
           </div>
           <div className="promoted__content">

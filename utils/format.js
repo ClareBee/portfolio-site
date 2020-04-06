@@ -22,7 +22,6 @@ export const queryFromUrl = url => {
   ).entries()) {
     query[key] = value;
   }
-  console.log('query is:', query);
   return query;
 };
 

@@ -2,10 +2,13 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import Layout from '../layout/Layout';
 import PictureSet from '../components/PictureSet';
+import Spinner from '../components/Spinner';
+/* eslint-disable */
 const DynamicComponentWithNoSSR = dynamic(
   () => import('../higher_order_components/scrollmagic'),
-  { ssr: false },
+  { loading: () => <Spinner />, ssr: false },
 );
+/* eslint-enable */
 import {
   FaGithub,
   FaDesktop,

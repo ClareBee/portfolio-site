@@ -20,6 +20,7 @@ function ContactEmail() {
             ref={inputRef}
           />
           <button
+            aria-label="copy to clipboard"
             className="clipboard__button"
             onClick={() => copyToClipboard()}
           >

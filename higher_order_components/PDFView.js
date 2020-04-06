@@ -1,5 +1,3 @@
-import dynamic from 'next/dynamic';
-import Spinner from '../components/Spinner';
 import { useMediaQuery } from 'react-responsive';
 import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 import CV from '../components/CVComponent';
@@ -46,8 +44,4 @@ const PDFView = () => {
   );
 };
 
-/*eslint-disable */
-export default dynamic(() => Promise.resolve(PDFView), {
-  loading: () => <Spinner />,
-  ssr: false,
-});
+export default PDFView;

@@ -22,13 +22,9 @@ function BlogRoll({ allBlogs }) {
     <ul className="blog-list">
       {allBlogs.length >= 1 &&
         allBlogs.map(blog => (
-          <Link
-            key={blog.slug}
-            href="/blog/[id]"
-            as={`/blog/${blog.slug}`}
-          >
-            <a className="blog">
-              <li>
+          <li key={blog.slug}>
+            <Link href="/blog/[id]" as={`/blog/${blog.slug}`}>
+              <a className="blog">
                 <div className="blog__header">
                   <h3 className="heading-3 blog__title">
                     {blog.document.data.title}
@@ -47,9 +43,9 @@ function BlogRoll({ allBlogs }) {
                   )}
                 />
                 <div className="blog-list__read-more">Read More</div>
-              </li>
-            </a>
-          </Link>
+              </a>
+            </Link>
+          </li>
         ))}
     </ul>
   );

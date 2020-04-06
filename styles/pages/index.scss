@@ -59,6 +59,12 @@
     padding: 0.5rem;
     background: linear-gradient(
       to right bottom,
+      #fff 0%,
+      $secondaryColor 55%,
+      $primaryColor 80%
+    );
+    background: linear-gradient(
+      to right bottom,
       var(--white-color) 0%,
       var(--secondary-color) 55%,
       var(--primary-color) 80%

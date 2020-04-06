@@ -59,6 +59,7 @@
     display: none;
   }
   &__button {
+    background-color: $secondaryColor;
     background-color: var(--bg-color);
     height: 7rem;
     width: 7rem;
@@ -78,6 +79,7 @@
     position: fixed;
     top: 2rem;
     right: 2.5rem;
+    background-image: radial-gradient($primaryColor, $secondaryColor);
     background-image: radial-gradient(
       var(--primary-color),
       var(--secondary-color)

@@ -611,97 +611,97 @@ const Path = () => (
         id="image-3"
         width="444"
         height="599"
-        href={require('../images/paris.png')}
+        href={require('../images/rsz_paris.png')}
       />
       <image
         id="image-4"
         width="503"
         height="599"
-        href={require('../images/bologna.png')}
+        href={require('../images/rsz_bologna.png')}
       />
       <image
         id="image-9"
         width="800"
         height="533"
-        href={require('../images/hanoi.png')}
+        href={require('../images/rsz_hanoi.png')}
       />
       <image
         id="image-11"
         width="1024"
         height="761"
-        href={require('../images/myanmar.png')}
+        href={require('../images/rsz_myanmar.png')}
       />
       <image
         id="image-16"
         width="4075"
         height="3056"
-        href={require('../images/glasgow.png')}
+        href={require('../images/rsz_glasgow.png')}
       />
       <image
         id="image-8"
         width="1300"
         height="1300"
-        href={require('../images/nepal.png')}
+        href={require('../images/rsz_nepal.png')}
       />
       <image
         id="image-13"
         width="264"
         height="191"
-        href={require('../images/chiangmai.png')}
+        href={require('../images/rsz_chiangmai.png')}
       />
       <image
         id="image-10"
         width="3000"
         height="4000"
-        href={require('../images/india.png')}
+        href={require('../images/rsz_india.png')}
       />
       <image
         id="image-12"
         width="1536"
         height="1024"
-        href={require('../images/cambodia.png')}
+        href={require('../images/rsz_cambodia.png')}
       />
       <image
         id="image-15"
         width="1023"
         height="574"
-        href={require('../images/newzealand.png')}
+        href={require('../images/rsz_newzealand.png')}
       />
       <image
         id="image-2"
         width="240"
         height="176"
-        href={require('../images/oxford.png')}
+        href={require('../images/rsz_oxford.png')}
       />
       <image
         id="image-6"
         width="1024"
         height="675"
-        href={require('../images/canada.png')}
+        href={require('../images/rsz_canada.png')}
       />
       <image
         id="image-7"
         width="910"
         height="1043"
-        href={require('../images/japan.png')}
+        href={require('../images/rsz_japan.png')}
       />
       <image
         id="image-14"
         width="265"
         height="190"
-        href={require('../images/tainan.png')}
+        href={require('../images/rsz_tainan.png')}
       />
       <image
         id="image-5"
         width="800"
         height="400"
-        href={require('../images/london.png')}
+        href={require('../images/rsz_london.png')}
       />
       <image
         id="image-1"
         width="615"
         height="407"
-        href={require('../images/giggleswick.png')}
+        href={require('../images/rsz_giggleswick.png')}
       />
     </defs>
   </svg>

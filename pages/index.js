@@ -26,7 +26,7 @@ const Index = () => {
               Hi! I&apos;m{' '}
               <span className="introduction__content highlight">
                 <Link href="/about">
-                  <a>Clare</a>
+                  <a title="About page">Clare</a>
                 </Link>
               </span>
               , a <span className="bold">Software</span> Developer in
@@ -94,6 +94,7 @@ const Index = () => {
                     href="https://github.com/ClareBee/barns"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="GitHub Repository"
                   >
                     GitHub
                     <FaGithub />
@@ -102,6 +103,7 @@ const Index = () => {
                     href="https://www.disappearingbarns.co.uk/"
                     target="blank"
                     rel="noopener noreferrer"
+                    title="DisappearingBarns live site"
                   >
                     Website
                     <FaDesktop />
@@ -146,6 +148,7 @@ const Index = () => {
                     href="https://github.com/ClareBee/front-end"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="GitHub Repository"
                   >
                     GitHub
                     <FaGithub />
@@ -154,6 +157,7 @@ const Index = () => {
                     href="https://clare-bee-blog.netlify.com/posts"
                     target="blank"
                     rel="noopener noreferrer"
+                    title="Blog site"
                   >
                     Website
                     <FaDesktop />
@@ -211,6 +215,7 @@ const Index = () => {
                     href="https://github.com/ClareBee/eleventy_layouts"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="GitHub Repository"
                   >
                     GitHub
                     <FaGithub />
@@ -219,6 +224,7 @@ const Index = () => {
                     href="https://adventures-in-layouts.netlify.com/"
                     target="blank"
                     rel="noopener noreferrer"
+                    title="Eleventy stie"
                   >
                     Website
                     <FaDesktop />
@@ -265,6 +271,7 @@ const Index = () => {
                     href="https://github.com/ClareBee/css-experiments"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="GitHub Repository"
                   >
                     GitHub
                     <FaGithub />
@@ -273,6 +280,7 @@ const Index = () => {
                     href="https://clarebee.github.io/css-experiments/"
                     target="blank"
                     rel="noopener noreferrer"
+                    title="Jekyll site"
                   >
                     Website
                     <FaDesktop />

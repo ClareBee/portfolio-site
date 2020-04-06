@@ -12,7 +12,7 @@ function PromotedBlog({
   const { alt_text: altText } = promotedBlog;
 
   const truncateSummary = content => {
-    return content.slice(0, 250).trimEnd() + '...';
+    return content.slice(0, 250) + '...';
   };
   const tags = promotedBlog.tags.map(tag => {
     return (

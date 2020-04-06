@@ -39,7 +39,7 @@ const Index = () => {
           <div className="portrait">
             <div className="portrait__border">
               <PictureSet
-                pictureName="rsz_opacity_portrait_copy.png"
+                pictureName="rsz_opacity_portrait.png"
                 styleSelector="portrait__image"
                 id="portrait"
                 altText="portrait"

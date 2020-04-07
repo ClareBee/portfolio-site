@@ -27,7 +27,10 @@ function Meta({ title }) {
       <meta property="og:site_name" content={site} />
       <meta property="og:url" content={url} />
       <meta property="og:locale" content="en_GB" />
-      <meta property="og:image" content="/landing_page.jpg" />
+      <meta
+        property="og:image"
+        content="https://clarebee.com/landing_page.jpg"
+      />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630"></meta>
       <meta name="twitter:card" content="summary" />
@@ -35,7 +38,10 @@ function Meta({ title }) {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:site" content={twitterHandle} />
       <meta name="twitter:creator" content={twitterHandle} />
-      <meta name="twitter:image" content="/landing_page.jpg" />
+      <meta
+        name="twitter:image"
+        content="https://clarebee.com/landing_page.jpg"
+      />
       <meta name="msapplication-TileColor" content="#2b5797" />
       <meta
         name="msapplication-config"

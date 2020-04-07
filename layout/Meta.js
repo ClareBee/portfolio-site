@@ -63,7 +63,7 @@ function Meta({ title }) {
       <link
         rel="apple-touch-icon"
         sizes="114x114"
-        href={require('../images/apple-touch-icon.png')}
+        href="/apple-touch-icon.png"
       />
       <link
         rel="icon"
@@ -80,7 +80,7 @@ function Meta({ title }) {
       <link rel="manifest" href="/manifest.json" />
       <link
         rel="mask-icon"
-        href={require('../images/safari-pinned-tab.svg')}
+        href="/safari-pinned-tab.svg"
         color="#5bbad5"
       />
 

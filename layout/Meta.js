@@ -40,7 +40,7 @@ function Meta({ title }) {
       <meta name="twitter:creator" content={twitterHandle} />
       <meta
         name="twitter:image"
-        content="https://clarebee.com/landing_page.jpg"
+        content="https://clarebee.com/twitter_preview.png"
       />
       <meta name="msapplication-TileColor" content="#2b5797" />
       <meta

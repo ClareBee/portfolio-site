@@ -25,8 +25,8 @@ const Index = () => {
             <h2 className="heading-2" id="intro">
               Hi! I&apos;m{' '}
               <span className="introduction__content highlight">
-                <Link href="/about">
-                  <a title="About page">Clare</a>
+                <Link href="/journey">
+                  <a title="Journey page">Clare</a>
                 </Link>
               </span>
               , a <span className="bold">Software</span> Developer in

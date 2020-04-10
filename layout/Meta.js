@@ -29,7 +29,7 @@ function Meta({ title }) {
       <meta property="og:locale" content="en_GB" />
       <meta
         property="og:image"
-        content="https://clarebee.com/landing_page.jpg"
+        content="https://clarebee.com/twitter_landing_page.jpg"
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630"></meta>

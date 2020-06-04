@@ -25,8 +25,8 @@ const Index = () => {
             <h2 className="heading-2" id="intro">
               Hi! I&apos;m{' '}
               <span className="introduction__content highlight">
-                <Link href="/journey">
-                  <a title="Journey page">Clare</a>
+                <Link href="/about">
+                  <a title="About page">Clare</a>
                 </Link>
               </span>
               , a <span className="bold">Software</span> Developer in
@@ -53,7 +53,7 @@ const Index = () => {
           </div>
           <div className="projects">
             <div className="project">
-              <div className="project__video project__left">
+              <div className="project__img project__left">
                 <PictureSet
                   pictureName="rsz_barns2.jpg"
                   altText="Barn site"
@@ -111,8 +111,78 @@ const Index = () => {
                 </div>
               </div>
             </div>
+
             <div className="project">
               <div className="project__details project__left">
+                <div className="project__title">
+                  <h3 className="heading-3">SciFi Movie List</h3>
+                  <div className="tag-icons">
+                    <span className="tag-icon">GatsbyJS</span>
+                    <span className="tag-icon">Sanity.io</span>
+                    <span className="tag-icon">Webhooks</span>
+                    <span className="tag-icon">Netlify Plugins</span>
+                  </div>
+                </div>
+                <div className="project__description">
+                  <p>
+                    SciFi Movies from editable Sanity.io GraphQL API
+                  </p>
+                  <ul>
+                    <li>
+                      <FaStar />
+                      Netlify Incremental Builds
+                    </li>
+                    <li>
+                      <FaStar />
+                      Netlify Build Plugins for Cypress.io & A11y
+                    </li>
+                    <li>
+                      <FaStar />
+                      Webhook to trigger build on Sanity updates
+                    </li>
+                    <li>
+                      <FaStar />
+                      CSS Modules
+                    </li>
+                  </ul>
+                </div>
+                <div className="project__links">
+                  <a
+                    href="https://github.com/ClareBee/demo-site"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="GitHub Repository"
+                  >
+                    GitHub
+                    <FaGithub />
+                  </a>
+                  <a
+                    href="https://demo-site-for-build-plugins.netlify.app/"
+                    target="blank"
+                    rel="noopener noreferrer"
+                    title="SciFi site"
+                  >
+                    Website
+                    <FaDesktop />
+                  </a>
+                </div>
+              </div>
+              <div className="project__img project__right">
+                <PictureSet
+                  pictureName="scifi.jpg"
+                  altText="Scifi Movies"
+                />
+              </div>
+            </div>
+
+            <div className="project">
+              <div className="project__img project__left">
+                <PictureSet
+                  pictureName="rsz_techblog.jpg"
+                  altText="Tech blog"
+                />
+              </div>
+              <div className="project__details project__right">
                 <div className="project__title">
                   <h3 className="heading-3">Tech Blog</h3>
                   <div className="tag-icons">
@@ -164,22 +234,10 @@ const Index = () => {
                   </a>
                 </div>
               </div>
-              <div className="project__video project__right">
-                <PictureSet
-                  pictureName="rsz_techblog.jpg"
-                  altText="Tech blog"
-                />
-              </div>
             </div>
 
             <div className="project">
-              <div className="project__video project__left">
-                <PictureSet
-                  pictureName="rsz_eleventy2.jpg"
-                  altText="Eleventy site"
-                />
-              </div>
-              <div className="project__details project__right">
+              <div className="project__details project__left">
                 <div className="project__title">
                   <h3 className="heading-3">Eleventy</h3>
                   <div className="tag-icons">
@@ -231,66 +289,10 @@ const Index = () => {
                   </a>
                 </div>
               </div>
-            </div>
-            <div className="project">
-              <div className="project__details project__left">
-                <div className="project__title">
-                  <h3 className="heading-3">Jekyll Blog</h3>
-                  <div className="tag-icons">
-                    <span className="tag-icon">Jekyll</span>
-                    <span className="tag-icon">SCSS</span>
-                    <span className="tag-icon">Liquid</span>
-                  </div>
-                </div>
-                <div className="project__description">
-                  <p>
-                    Markdown blog exploring Lea Verou&apos;s CSS
-                    Experiments in SCSS
-                  </p>
-                  <ul>
-                    <li>
-                      <FaStar />
-                      Pagination
-                    </li>
-                    <li>
-                      <FaStar />
-                      RSS Feed
-                    </li>
-                    <li>
-                      <FaStar />
-                      Contact Form with FormSpree
-                    </li>
-                    <li>
-                      <FaStar />
-                      SEO and sitemap
-                    </li>
-                  </ul>
-                </div>
-                <div className="project__links">
-                  <a
-                    href="https://github.com/ClareBee/css-experiments"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="GitHub Repository"
-                  >
-                    GitHub
-                    <FaGithub />
-                  </a>
-                  <a
-                    href="https://clarebee.github.io/css-experiments/"
-                    target="blank"
-                    rel="noopener noreferrer"
-                    title="Jekyll site"
-                  >
-                    Website
-                    <FaDesktop />
-                  </a>
-                </div>
-              </div>
-              <div className="project__video project__right">
+              <div className="project__img project__right">
                 <PictureSet
-                  pictureName="rsz_jekyll.jpg"
-                  altText="Jekyll blog"
+                  pictureName="rsz_eleventy2.jpg"
+                  altText="Eleventy site"
                 />
               </div>
             </div>

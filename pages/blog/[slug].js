@@ -44,6 +44,8 @@ const Blog = ({ data, content, siteTitle }) => {
             alt={data.alt_text}
           />
         </div>
+        <hr className="divider" />
+
         <div className="blog-post__content-container">
           <ReactMarkdown
             source={content}

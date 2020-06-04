@@ -6,7 +6,7 @@ date: '2020-02-18'
 banner: rsz_test_image.png
 alt_text: 'linting'
 tags: [scss, javascript, linting, typescript]
-promoted: true
+promoted: false
 ---
 
 This project started off written in ReactJS, but I wanted the option to incorporate TypeScript at a later date. Linting therefore needed to be 'flexible' and cope with both!
@@ -16,6 +16,8 @@ While CSS-in-JS seems to be the most popular choice of styling for NextJS Apps, 
 I therefore also needed to linting to be able to cope with Sass written with SCSS syntax.
 
 ## ESLint
+
+---
 
 TSLint has been deprecated in favour of ESLint, so I needed some extra dependencies:
 
@@ -53,6 +55,8 @@ module.exports = {
 
 ## Making it play nicely with React
 
+---
+
 ```
 npm install eslint-plugin-react --save-dev
 ```
@@ -83,6 +87,8 @@ File: .eslintrc.js
 
 ## Adjusting it for NextJS
 
+---
+
 File: .eslintrc.js
 
 ```javascript
@@ -95,6 +101,8 @@ File: .eslintrc.js
 ```
 
 ## Other Bits & Bobs
+
+---
 
 I'm using 'require' to load images and 'document' for GSAP, so needed the following lines
 
@@ -134,6 +142,8 @@ This still left the issue of the error in PropTypes, so I ended up including it 
 
 ## When you reach a limit!
 
+---
+
 I had an unnamed component error when trying to implement lazy loading, so chose to disable ESLint for this section only!
 
 ```javascript
@@ -145,6 +155,8 @@ I had an unnamed component error when trying to implement lazy loading, so chose
 ```
 
 ## Adding Prettier
+
+---
 
 ```
 npm i prettier eslint-config-prettier eslint-plugin-prettier --save-dev
@@ -178,6 +190,8 @@ module.exports = {
 
 ## Adding Stylelint
 
+---
+
 ```
 npm i stylelint --save-dev
 ```
@@ -204,6 +218,8 @@ npm install stylelint-config-recommended-scss --save-dev
 
 ## NPM Scripts & Husky
 
+---
+
 ```
 npm i husky --save-dev
 ```
@@ -222,6 +238,8 @@ npm i husky --save-dev
   }
 }
 ```
+
+---
 
 ## Useful articles
 

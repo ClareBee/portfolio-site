@@ -141,5 +141,18 @@
       margin-bottom: 3rem;
       display: inline-block;
     }
+    &__content-container {
+      a,
+      p,
+      li,
+      blockquote,
+      code {
+        font-size: 1.25rem;
+      }
+      code {
+        margin: 0;
+        padding: 0 0.25rem;
+      }
+    }
   }
 }

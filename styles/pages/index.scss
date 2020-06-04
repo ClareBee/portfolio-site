@@ -131,12 +131,15 @@
       opacity: 1;
       transform: none;
     }
-    &__video {
+    &__img {
       width: 47%;
       background: transparent;
       padding: 2rem;
       display: flex;
       align-items: center;
+      border-radius: 3px;
+      box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.1);
+
       img {
         border-radius: 3px;
       }

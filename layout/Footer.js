@@ -27,12 +27,12 @@ const Footer = ({ footerVisibility }) => (
       </a>{' '}
       & hosted by{' '}
       <a
-        href="https://zeit.co"
+        href="https://vercel.com"
         target="_blank"
         rel="noopener noreferrer"
-        title="Zeit Homepage"
+        title="Vercel Homepage"
       >
-        ZEIT
+        Vercel
       </a>
     </p>
     <Icons />

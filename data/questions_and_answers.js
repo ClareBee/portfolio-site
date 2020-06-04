@@ -45,8 +45,6 @@ export const questionsAndAnswers = [
     answers: [
       `My main obsessions are everything ReactJS, the JAMstack ` +
         `ecosystem, Cypress.io & GraphQL. My global experience & diverse background gives me a unique perspective on customer-focused web-design, content, & collaboration - as well as the necessary independence, adaptability, & initiative to thrive in remote working.`,
-      `PhD ` +
-        `research skills & a tireless enthusiasm for learning mean I'm always up for a challenge & ready to get to grips with new technologies on the fly.`,
       `Get in touch if you'd like to see an up-to-date version of my CV.`,
     ],
     expanded: false,
@@ -56,7 +54,7 @@ export const questionsAndAnswers = [
     question: `About this website`,
     answers: [
       `This site was built using NextJS, GSAP & SASS, ` +
-        `with Figma for the design stage & Zeit for deployment. The configuration is set up to allow a ` +
+        `with Figma for the design stage & Vercel (formerly Zeit) for deployment. The configuration is set up to allow a ` +
         `planned refactor into TypeScript.`,
       `The source code ` +
         `is available on my GitHub profile (see link in footer).`,

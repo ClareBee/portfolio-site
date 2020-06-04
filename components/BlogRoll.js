@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
 function BlogRoll({ allBlogs }) {
+  function removePromoted(blogs) {
+    return blogs.filter(blog => blog.document.data.promoted !== true);
+  }
   function truncateSummary(content) {
     return content.slice(0, 150) + '...';
   }
@@ -21,7 +24,7 @@ function BlogRoll({ allBlogs }) {
   return (
     <ul className="blog-list">
       {allBlogs.length >= 1 &&
-        allBlogs.map(blog => (
+        removePromoted(allBlogs).map(blog => (
           <li key={blog.slug}>
             <Link href="/blog/[id]" as={`/blog/${blog.slug}`}>
               <a className="blog">

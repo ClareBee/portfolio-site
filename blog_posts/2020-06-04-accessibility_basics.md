@@ -21,11 +21,6 @@ According to Scope, there are 13.9 million disabled people in the UK.
 
 Here are some basic things I've discovered while trying to improve the accessibility of my sites. I'm still new to this area, so apologies if there are any errors or glaring omissions. Feel free to reach out and let me know! Once you've worked through the checklist, hopefully it'll become second nature to build in these considerations from the start!
 
-> What is ARIA?
-> ARIA (Assistive Rich Internet Applications), is a spec from the World Wide Web Consortium (W3C) that was created to improve accessibility of web pages and applications by providing extra information to screen readers via HTML attributes.
-
-(source: [Web Accessibility, Carnegie Museums](http://web-accessibility.carnegiemuseums.org/foundations/aria/))
-
 ---
 
 ### 1. Use Tools

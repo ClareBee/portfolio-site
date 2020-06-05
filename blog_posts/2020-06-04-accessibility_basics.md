@@ -25,7 +25,7 @@ Here are some basic things I've discovered while trying to improve the accessibi
 
 ### 1. Use Tools
 
-The best way to appreciate the importance of accessibility is through experiencing the site as many of your users might - through screen readers or Chrome extensions that adjust the colours to match the range seen by someone with colour blindness.
+The best way to appreciate the importance of accessibility is through experiencing the site as many of your users might - through screen readers, or Chrome extensions that adjust the colours to match the range seen by someone with colour blindness.
 These are largely free and easy to install.
 
 Here are just a few to get you started:
@@ -41,7 +41,7 @@ Here are just a few to get you started:
 
 Check you haven't disabled magnification and zoom.
 
-**Why?** People with visability challenges might need to enlarge text or images
+**Why?** People with visability challenges might need to enlarge text or images.
 Check the meta viewport tag in your site's head element. If you see maximum-scale, minimum-scale, user-scalable=no, or user-scalable=0, remove these.
 
 ---
@@ -113,14 +113,14 @@ There's a great article on this by [WebAIM](https://webaim.org/techniques/semant
 - use headings in order (h1 -> h6), without skipping levels
 - prefer native UI controls (use a button rather than a clickable div which would also need an onKeyDown handler!)
 - prefer links for navigation and buttons for actions
-- if you use `<section>`, w3.org recommends adding the role="contentinfo" with a corresponding aria-label that describes the section. This makes the stucture more accessible and also helps use agenst that don't support HTML5.
-- `<article>` isn’t just for blog posts — it’s for any self-contained thing. It also helps WatchOS display your content properly. [SmashingMagazine](https://www.smashingmagazine.com/2020/01/html5-article-section/)
+- if you use `<section>`, w3.org recommends adding the role="contentinfo" with a corresponding aria-label that describes the section. This makes the stucture more accessible and also helps user agents that don't support HTML5.
+- `<article>` isn’t just for blog posts — it’s for any self-contained part of a page. It also helps WatchOS display your content properly. [SmashingMagazine](https://www.smashingmagazine.com/2020/01/html5-article-section/)
 
 ---
 
 ### 8. Add Main Landmarks
 
-In addition to Semantic HTML, ARIA landmarks identify which parts of the page are important and helping navigation through them. The most common roles are "main", "navigation" and "search".
+In addition to Semantic HTML, ARIA landmarks identify which parts of the page are important and help navigation. The most common roles are "main", "navigation", and "search".
 
 e.g.
 
@@ -140,11 +140,11 @@ e.g.
 
 Source: [MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Keyboard)
 
-Note that you should avoid setting the tabindex to greater than 0 as this will make the focus order different from the natural order of the elements in the DOM.
+Note that you should avoid setting the tabindex to greater than 0, as this will make the focus order different from the natural order of elements in the DOM.
 
-It's best to rely on elements which are implicitly focusable, like buttons or select lists.
+It's best to rely on elements which are implicitly focusable, such as buttons or select lists.
 
-If you need to customise this, i.e. 'focus management' in modals or custom buttons, then use tabIndex, roles, and aria-labels to aid assistive technologies to realise that an element is indeed interactive
+If you need to customise this, i.e. by rolling your own 'focus management' in modals or custom buttons, then use tabIndex, roles, and aria-labels to aid assistive technologies to realise that an element is indeed interactive
 
 ```html
 <div tabindex="0" role="button" aria-label="Close"></div>
@@ -176,7 +176,7 @@ In addition, you could consider adding more controls, content warnings, the abil
 
 ### 11. Live Region Announcements
 
-As JavaScript can dynamically change the content of a page without a reload, changes are often missed by assistive technologies, e.g. chat widgets or filtered lists. ARIA live regions help draw attention to important changes.
+As JavaScript can dynamically change the content of a page without a reload, changes such as popup chat widgets or filtered lists are often missed by assistive technologies. ARIA live regions help draw attention and can be set to different levels of assertiveness!
 
 Note that MDN points out:
 
@@ -195,14 +195,14 @@ Source: [MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/AR
 
 ### 12. Don't Rely on Colour
 
-**Why?** People who are colour blind or screen-reader users may not be able to tell the difference between different colours, so make sure you don't rely on colour alone to convey meaning. Instead, include cues and meaningful labels, and double-check that your design communicates what you want it to, even in grayscale!
+**Why?** People who are colourblind or screen-reader users may not be able to spot the difference between colours, so make sure you don't rely on colour alone to convey meaning. Instead, include cues and meaningful labels, and double-check that your design communicates what you want it to, even in grayscale!
 
 ---
 
 ### 13. Short Sentences
 
 **Why?** Longer sentences (over 20 words) are much harder for readers to understand.
-The optimal line length is often judged to be 65 characters. If you're using fixed-width fonts, you can set this using CSS! [MeyerWeb](https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/)
+The optimal line length is often judged to be around 65 characters. If you're using fixed-width fonts, you can set this using CSS! [MeyerWeb](https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/)
 
 ```css
 p {
@@ -210,7 +210,7 @@ p {
 }
 ```
 
-According to Gov.uk, the average reading age in the UK is nine years old. Check the readability of your content with free sites such as [ReadabilityFormulas](https://readabilityformulas.com/free-readability-formula-tests.php) which uses the Flesch Kincaid measure [Wikipedia](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests)
+According to Gov.uk, the average reading age in the UK is nine years old. Check the readability of your content with free sites such as [ReadabilityFormulas](https://readabilityformulas.com/free-readability-formula-tests.php), which uses the Flesch Kincaid measure [Wikipedia](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests)
 
 ---
 

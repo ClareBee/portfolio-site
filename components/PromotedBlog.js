@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import PictureSet from './PictureSet';
+import ReactMarkdown from 'react-markdown';
 
 function PromotedBlog({
   blog,
@@ -33,13 +34,15 @@ function PromotedBlog({
           </div>
           <div className="promoted__content">
             <div className="promoted__title">
-              <h1 className="blog__title">{promotedBlog.title}</h1>
+              <h1 className="blog__title heading-3">
+                {promotedBlog.title}
+              </h1>
               <span className="promoted__msg">Pinned</span>
             </div>
             <h2 className="blog__subtitle">
               {promotedBlog.subtitle}
             </h2>
-            <p>{truncateSummary(content)}</p>
+            <ReactMarkdown source={truncateSummary(content)} />
             <div className="blog-list__read-more">Read More</div>
             <ul className="tag-icons">{tags}</ul>
           </div>

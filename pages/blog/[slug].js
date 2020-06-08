@@ -31,6 +31,7 @@ const Blog = ({ data, content, siteTitle }) => {
     <Layout
       title={siteTitle}
       imageUrl={`https://clarebee.com/${data.banner}`}
+      blogDescription={`${data.title} - ${reformatDate(data.date)}`}
     >
       <article className="blog-post">
         <div className="blog-post__header">

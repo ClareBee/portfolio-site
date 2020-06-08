@@ -5,7 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { CSSTransition } from 'react-transition-group';
 
-const Layout = ({ title, children }) => {
+const Layout = ({ title, imageUrl, children }) => {
   const [pageTitle, setPageTitle] = useState('');
   const [footerVisibility, setFooterVisibility] = useState(false);
   useEffect(() => {
@@ -14,7 +14,7 @@ const Layout = ({ title, children }) => {
   }, [pageTitle]);
   return (
     <div className="container">
-      <Meta title={title} />
+      <Meta title={title} imageUrl={imageUrl} />
       <Header />
       <CSSTransition
         in={!!pageTitle}
@@ -34,6 +34,7 @@ const Layout = ({ title, children }) => {
 
 Layout.propTypes = {
   title: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 

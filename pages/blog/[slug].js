@@ -28,7 +28,10 @@ const Blog = ({ data, content, siteTitle }) => {
   }
 
   return (
-    <Layout title={siteTitle}>
+    <Layout
+      title={siteTitle}
+      imageUrl={`https://clarebee.com/${data.banner}`}
+    >
       <article className="blog-post">
         <div className="blog-post__header">
           <h1 className="heading-1">{data.title}</h1>

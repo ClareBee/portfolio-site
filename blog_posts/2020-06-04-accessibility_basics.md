@@ -6,7 +6,7 @@ date: '2020-06-04'
 banner: website.jpg
 alt_text: 'website'
 tags: [A11y, accessibility]
-promoted: true
+promoted: false
 ---
 
 An accessible website is one that is usable by as many people as possible, including those with:

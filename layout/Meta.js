@@ -3,9 +3,12 @@ import Head from 'next/head';
 import data from '../data/config';
 import { GA_TRACKING_ID } from '../lib/gtag';
 
-function Meta({ title }) {
+function Meta({ title, imageUrl, blogDescription }) {
   const { site, description, url, twitterHandle } = data;
-
+  const twitterImage = imageUrl
+    ? imageUrl
+    : 'https://clarebee.com/twitter_landing_page.jpg';
+  const summary = blogDescription ? blogDescription : description;
   return (
     <Head>
       <title>{title}</title>
@@ -16,33 +19,27 @@ function Meta({ title }) {
                       width=device-width, initial-scale=1.0, 
                       minimum-scale=1.0, maximum-scale=5.0"
       />
-      <meta name="Description" content={description} />
+      <meta name="Description" content={summary} />
       <meta property="og:type" content="website" />
       <meta name="og:title" property="og:title" content={title} />
       <meta
         name="og:description"
         property="og:description"
-        content={description}
+        content={summary}
       />
       <meta property="og:site_name" content={site} />
       <meta property="og:url" content={url} />
       <meta property="og:locale" content="en_GB" />
-      <meta
-        property="og:image"
-        content="https://clarebee.com/twitter_landing_page.jpg"
-      />
+      <meta property="og:image" content={twitterImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630"></meta>
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:description" content={summary} />
       <meta name="twitter:site" content={twitterHandle} />
       <meta name="twitter:creator" content={twitterHandle} />
       <meta name="twitter:image:alt" content="Landing page" />
-      <meta
-        name="twitter:image"
-        content="https://clarebee.com/twitter_landing_page.jpg"
-      />
+      <meta name="twitter:image" content={twitterImage} />
       <meta name="msapplication-TileColor" content="#2b5797" />
       <meta
         name="msapplication-config"
@@ -112,6 +109,8 @@ function Meta({ title }) {
 
 Meta.propTypes = {
   title: PropTypes.string,
+  imageUrl: PropTypes.string,
+  blogDescription: PropTypes.string,
 };
 
 export default Meta;

@@ -40,13 +40,13 @@
   }
   &__subtitle {
     letter-spacing: 0.2rem;
+    margin-top: 0.75rem;
     margin-bottom: 1rem;
   }
   &__date {
     color: var(--heading-color);
     font-size: 1.25rem;
   }
-
   @include md {
     &__date {
       font-size: 0.85rem;

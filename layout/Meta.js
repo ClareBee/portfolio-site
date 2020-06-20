@@ -3,12 +3,20 @@ import Head from 'next/head';
 import data from '../data/config';
 import { GA_TRACKING_ID } from '../lib/gtag';
 
-function Meta({ title, imageUrl, blogDescription }) {
+function Meta({
+  title,
+  imageUrl,
+  blogTitle,
+  blogDescription,
+  blogDate,
+}) {
   const { site, description, url, twitterHandle } = data;
-  const twitterImage = imageUrl
+  const socialMediaImg = imageUrl
     ? imageUrl
     : 'https://clarebee.com/twitter_landing_page.jpg';
   const summary = blogDescription ? blogDescription : description;
+  const twitterTitle = blogTitle;
+  const twitterDescription = blogDate ? blogDate : blogDescription;
   return (
     <Head>
       <title>{title}</title>
@@ -30,16 +38,16 @@ function Meta({ title, imageUrl, blogDescription }) {
       <meta property="og:site_name" content={site} />
       <meta property="og:url" content={url} />
       <meta property="og:locale" content="en_GB" />
-      <meta property="og:image" content={twitterImage} />
+      <meta property="og:image" content={socialMediaImg} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630"></meta>
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={summary} />
+      <meta name="twitter:title" content={twitterTitle} />
+      <meta name="twitter:description" content={twitterDescription} />
       <meta name="twitter:site" content={twitterHandle} />
       <meta name="twitter:creator" content={twitterHandle} />
       <meta name="twitter:image:alt" content="Landing page" />
-      <meta name="twitter:image" content={twitterImage} />
+      <meta name="twitter:image" content={socialMediaImg} />
       <meta name="msapplication-TileColor" content="#2b5797" />
       <meta
         name="msapplication-config"
@@ -111,6 +119,8 @@ Meta.propTypes = {
   title: PropTypes.string,
   imageUrl: PropTypes.string,
   blogDescription: PropTypes.string,
+  blogDate: PropTypes.string,
+  blogTitle: PropTypes.string,
 };
 
 export default Meta;

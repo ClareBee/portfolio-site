@@ -1,4 +1,5 @@
 import { useState } from 'react';
+// TODO: polyfill now included in Nextjs - remove import and test
 import fetch from 'isomorphic-unfetch';
 import * as gtag from '../lib/gtag';
 

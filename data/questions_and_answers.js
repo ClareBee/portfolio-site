@@ -18,27 +18,10 @@ export const questionsAndAnswers = [
       `I started playing around with code when living in Asia, writing a travel blog & completing online courses. In 2015, I took the leap & completed the immersive 16-week software development programme & a 4-week ` +
         `UX course with CodeClan & immediately ` +
         `started work as a fullstack developer.`,
-      `My first job was with a fintech startup, ` +
-        `Castlight, which focused on using cutting-edge Open Banking technology to empower customers to improve their credit rating. Our tech stack was Rails & React, but shifted towards .NET & AngularJS when the company was bought by Experian in 2019.`,
-      `I dedicated a lot of my evenings & weekends to keeping up with developments in ReactJS, completing the Fullstack Open certification (University of Helsinki) & several courses (Udemy, Frontend Masters & Udacity). I also attended JavaScript Meetups, took part in the #100DaysOfCode on Twitter, mentored new CodeClan graduates, & had lots of fun with JAMstack side projects!`,
       `You can check out my work on the Projects page or on my GitHub profile.`,
     ],
     expanded: false,
     id: 456,
-  },
-  {
-    question: 'What am I doing now?',
-    answers: [
-      `In January 2020 I decided to shift towards my main focus - ReactJS - & remote ` +
-        `work. As a last hurrah, I bought a small van & set off ` +
-        `round the Highlands & Islands of Scotland (all while coding online, ` +
-        `thanks to data tethering!).`,
-      `Since Covid-19 has cut that journey short, I'm now ` +
-        `available for a remote FrontEnd role earlier than expected.`,
-      `You can check out my GitHub & LinkedIn via the links in the footer, & feel free to contact me via the Contact page if you want to know more!`,
-    ],
-    expanded: false,
-    id: 789,
   },
   {
     question: `What are my main skills?`,

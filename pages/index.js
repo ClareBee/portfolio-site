@@ -30,7 +30,7 @@ const Index = () => {
                 </Link>
               </span>
               , a <span className="bold">Software</span> Developer in
-              Scotland
+              the UK
             </h2>
             <h3 className="heading-3 introduction__subtitle">
               ReactJS, GraphQL & the JAMstack

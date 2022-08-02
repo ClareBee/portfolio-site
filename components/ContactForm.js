@@ -3,7 +3,7 @@ import { useState } from 'react';
 import fetch from 'isomorphic-unfetch';
 import * as gtag from '../lib/gtag';
 
-export default () => {
+const ContactForm = () => {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
@@ -126,3 +126,5 @@ export default () => {
     </section>
   );
 };
+
+export default ContactForm;
